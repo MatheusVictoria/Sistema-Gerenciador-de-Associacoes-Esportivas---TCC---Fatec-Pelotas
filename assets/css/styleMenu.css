@@ -1,0 +1,28 @@
+/*Folha de estilo para a tela de login
+*/
+/* 
+    Created on : 01/05/2017, 20:28:27
+    Author     : Matheus
+*/
+
+body{
+    
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background: #eee    
+    
+}
+
+
+.form-login .form-control:focus{
+    
+    z-index: 10;
+    
+}
+
+.panel{
+    
+    margin-top: 100px;
+    margin-left: -30px;
+    
+}
