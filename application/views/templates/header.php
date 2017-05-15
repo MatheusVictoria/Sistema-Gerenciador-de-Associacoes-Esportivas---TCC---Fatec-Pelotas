@@ -60,7 +60,7 @@
                     <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="<?php base_url('login/login') ?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            <li><a href="<?= base_url('login') ?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                         </ul>
                     </div>
                 </div>

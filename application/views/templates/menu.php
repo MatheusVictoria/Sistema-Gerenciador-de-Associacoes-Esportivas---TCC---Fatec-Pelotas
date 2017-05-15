@@ -14,16 +14,27 @@
                     <hr class="large btn-primary" />
 
                     <ul class="nav nav-pills nav-stacked menu">
+                        <a class="btn btn-block btn-primary" role="button" data-toggle="collapse" href="#dash" aria-expanded="false" aria-controls="collapseExample">Dashboard</a>
+                        <div class="collapse" id="dash" aria-expanded="true">
+                            <div class="well well-sm">
+
+                                <li>
+                                    <a href="<?= base_url() ?>">Dashboard</a>
+                                </li>
+                                
+                            </div>
+                        </div>
+                        
                         <a class="btn btn-block btn-primary" role="button" data-toggle="collapse" href="#cad" aria-expanded="false" aria-controls="collapseExample">Cadastros</a>
                         <div class="collapse" id="cad" aria-expanded="true">
                             <div class="well well-sm">
 
                                 <li>
-                                    <a href="<?= base_url('##') ?>">Aluno</a>
+                                    <a href="<?= base_url('form_aluno') ?>">Aluno</a>
                                 </li>
                                 <hr class="btn-primary">
                                 <li>
-                                    <a href="<?= base_url('##') ?>">Centro de Treinamento</a>
+                                    <a href="<?= base_url('form_centro_treinamento') ?>">Centro de Treinamento</a>
                                 </li>
                                 <hr class="btn-primary">
                                 <li>
@@ -71,6 +82,20 @@
                                 <hr class="btn-primary">
                                 <li>
                                     <a href="<?= base_url('produto/listar') ?>">Pagamentos</a>
+                                </li>
+
+                            </div>
+                        </div>
+                        <a href="#site" class="btn btn-block btn-primary" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">Site</a>
+                        <div class="collapse" id="site" aria-expanded="true">
+                            <div class="well well-sm">
+
+                                <li>
+                                    <a href="<?= base_url('#') ?>">Cadastrar Patrocinador</a>
+                                </li>
+                                <hr class="btn-primary">
+                                <li>
+                                    <a href="<?= base_url('#') ?>">Novo Evento</a>
                                 </li>
 
                             </div>
