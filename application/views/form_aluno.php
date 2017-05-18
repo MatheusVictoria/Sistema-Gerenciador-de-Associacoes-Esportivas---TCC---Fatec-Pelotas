@@ -1,5 +1,5 @@
 
-<div class="col-lg-10 coluna">
+<div class="col-lg-10 ">
 
     <div class="col-lg-12">
         <h1>
@@ -95,29 +95,22 @@
                 </select>
             </div>
 
-            <div class=" form-group col-lg-6">
-                <div class="input-group">
-                    <label for="sexo">Masculino:</label>
-                    <span class="input-group-addon" style="margin-left: -20px">
-                        <input type="checkbox" name="sexo" aria-label="...">
-                    </span>                
+            <div class=" form-group col-lg-4">
+                <div>
+                <label for="sexo">Sexo:</label>
+                </div>
+                <div>
+                <label class="checkbox-inline "><input type="checkbox" value="">Masculino</label>
+                <label class="checkbox-inline "><input type="checkbox" value="">Feminino</label>
                 </div>
             </div>
-            <div class="form-group col-lg-6">
-                <div class="input-group">
-                    <label for="sexo">Feminino:</label>
-                    <span class="input-group-addon" style="margin-left: -20px">
-                        <input type="checkbox" name="sexo" aria-label="...">
-                    </span>                
-                </div>
-            </div>
-            
-            <div class="form-group col-lg-6 ">
+
+            <div class="form-group col-lg-4 ">
                 <label for="foto">Foto:</label>
                 <input type="file" id="foto" name="foto"/>
             </div>
 
-            <div class="form-group col-lg-6">
+            <div class="form-group col-lg-4">
                 <label for="ativo">Ativo:</label>
                 <select class="form-control" id="ativo">
                     <option>Sim</option>
@@ -125,7 +118,7 @@
                 </select>
             </div>
 
-            <div class="col-lg-12 col-lg-offset-1 ">
+            <div class="col-lg-12 col-lg-offset-1 " style="margin-top: 10px; margin-bottom: 10px">
                 <div class="col-lg-6">
                     <button type="submit" class="btn btn-primary col-lg-4">Enviar</button>
                 </div>
