@@ -33,20 +33,34 @@
                                     <a href="<?= base_url('form_aluno') ?>">Aluno</a>
                                 </li>
                                 <hr class="btn-primary">
+                                
                                 <li>
                                     <a href="<?= base_url('form_centro_treinamento') ?>">Centro de Treinamento</a>
                                 </li>
                                 <hr class="btn-primary">
+                                
+                                <li>
+                                    <a href="<?= base_url('form_graduacao') ?>">Graduação</a>
+                                </li>
+                                <hr class="btn-primary">
+                                
                                 <li>
                                     <a href="<?= base_url('##') ?>">Professor</a>
                                 </li>
                                 <hr class="btn-primary">
+                                
                                 <li>
                                     <a href="<?= base_url('##') ?>">Turma</a>
+                                </li>
+                                <hr class="btn-primary">
+                                
+                                <li>
+                                    <a href="<?= base_url('form_usuario') ?>">Usuário</a>
                                 </li>
 
                             </div>
                         </div>
+                        
                         <a href="#list" class="btn btn-block btn-primary" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">Listas</a>
                         <div class="collapse" id="list" aria-expanded="true">
                             <div class="well well-sm">

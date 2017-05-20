@@ -23,11 +23,14 @@ class Graduacao extends CI_Controller {
         
     }
     
-    function cadastrar (){
+    function cadastrar(){
         
         $dados = $this->input->post();
         
         $this->graduacaoM->inserir($dados);
+        
+  
+        redirect(base_url());
         
         
     }
