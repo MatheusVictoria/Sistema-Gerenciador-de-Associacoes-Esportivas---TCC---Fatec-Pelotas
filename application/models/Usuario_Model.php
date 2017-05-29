@@ -14,13 +14,29 @@ class Usuario_Model extends CI_Model{
     
     public function selecionar(){
         
-        $sql = 'SELECT u.usuario, u.senha, u.ativo, t.tipo as tipo_id  FROM `usuario` u LEFT JOIN tipo t ON u.tipo_id = t.id';
+        $sql = 'SELECT u.id, u.usuario, u.senha, u.ativo, t.tipo as tipo_id  FROM `usuario` u LEFT JOIN tipo t ON u.tipo_id = t.id ORDER BY u.id';
         
         $query = $this->db->query($sql);
         
         return $query->result();
         
     }
+    
+   public function encontrar($id){
+       
+       $sql = "SELECT u.id, u.usuario, u.senha, u.ativo, t.tipo as tipo_id  FROM `usuario` u LEFT JOIN tipo t ON u.tipo_id = t.id WHERE u.id = $id";
+       
+       $query = $this->db->query($sql);
+       
+       return $query->row();
+   } 
+   
+   public function atualiza($registro){
+       
+       $this->db->where('id', $registro['id']);
+       return $this->db->update('usuario', $registro);
+       
+   }
     
 }
 

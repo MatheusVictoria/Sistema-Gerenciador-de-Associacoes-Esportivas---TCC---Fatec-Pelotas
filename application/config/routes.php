@@ -56,4 +56,7 @@ $route['login'] = 'Login/index';
 $route['form_centro_treinamento'] = 'Centro_de_Treinamento/index';
 $route['form_aluno'] = 'Aluno/index';
 $route['form_graduacao'] = 'Graduacao/index';
+$route['listar_graduacao'] = 'Graduacao/listar';
 $route['form_usuario'] = 'Usuario/index';
+$route['alt_usuario'] = 'Usuario/editar';
+$route['listar_usuario'] = 'Usuario/listar';

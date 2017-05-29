@@ -21,10 +21,10 @@
                                 <li>
                                     <a href="<?= base_url() ?>">Dashboard</a>
                                 </li>
-                                
+
                             </div>
                         </div>
-                        
+
                         <a class="btn btn-block btn-primary" role="button" data-toggle="collapse" href="#cad" aria-expanded="false" aria-controls="collapseExample">Cadastros</a>
                         <div class="collapse" id="cad" aria-expanded="true">
                             <div class="well well-sm">
@@ -33,52 +33,60 @@
                                     <a href="<?= base_url('form_aluno') ?>">Aluno</a>
                                 </li>
                                 <hr class="btn-primary">
-                                
+
                                 <li>
                                     <a href="<?= base_url('form_centro_treinamento') ?>">Centro de Treinamento</a>
                                 </li>
                                 <hr class="btn-primary">
-                                
+
                                 <li>
                                     <a href="<?= base_url('form_graduacao') ?>">Graduação</a>
                                 </li>
                                 <hr class="btn-primary">
-                                
+
                                 <li>
                                     <a href="<?= base_url('##') ?>">Professor</a>
                                 </li>
                                 <hr class="btn-primary">
-                                
+
                                 <li>
                                     <a href="<?= base_url('##') ?>">Turma</a>
                                 </li>
                                 <hr class="btn-primary">
-                                
+
                                 <li>
                                     <a href="<?= base_url('form_usuario') ?>">Usuário</a>
                                 </li>
 
                             </div>
                         </div>
-                        
+
                         <a href="#list" class="btn btn-block btn-primary" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">Listas</a>
                         <div class="collapse" id="list" aria-expanded="true">
                             <div class="well well-sm">
 
                                 <li>
-                                    <a href="<?= base_url('categoria/listar') ?>">Aluno</a>
+                                    <a href="<?= base_url('##') ?>">Aluno</a>
                                 </li>
                                 <hr class="btn-primary">
                                 <li>
-                                    <a href="<?= base_url('marca/listar') ?>">Centro de Treinamento</a>
+                                    <a href="<?= base_url('##') ?>">Centro de Treinamento</a>
                                 </li>
                                 <hr class="btn-primary">
                                 <li>
-                                    <a href="<?= base_url('produto/listar') ?>">Professores</a>
+                                    <a href="<?= base_url('listar_graduacao') ?>">Graduação</a>
                                 </li>
                                 <hr class="btn-primary">
                                 <li>
-                                    <a href="<?= base_url('user') ?>">Turmas</a>
+                                    <a href="<?= base_url('##') ?>">Professores</a>
+                                </li>
+                                <hr class="btn-primary">
+                                <li>
+                                    <a href="<?= base_url('##') ?>">Turmas</a>
+                                </li>
+                                <hr class="btn-primary">
+                                <li>
+                                    <a href="<?= base_url('listar_usuario') ?>">Usuários</a>
                                 </li>
                             </div>
                         </div>

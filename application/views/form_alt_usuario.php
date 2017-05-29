@@ -1,9 +1,8 @@
-
 <div class="col-lg-10">
 
     <div class="col-lg-12">
         <h1>
-            Cadastro de Usuários
+            Alteração de Usuários
         </h1>
 
         <hr class="col-lg-12 media btn-primary" />
@@ -11,25 +10,28 @@
     </div>
     <div class="col-lg-12">
 
-        <form method="post" action="<?= base_url('Usuario/cadastrar') ?>" enctype="multipart/form-data">
-            <div class="form-group col-lg-6 ">
+        <form method="post" action="<?= base_url('Usuario/grava_alteracao') ?>" enctype="multipart/form-data">
+
+            <input type="hidden" id="id" name="id" value="<?= $usuario->id ?>"
+
+                   <div class="form-group col-lg-6 ">
                 <label for="usuario">Usuário:</label>
-                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="usuario"/>
+                <input type="text" class="form-control" id="usuario" name="usuario" value="<?= $usuario->usuario ?>"/>
             </div>
 
             <div class="form-group col-lg-6 ">
                 <label for="senha">Senha:</label>
-                <input type="password" class="form-control" id="senha" name="senha" placeholder="senha"/>
+                <input type="password" class="form-control" id="senha" name="senha" value="<?= $usuario->senha ?>"/>
             </div>
 
             <div class="form-group col-lg-6">
                 <label for="tipo">Tipo de Usuário:</label>
                 <select name="tipo_id" id="tipo_id" class="form-control" >
-                    <option> Selecione o tipo de usuário </option>
                     <?php
                     foreach ($tipos as $tipo) {
                         ?>
-                        <option value="<?= $tipo->id ?>"> 
+                        <option value="<?= $tipo->id ?>">
+                            <?= $tipo->id == $usuario->tipo_id ? 'selected' : ''?> 
                             <?= $tipo->tipo ?> </option>
                         <?php
                     }
@@ -58,6 +60,7 @@
 
     </div>
 </div>
+
 
 
 

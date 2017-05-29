@@ -10,5 +10,25 @@ class Graduacao_Model extends CI_Model {
         
     }
     
+    function selecionar(){
+        
+        $sql = "SELECT * FROM graduacao";
+        
+        $query = $this->db->query($sql);
+        
+        return $query->result();
+        
+    }
+    
+    function encontrar($id){
+        
+        $sql = "SELECT * FROM graduacao WHERE id = $id";
+        
+        $query = $this->db->query($sql);
+        
+        return $query->row();        
+        
+    }
+    
     
 }

@@ -32,6 +32,26 @@ class Graduacao extends CI_Controller {
   
         redirect(base_url());
         
+    }
+    
+    public function editar($id){
+        
+        $dados ['graduacao'] = $this->graduacaoM->encontrar($id);
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('form_alt_graduacao', $dados);
+        $this->load->view('templates/footer');
+        
+        
+    }
+    
+    public function listar(){
+        
+        $dados ['graduacao'] = $this->graduacaoM->selecionar();
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('lista_graduacao', $dados);
+        $this->load->view('templates/footer');      
         
     }
     
