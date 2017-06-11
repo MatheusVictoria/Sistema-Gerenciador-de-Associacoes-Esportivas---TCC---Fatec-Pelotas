@@ -11,7 +11,7 @@
     </div>
     <div class="col-lg-12">
 
-        <form method="post" action="<?= base_url('Graduacao/cadastrar_alteracao') ?>" enctype="multipart/form-data">
+        <form method="post" action="<?= base_url('Graduacao/grava_alteracao') ?>" enctype="multipart/form-data">
             
             <input type="hidden" id="id" name="id" value="<?= $graduacao->id ?>"  >
             

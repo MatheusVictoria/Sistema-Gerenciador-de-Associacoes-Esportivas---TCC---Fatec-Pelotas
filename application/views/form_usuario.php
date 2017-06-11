@@ -11,15 +11,15 @@
     </div>
     <div class="col-lg-12">
 
-        <form method="post" action="<?= base_url('Usuario/cadastrar') ?>" enctype="multipart/form-data">
+        <form method="post" action="<?= base_url('Usuario/index') ?>" enctype="multipart/form-data">
             <div class="form-group col-lg-6 ">
                 <label for="usuario">Usuário:</label>
-                <input type="text" class="form-control" id="usuario" name="usuario" placeholder="usuario"/>
+                <input type="text" class="form-control" id="usuario" name="usuario" value="<?= set_value('usuario')?>" placeholder="usuario"/>
             </div>
 
             <div class="form-group col-lg-6 ">
                 <label for="senha">Senha:</label>
-                <input type="password" class="form-control" id="senha" name="senha" placeholder="senha"/>
+                <input type="password" class="form-control" id="senha" name="senha" value="<?= set_value('senha')?>" placeholder="senha"/>
             </div>
 
             <div class="form-group col-lg-6">
@@ -29,8 +29,8 @@
                     <?php
                     foreach ($tipos as $tipo) {
                         ?>
-                        <option value="<?= $tipo->id ?>"> 
-                            <?= $tipo->tipo ?> </option>
+                    <option value="<?= $tipo->id ?>"> 
+                            <?= $tipo->tipo?> </option>
                         <?php
                     }
                     ?>
@@ -40,8 +40,8 @@
             <div class="form-group col-lg-6">
                 <label for="ativo">Ativo:</label>
                 <select class="form-control" name="ativo" id="ativo">
-                    <option value="1" >Sim</option>
-                    <option value="2">Não</option>                    
+                    <option value="1 <?= set_select('ativo', '1')?>" >Sim</option>
+                    <option value="2 <?= set_select('ativo', '2')?>">Não</option>                    
                 </select>          
             </div>
 
@@ -54,11 +54,17 @@
                     <button type="reset" class="btn btn-primary col-lg-4">Limpar</button>
                 </div>
             </div>
-        </form>                         
+        </form>
 
+        <div class="col-lg-10">
+            <?php if($erro):?>
+            <div class="alert alert-warning">
+                <ul>
+                    <?=$erro?>
+                </ul> 
+            </div>            
+            <?php endif;?>      
+        </div>
+        
     </div>
 </div>
-
-
-
-

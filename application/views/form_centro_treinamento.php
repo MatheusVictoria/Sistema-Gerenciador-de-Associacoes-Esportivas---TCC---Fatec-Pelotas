@@ -11,7 +11,7 @@
     </div>
     <div class="col-lg-12">
 
-        <form method="post" action="<?= base_url('####') ?>" enctype="multipart/form-data">
+        <form method="post" action="<?= base_url('Centro_de_Treinamento/cadastrar') ?>" enctype="multipart/form-data">
             <div class="form-group col-lg-6 ">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome"/>

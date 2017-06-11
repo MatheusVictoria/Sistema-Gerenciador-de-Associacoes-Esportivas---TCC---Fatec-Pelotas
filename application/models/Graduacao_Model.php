@@ -30,5 +30,12 @@ class Graduacao_Model extends CI_Model {
         
     }
     
+    function atualiza($registro){
+        
+        $this->db->where('id', $registro['id']);
+        return $this->db->update('graduacao', $registro);
+        
+    }
+    
     
 }
