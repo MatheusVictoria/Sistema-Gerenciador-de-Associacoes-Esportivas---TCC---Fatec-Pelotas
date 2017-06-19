@@ -14,20 +14,29 @@ class Graduacao extends CI_Controller {
 
     function index() {
 
+        $dados ['erros'] = null;
+
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
-        $this->load->view('form_graduacao');
-        $this->load->view('templates/footer');
-    }
-
-    function cadastrar() {
-
+        
         $dados = $this->input->post();
+       
+        $this->form_validation->set_rules('cor', 'Cor', 'trim|required', array('required' => 'Preencha o campo cor'));
+        $this->form_validation->set_rules('descricao', 'Descrição', 'trim|required', array('required' => 'Preencha o campo descrição'));
 
-        $this->graduacaoM->inserir($dados);
+        if ($this->form_validation->run() === FALSE) {
 
+            $dados['erros'] = validation_errors('<li>', '</li>');
+        } else {
 
-        redirect(base_url());
+            $this->graduacaoM->inserir($dados);
+            redirect('listar_graduacao');
+            
+        }
+        
+        $this->load->view('form_graduacao', $dados);
+        $this->load->view('templates/footer');
+        
     }
 
     public function editar($id) {
@@ -52,9 +61,8 @@ class Graduacao extends CI_Controller {
 
         $dados = $this->input->post();
         $this->graduacaoM->atualiza($dados);
-        
+
         redirect('listar_graduacao');
-        
     }
 
 }

@@ -28,7 +28,7 @@ class Centro_de_Treinamento extends CI_Controller{
         
         $this->ctM->inserir($dados);
         
-        redirect(base_url());
+        redirect(base_url('listar_centro_treinamento'));
         
     }
     

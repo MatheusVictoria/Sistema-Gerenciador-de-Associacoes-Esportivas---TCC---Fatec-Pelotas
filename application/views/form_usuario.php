@@ -58,7 +58,7 @@
 
         <div class="col-lg-10">
             <?php if($erro):?>
-            <div class="alert alert-warning">
+            <div class="alert alert-danger">
                 <ul>
                     <?=$erro?>
                 </ul> 

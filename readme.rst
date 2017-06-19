@@ -1,70 +1,22 @@
-###################
-What is CodeIgniter
-###################
+## Sistema Gerenciador de Associações Esportivas - SGAE
 
-CodeIgniter is an Application Development Framework - a toolkit - for people
-who build web sites using PHP. Its goal is to enable you to develop projects
-much faster than you could if you were writing code from scratch, by providing
-a rich set of libraries for commonly needed tasks, as well as a simple
-interface and logical structure to access these libraries. CodeIgniter lets
-you creatively focus on your project by minimizing the amount of code needed
-for a given task.
+Ciente de que nos dias atuais as associações esportivas, por vezes, possuem mais de um centro de treinamento, o que potencializa a dificuldade de reunir e organizar as informações referentes a estes centros, pensou-se em desenvolver uma aplicação visando facilitar o acesso a estas informações de forma organizada e centralizada.
 
-*******************
-Release Information
-*******************
+## Ferramentas e Tecnologias Utilizadas
 
-This repo contains in-development code for future releases. To download the
-latest stable release please visit the `CodeIgniter Downloads
-<https://codeigniter.com/download>`_ page.
+* PHP 5.6 -> <http://php.net/docs.php>
+* Mysql 5.7.14 -> <https://dev.mysql.com/doc/refman/5.7/en/>
+* Codeigniter 3.x.x -> <https://codeigniter.com/docs>_
+* Bootstrap 3.3.7 -> <http://getbootstrap.com/>
+* IDE NetBeans 8.1 -> <https://netbeans.org/>
+* MySQL WorKbench 6.3 -> <https://www.mysql.com/>
+* WampServer 3.0.6 -> <http://www.wampserver.com/en/>_
 
-**************************
-Changelog and New Features
-**************************
+## Execução no Netbeans
+1. Clone o projeto 
 
-You can find a list of all changes for each release in the `user
-guide change log <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/changelog.rst>`_.
+<code>git clone git@github.com:MatheusVictoria/Sistema-Gerenciador-de-Associacoes-Esportivas---TCC---Fatec-Pelotas.git</code>
 
-*******************
-Server Requirements
-*******************
+2. Import o script no phpmyadmin que está localizado dentro da pasta de arquivos de código fonte do projeto para criar o banco.
 
-PHP version 5.6 or newer is recommended.
-
-It should work on 5.3.7 as well, but we strongly advise you NOT to run
-such old versions of PHP, because of potential security and performance
-issues, as well as missing features.
-
-************
-Installation
-************
-
-Please see the `installation section <https://codeigniter.com/user_guide/installation/index.html>`_
-of the CodeIgniter User Guide.
-
-*******
-License
-*******
-
-Please see the `license
-agreement <https://github.com/bcit-ci/CodeIgniter/blob/develop/user_guide_src/source/license.rst>`_.
-
-*********
-Resources
-*********
-
--  `User Guide <https://codeigniter.com/docs>`_
--  `Language File Translations <https://github.com/bcit-ci/codeigniter3-translations>`_
--  `Community Forums <http://forum.codeigniter.com/>`_
--  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
--  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
-
-Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
-or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
-
-***************
-Acknowledgement
-***************
-
-The CodeIgniter team would like to thank EllisLab, all the
-contributors to the CodeIgniter project and you, the CodeIgniter user.
+3. Abra o projeto na versão 8 ou superior do Netbeans.
