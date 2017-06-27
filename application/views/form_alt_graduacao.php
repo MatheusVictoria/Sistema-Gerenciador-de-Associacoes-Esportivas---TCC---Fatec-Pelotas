@@ -1,5 +1,5 @@
 
-<div class="col-lg-10">
+<div class="col-lg-10 conteudo">
 
     <div class="col-lg-12">
         <h1>

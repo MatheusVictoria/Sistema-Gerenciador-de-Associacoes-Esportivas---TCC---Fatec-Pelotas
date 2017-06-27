@@ -1,7 +1,7 @@
 
 
 
-<div class="col-lg-10">
+<div class="col-lg-10 conteudo">
     <div class="well-lg">
         <h1 style="font-family: initial; font-size: 40px;"> Bem vindo a área administrativa.</h1>
 

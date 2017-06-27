@@ -8,7 +8,7 @@
 
     <div class="col-lg-12">
         <h1>
-            Cadastro de Aluno
+            Cadastro de Professores
         </h1>
 
         <hr class="col-lg-12 media btn-primary" />
@@ -37,11 +37,12 @@
                 <input type="tel" class="form-control" id="fone" name="fone" placeholder="Telefone"/>
             </div>
 
+
             <div class="form-group col-lg-6 ">
                 <label for="email">E-mail:</label>
                 <input type="email" class="form-control" id="enail" name="email" placeholder="E-mail"/>
             </div>
-            
+
             <div class="form-group col-lg-6 ">
 
                 <label for="cep">Cep:</label>
@@ -103,11 +104,11 @@
 
             <div class=" form-group col-lg-4">
                 <div>
-                <label for="sexo">Sexo:</label>
+                    <label for="sexo">Sexo:</label>
                 </div>
                 <div>
-                <label class="checkbox-inline "><input type="checkbox" value="M">Masculino</label>
-                <label class="checkbox-inline "><input type="checkbox" value="F">Feminino</label>
+                    <label class="checkbox-inline "><input type="checkbox" value="M">Masculino</label>
+                    <label class="checkbox-inline "><input type="checkbox" value="F">Feminino</label>
                 </div>
             </div>
 

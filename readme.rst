@@ -1,6 +1,8 @@
+
+
 ## Sistema Gerenciador de Associações Esportivas - SGAE
 
-Ciente de que nos dias atuais as associações esportivas, por vezes, possuem mais de um centro de treinamento, o que potencializa a dificuldade de reunir e organizar as informações referentes a estes centros, pensou-se em desenvolver uma aplicação visando facilitar o acesso a estas informações de forma organizada e centralizada.
+O sistema tem como objetivo 
 
 ## Ferramentas e Tecnologias Utilizadas
 
@@ -20,3 +22,8 @@ Ciente de que nos dias atuais as associações esportivas, por vezes, possuem ma
 2. Import o script no phpmyadmin que está localizado dentro da pasta de arquivos de código fonte do projeto para criar o banco.
 
 3. Abra o projeto na versão 8 ou superior do Netbeans.
+
+4. Clique no link a seguir para ver a licensa do sisema 
+
+[Licensa]<https://raw.githubusercontent.com/MatheusVictoria/Sistema-Gerenciador-de-Associacoes-Esportivas---TCC---Fatec-Pelotas/master/license.txt>
+

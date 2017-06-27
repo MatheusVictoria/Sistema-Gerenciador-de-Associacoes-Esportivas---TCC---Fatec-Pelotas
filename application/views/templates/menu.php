@@ -45,12 +45,12 @@
                                 <hr class="btn-primary">
 
                                 <li>
-                                    <a href="<?= base_url('##') ?>">Professor</a>
+                                    <a href="<?= base_url('form_professor') ?>">Professor</a>
                                 </li>
                                 <hr class="btn-primary">
 
                                 <li>
-                                    <a href="<?= base_url('##') ?>">Turma</a>
+                                    <a href="<?= base_url('form_turma') ?>">Turma</a>
                                 </li>
                                 <hr class="btn-primary">
 

@@ -32,7 +32,6 @@ class Usuario extends CI_Controller {
         
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
-        $dados['tipos'] = $this->tipoM->selecionar();
         $dados = $this->input->post();
 
         $this->form_validation->set_rules('usuario', 'Usuário', 'trim|required|min_length[4]|max_length[50]|is_unique', array('required' => 'Preencha o nome do usuário', 'min_length' => 'Nome de usuário não pode ser menor que 5 caracteres',
@@ -50,6 +49,7 @@ class Usuario extends CI_Controller {
             $this->usuarioM->inserir($dados);
             redirect('listar_usuario');
         }        
+        $dados['tipos'] = $this->tipoM->selecionar();
         $this->load->view('form_usuario', $dados);
         $this->load->view('templates/footer');
         
