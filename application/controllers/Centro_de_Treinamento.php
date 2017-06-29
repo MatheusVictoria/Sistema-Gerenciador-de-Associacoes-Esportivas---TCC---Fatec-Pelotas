@@ -10,7 +10,6 @@ class Centro_de_Treinamento extends CI_Controller {
         //    redirect("home/login");
         //}
         $this->load->model('Centro_de_Treinamento_Model', 'ctM');
-        $this->load->model('Estado_Model', 'estadoM');
     }
 
     public function index() {
@@ -19,7 +18,6 @@ class Centro_de_Treinamento extends CI_Controller {
         $this->load->view('templates/menu');
         $this->load->view('form_centro_treinamento');
         $this->load->view('templates/footer');
-        
     }
 
     public function cadastrar() {
@@ -28,8 +26,36 @@ class Centro_de_Treinamento extends CI_Controller {
 
         $this->ctM->inserir($dados);
 
-        redirect(base_url('listar_centro_treinamento'));
-        
+        redirect(base_url('listar_ct'));
     }
 
+    public function listar() {
+
+        $dados['centro'] = $this->ctM->selecionar();
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('lista_centro_de_treinamento', $dados);
+        $this->load->view('templates/footer');
+    }
+    
+    
+    public function editar($id){
+        
+        $dados ['ct'] = $this->ctM->encontrar($id);
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('form_alt_centro_de_treinamento', $dados);
+        $this->load->view('templates/footer');
+        
+    }
+    
+    public function grava_alteracao(){
+        
+        $dados = $this->input->post();
+        $this->ctM->atualiza($dados);
+        
+        redirect(base_url('listar_ct'));
+        
+    }
+    
 }

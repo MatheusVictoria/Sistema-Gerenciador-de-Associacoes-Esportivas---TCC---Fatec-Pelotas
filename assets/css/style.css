@@ -43,7 +43,7 @@ nos templates header, menu.*/
     margin: 0;
     margin-top: -15px;
     background: white;
-    height: 600px;
+    min-height: 600px;
 
 }
 
@@ -68,8 +68,16 @@ nos templates header, menu.*/
     
     background-color: white;
     
+}
+
+.tabela{
+    
+    table-layout: auto;
+    
     
 }
+
+
 
 
 

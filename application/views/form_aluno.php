@@ -33,15 +33,15 @@
             </div>
 
             <div class="form-group col-lg-6 ">
-                <label for="fone">Telefone:</label>
-                <input type="tel" class="form-control" id="fone" name="fone" placeholder="Telefone"/>
+                <label for="telefone">Telefone:</label>
+                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone"/>
             </div>
 
             <div class="form-group col-lg-6 ">
                 <label for="email">E-mail:</label>
                 <input type="email" class="form-control" id="enail" name="email" placeholder="E-mail"/>
             </div>
-            
+
             <div class="form-group col-lg-6 ">
 
                 <label for="cep">Cep:</label>
@@ -89,12 +89,12 @@
             <div class="form-group col-lg-6">
                 <label for="graduacao">Graduação:</label>
                 <select name="graduacao_id" id="graduacao_id" class="form-control" >
-                    <option> Selecione a Graduação do aluno </option>
+                    <option>Selecione a Graduação</option>
                     <?php
                     foreach ($graduacao as $graduacao) {
                         ?>
                         <option value="<?= $graduacao->id ?>"> 
-                            <?= $graduacao->faixa ?> </option>
+                            <?= $graduacao->cor ?> </option>
                         <?php
                     }
                     ?>
@@ -103,11 +103,11 @@
 
             <div class=" form-group col-lg-4">
                 <div>
-                <label for="sexo">Sexo:</label>
+                    <label for="sexo">Sexo:</label>
                 </div>
                 <div>
-                <label class="checkbox-inline "><input type="checkbox" value="M">Masculino</label>
-                <label class="checkbox-inline "><input type="checkbox" value="F">Feminino</label>
+                    <label class="checkbox-inline "><input type="checkbox" id="sexo" name="sexo" value="M">Masculino</label>
+                    <label class="checkbox-inline "><input type="checkbox" id="sexo" name="sexo" value="F">Feminino</label>
                 </div>
             </div>
 
@@ -118,7 +118,7 @@
 
             <div class="form-group col-lg-4">
                 <label for="ativo">Ativo:</label>
-                <select class="form-control" id="ativo">
+                <select class="form-control" id="ativo" name="ativo">
                     <option value="1">Sim</option>
                     <option value="0">Não</option>
                 </select>

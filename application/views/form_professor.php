@@ -16,7 +16,7 @@
     </div>
     <div class="col-lg-12">
 
-        <form method="post" action="<?= base_url('Aluno/cadastrar') ?>" enctype="multipart/form-data">
+        <form method="post" action="<?= base_url('Professor/cadastrar') ?>" enctype="multipart/form-data">
             <div class="form-group col-lg-6 ">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome"/>
@@ -33,8 +33,8 @@
             </div>
 
             <div class="form-group col-lg-6 ">
-                <label for="fone">Telefone:</label>
-                <input type="tel" class="form-control" id="fone" name="fone" placeholder="Telefone"/>
+                <label for="telefone">Telefone:</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="Telefone"/>
             </div>
 
 
@@ -95,7 +95,7 @@
                     foreach ($graduacao as $graduacao) {
                         ?>
                         <option value="<?= $graduacao->id ?>"> 
-                            <?= $graduacao->faixa ?> </option>
+                            <?= $graduacao->cor ?> </option>
                         <?php
                     }
                     ?>
@@ -107,8 +107,8 @@
                     <label for="sexo">Sexo:</label>
                 </div>
                 <div>
-                    <label class="checkbox-inline "><input type="checkbox" value="M">Masculino</label>
-                    <label class="checkbox-inline "><input type="checkbox" value="F">Feminino</label>
+                    <label class="checkbox-inline "><input type="checkbox" value="M" name="sexo" id="sexo">Masculino</label>
+                    <label class="checkbox-inline "><input type="checkbox" value="F" name="sexo" id="sexo">Feminino</label>
                 </div>
             </div>
 
@@ -119,7 +119,7 @@
 
             <div class="form-group col-lg-4">
                 <label for="ativo">Ativo:</label>
-                <select class="form-control" id="ativo">
+                <select class="form-control" id="ativo" name="ativo" id="ativo">
                     <option value="1">Sim</option>
                     <option value="0">Não</option>
                 </select>

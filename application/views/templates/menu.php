@@ -66,11 +66,11 @@
                             <div class="well well-sm">
 
                                 <li>
-                                    <a href="<?= base_url('##') ?>">Aluno</a>
+                                    <a href="<?= base_url('listar_aluno') ?>">Aluno</a>
                                 </li>
                                 <hr class="btn-primary">
                                 <li>
-                                    <a href="<?= base_url('##') ?>">Centro de Treinamento</a>
+                                    <a href="<?= base_url('listar_ct') ?>">Centro de Treinamento</a>
                                 </li>
                                 <hr class="btn-primary">
                                 <li>
@@ -78,11 +78,11 @@
                                 </li>
                                 <hr class="btn-primary">
                                 <li>
-                                    <a href="<?= base_url('##') ?>">Professores</a>
+                                    <a href="<?= base_url('listar_professor') ?>">Professores</a>
                                 </li>
                                 <hr class="btn-primary">
                                 <li>
-                                    <a href="<?= base_url('##') ?>">Turmas</a>
+                                    <a href="<?= base_url('listar_turmas') ?>">Turmas</a>
                                 </li>
                                 <hr class="btn-primary">
                                 <li>

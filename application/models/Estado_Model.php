@@ -2,40 +2,18 @@
 
 class Estado_Model extends CI_Model{
     
-    /**
+   /**
      * 
-     * Traz todos os estados cadastrados no banco de dados.
-     * 
+     * Busca o id das cidades através do nome.
+     * @param $nome recebe o nome da cidade através do formulário
      */
-    public function busca_estados(){
-        
-        
-        return $this->db->order_by('sigla')
-                ->get('estado');
-        
+    public function busca_estados($rua) {
+
+        $query = $this->db->query("select id as estado_id from estado where rua = '{$rua}'");
+        $linha = $query->row();
+        return $linha->id_estado;
     }
-    
-    
-    /**
-     * 
-     * Cria o select referente aos estados.
-     * 
-     */
-    public function seleciona_estados(){
-        
-        $opicao = "<option value=''>Selecione o Estado</option>";
-        
-        $estados = $this->busca_estados();
-        
-        foreach ($estados->result() as $estado) {
-            
-            $opicao .= "<option value='{$estado->id}'>{$estado->sigla}</option>";
-            
-        }
-        
-        return $opicao;
-                
-    }
+
     
 }
 

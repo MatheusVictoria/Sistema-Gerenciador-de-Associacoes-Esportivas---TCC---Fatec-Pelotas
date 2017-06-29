@@ -12,9 +12,9 @@
 
         <form method="post" action="<?= base_url('Usuario/grava_alteracao') ?>" enctype="multipart/form-data">
 
-            <input type="hidden" id="id" name="id" value="<?= $usuario->id ?>"
+            <input type="hidden" id="id" name="id" value="<?= $usuario->id ?>"/>
 
-                   <div class="form-group col-lg-6 ">
+            <div class="form-group col-lg-6 ">
                 <label for="usuario">Usuário:</label>
                 <input type="text" class="form-control" id="usuario" name="usuario" value="<?= $usuario->usuario ?>"/>
             </div>
@@ -31,7 +31,7 @@
                     foreach ($tipos as $tipo) {
                         ?>
                         <option value="<?= $tipo->id ?>">
-                            <?= $tipo->id == $usuario->tipo_id ? 'selected' : ''?> 
+                            <?= $tipo->id == $usuario->tipo_id ? 'selected' : '' ?> 
                             <?= $tipo->tipo ?> </option>
                         <?php
                     }
