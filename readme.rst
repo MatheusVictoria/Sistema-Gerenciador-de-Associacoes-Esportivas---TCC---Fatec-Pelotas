@@ -2,17 +2,17 @@
 
 ## Sistema Gerenciador de Associações Esportivas - SGAE
 
-O sistema tem como objetivo 
+O sistema tem como objetivo centralizar os dados e auxiliar na organização das associações esportivas.
 
 ## Ferramentas e Tecnologias Utilizadas
 
-* PHP 5.6 -> <http://php.net/docs.php>
-* Mysql 5.7.14 -> <https://dev.mysql.com/doc/refman/5.7/en/>
-* Codeigniter 3.x.x -> <https://codeigniter.com/docs>_
-* Bootstrap 3.3.7 -> <http://getbootstrap.com/>
-* IDE NetBeans 8.1 -> <https://netbeans.org/>
-* MySQL WorKbench 6.3 -> <https://www.mysql.com/>
-* WampServer 3.0.6 -> <http://www.wampserver.com/en/>_
+* PHP 5.6 -> http://php.net/docs.php
+* Mysql 5.7.14 -> https://dev.mysql.com/doc/refman/5.7/en/
+* Codeigniter 3.x.x -> https://codeigniter.com/docs
+* Bootstrap 3.3.7 -> http://getbootstrap.com/
+* IDE NetBeans 8.1 -> <https://netbeans.org/
+* MySQL WorKbench 6.3 -> https://www.mysql.com/
+* WampServer 3.0.6 -> http://www.wampserver.com/en/
 
 ## Execução no Netbeans
 1. Clone o projeto 
@@ -23,7 +23,7 @@ O sistema tem como objetivo
 
 3. Abra o projeto na versão 8 ou superior do Netbeans.
 
-4. Clique no link a seguir para ver a licensa do sisema 
+4. Clique no link a seguir para ver a licensa do sistema 
 
-[Licensa]<https://raw.githubusercontent.com/MatheusVictoria/Sistema-Gerenciador-de-Associacoes-Esportivas---TCC---Fatec-Pelotas/master/license.txt>
+https://raw.githubusercontent.com/MatheusVictoria/Sistema-Gerenciador-de-Associacoes-Esportivas---TCC---Fatec-Pelotas/master/license.txt
 
