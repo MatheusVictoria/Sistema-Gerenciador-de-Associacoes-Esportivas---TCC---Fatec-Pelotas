@@ -88,7 +88,12 @@ class Centro_de_Treinamento_Model extends CI_Model {
     }
 
 
-    
+    /**
+     * 
+     * Busca do id do endereço e compara com o id que esta vindo da view from_alt_centro_de_treinamento
+     * @param $id recebe o id da view form_alt_centro_de_treinamento
+     * 
+     */
      public function busca_id_endereco($id){
         
         $query = $this->db->query("select id as endereco_id from endereco where id = '{$id}'");
