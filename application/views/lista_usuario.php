@@ -14,6 +14,7 @@
             <tr>
                 <th>#</th>
                 <th>Usuário</th>
+                <th>E-mail</th>
                 <th>Tipo de Usuário</th>
                 <th>Ativo</th>
                 <th>Ações</th>
@@ -24,6 +25,7 @@
                 <tr>
                     <td><?= $us->id ?></td>
                     <td><?= $us->usuario ?></td>
+                    <td><?= $us->email ?></td>
                     <td><?= $us->tipo_id ?></td>
                     <td><?php
                         if ($us->ativo == 1) {

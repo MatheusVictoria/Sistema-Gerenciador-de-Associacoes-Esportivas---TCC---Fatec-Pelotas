@@ -8,12 +8,11 @@ class Usuario_Model extends CI_Model {
 
         $registro ['senha'] = md5($registro['senha']);
         return $this->db->insert('usuario', $registro);
-        
     }
 
     public function selecionar() {
 
-        $sql = 'SELECT u.id, u.usuario, u.senha, u.ativo, t.tipo as tipo_id  FROM `usuario` u LEFT JOIN tipo t ON u.tipo_id = t.id ORDER BY u.id';
+        $sql = 'SELECT u.id, u.usuario, u.senha, u.email, u.ativo, t.tipo as tipo_id  FROM `usuario` u LEFT JOIN tipo t ON u.tipo_id = t.id ORDER BY u.id';
 
         $query = $this->db->query($sql);
 
@@ -22,7 +21,7 @@ class Usuario_Model extends CI_Model {
 
     public function encontrar($id) {
 
-        $sql = "SELECT u.id, u.usuario, u.senha, u.ativo, t.tipo as tipo_id  FROM `usuario` u LEFT JOIN tipo t ON u.tipo_id = t.id WHERE u.id = $id";
+        $sql = "SELECT u.id, u.usuario, u.senha, u.email, u.ativo, t.tipo as tipo_id  FROM `usuario` u LEFT JOIN tipo t ON u.tipo_id = t.id WHERE u.id = $id";
 
         $query = $this->db->query($sql);
 

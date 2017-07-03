@@ -45,6 +45,7 @@
             <div class="form-group col-lg-6">
                 <label for="ativo">Ativo:</label>
                 <select class="form-control" name="ativo" id="ativo">
+                    <option>Selecione sim ou não para o campo ativo</option>
                     <option value="1 " >Sim</option>
                     <option value="2 " >Não</option>                    
                 </select>          

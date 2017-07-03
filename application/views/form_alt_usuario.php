@@ -18,6 +18,10 @@
                 <label for="usuario">Usuário:</label>
                 <input type="text" class="form-control" id="usuario" name="usuario" value="<?= $usuario->usuario ?>"/>
             </div>
+            <div class="form-group col-lg-6 ">
+                <label for="email">Usuário:</label>
+                <input type="email" class="form-control" id="email" name="email" value="<?= $usuario->email ?>"/>
+            </div>
 
             <div class="form-group col-lg-6 ">
                 <label for="senha">Senha:</label>
