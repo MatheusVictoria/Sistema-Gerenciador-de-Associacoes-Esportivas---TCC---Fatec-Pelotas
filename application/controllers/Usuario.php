@@ -28,15 +28,14 @@ class Usuario extends CI_Controller {
          */
         $dados ['erro'] = null;
 
-
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
+
         $dados = $this->input->post();
 
-        $this->form_validation->set_rules('usuario', 'Usuário', 'trim|required|min_length[4]|max_length[50]|is_unique', array('required' => 'Preencha o nome do usuário', 'min_length' => 'Nome de usuário não pode ser menor que 5 caracteres',
-            'max_length' => 'Nome do usuário não pode ser maior que 50 caracteres',
-            'is_unique' => 'Escolha outro nome de usuário'));
-        $this->form_validation->set_rules('senha', 'Senha', 'trim|required|min_length[4]', array('required' => 'Preencha a senha do usuário', 'min_length' => 'Senha não pode ser menor que 4 caraquiteres'));
+        $this->form_validation->set_rules('usuario', 'Usuário', 'trim|required|min_length[4]', array('required' => 'Preencha o campo nome do usuário', 'min_length' => 'Nome do usuário não pode menor que 4 caraquiteres'));
+        $this->form_validation->set_rules('email', 'E-mail', 'trim|required', array('required' => 'Preencha o campo e-mail do usuário'));
+        $this->form_validation->set_rules('senha', 'Senha', 'trim|required|min_length[4]', array('required' => 'Preencha o campo senha do usuário', 'min_length' => 'Senha não pode ser menor que 4 caraquiteres'));
         $this->form_validation->set_rules('tipo_id', 'Tipo de Usuário', 'required', array('required' => 'Escolha um tipo de usuário'));
         $this->form_validation->set_rules('ativo', 'Ativo', 'required');
 
@@ -47,6 +46,8 @@ class Usuario extends CI_Controller {
             $this->usuarioM->inserir($dados);
             redirect('listar_usuario');
         }
+
+
         $dados['tipos'] = $this->tipoM->selecionar();
         $this->load->view('form_usuario', $dados);
         $this->load->view('templates/footer');

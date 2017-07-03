@@ -19,7 +19,7 @@
 
             <div class="form-group col-lg-6 ">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email"  placeholder="usuario"/>
+                <input type="email" class="form-control" id="email" name="email"  placeholder="e-mail"/>
             </div>
 
             <div class="form-group col-lg-6 ">
