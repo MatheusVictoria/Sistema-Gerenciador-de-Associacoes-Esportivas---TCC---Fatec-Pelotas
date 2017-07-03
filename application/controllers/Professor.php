@@ -6,9 +6,9 @@ class Professor extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        //  if (!$this->session->logado) {
-        //    redirect("home/login");
-        //}
+         if (!$this->session->logado) {
+            redirect("home/login");
+        }
         $this->load->model('Professor_Model', 'professorM');
         $this->load->model('Graduacao_Model', 'graduacaoM');
     }
@@ -33,7 +33,7 @@ class Professor extends CI_Controller {
 
     public function listar() {
 
-        $dados['professor'] = $this->professorM->selecionar();
+        $dados['professor_edita'] = $this->professorM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
         $this->load->view('lista_professor', $dados);
@@ -57,7 +57,7 @@ class Professor extends CI_Controller {
         $dados = $this->input->post();
         $this->professorM->atualiza($dados);
         
-        redirect('lista_professor');
+        redirect('listar_professor');
         
         
     }

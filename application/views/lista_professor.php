@@ -33,7 +33,7 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($professor as $p) { ?>
+            <?php foreach ($professor_edita as $p) { ?>
                 <tr>
                     <td><?= $p->id ?></td>
                     <td><?= $p->nome ?></td>

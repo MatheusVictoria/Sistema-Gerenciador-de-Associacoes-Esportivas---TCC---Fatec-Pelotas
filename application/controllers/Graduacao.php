@@ -6,9 +6,10 @@ class Graduacao extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        //  if (!$this->session->logado) {
-        //    redirect("home/login");
-        //}
+        if (!$this->session->logado) {
+            redirect('home/login');
+        }
+        
         $this->load->model('Graduacao_Model', 'graduacaoM');
     }
 

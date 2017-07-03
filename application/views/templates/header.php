@@ -55,12 +55,12 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="<?= base_url('home') ?>"><span>SGA</span></a>
+                        <a class="navbar-brand" href="<?= base_url('home') ?>"><span>SGAE</span></a>
                     </div>
                     <div class="collapse navbar-collapse" id="navbar-ex-collapse">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="<?= base_url('login') ?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> <?= $this->session->nome ?></a></li>
+                            <li><a href="<?= base_url('home/sair') ?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                         </ul>
                     </div>
                 </div>

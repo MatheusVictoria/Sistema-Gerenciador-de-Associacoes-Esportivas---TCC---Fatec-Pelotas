@@ -6,9 +6,10 @@ class Aluno extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        //  if (!$this->session->logado) {
-        //    redirect("home/login");
-        //}
+         if (!$this->session->logado) {
+            redirect('home/login');
+        }
+        
         $this->load->model('Aluno_Model', 'alunoM');
         $this->load->model('Graduacao_Model', 'graduacaoM');
     }
@@ -59,7 +60,7 @@ class Aluno extends CI_Controller {
         
         $this->alunoM->atualiza($dados);
         
-        redirect('lista_aluno');
+        redirect('listar_aluno');
         
     }
 

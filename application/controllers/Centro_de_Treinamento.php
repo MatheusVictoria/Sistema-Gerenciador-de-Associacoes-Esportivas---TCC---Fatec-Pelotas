@@ -6,9 +6,10 @@ class Centro_de_Treinamento extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        //  if (!$this->session->logado) {
-        //    redirect("home/login");
-        //}
+          if (!$this->session->logado) {
+            redirect('home/login');
+        }
+        
         $this->load->model('Centro_de_Treinamento_Model', 'ctM');
     }
 

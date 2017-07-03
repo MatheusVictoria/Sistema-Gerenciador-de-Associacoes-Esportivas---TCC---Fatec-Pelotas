@@ -1,5 +1,4 @@
 
-
 Sistema Gerenciador de Associações Esportivas - SGAE
 
 O sistema tem como objetivo centralizar os dados e auxiliar na organização das associações esportivas.

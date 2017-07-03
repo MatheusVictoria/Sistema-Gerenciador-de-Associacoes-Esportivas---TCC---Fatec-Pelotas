@@ -20,9 +20,8 @@
 
 
             <input type="hidden" class="form-control" id="id" name="id" value="<?= $ct->id ?>"/>
+
             <input type="hidden" class="form-control" id="id_endereco" name="id_endereco" value="<?= $ct->id_endereco ?>"/>
-
-
 
             <div class="form-group col-lg-6 ">
                 <label for="nome">Nome:</label>

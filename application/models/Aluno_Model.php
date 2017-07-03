@@ -53,7 +53,15 @@ class Aluno_Model extends CI_Model {
      */
     public function encontrar($id) {
 
-        $sql = "SELECT * FROM aluno WHERE id = $id";
+        $sql = "SELECT a.id, a.nome, a.rg, a.cpf, a.telefone, a.email, a.sexo, 
+            a.ativo, g.cor as graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
+            en.complemento, en.cep, en.bairro, c.nome as cidade_id, 
+            est.nome as estado_id, p.nome as pais_id FROM aluno a 
+            LEFT JOIN endereco en ON a.endereco_id = en.id
+            LEFT JOIN cidade c ON en.cidade_id = c.id
+            LEFT JOIN estado est ON c.estado_id = est.id
+            LEFT JOIN pais p ON est.pais_id = p.id
+            LEFT JOIN graduacao g ON a.graduacao_id = g.id WHERE a.id = $id";
 
         $query = $this->db->query($sql);
 
@@ -64,14 +72,33 @@ class Aluno_Model extends CI_Model {
      * 
      * Atualiza os dados na tabela aluno através do id
      * alterando somente os dados que sejam deste id
-     * @param $registro recebe os valores do formulário
+     * @param $dados recebe os valores do formulário
      * 
      */
-    public function atualiza($registro) {
+    public function atualiza($dados) {
 
-        $this->db->where('id', $registro['id']);
+        $this->db->trans_start();
+        $cidade_id = $this->cidadeM->busca_cidades($dados['cidade']);
+        $endereco_id = $this->busca_id_endereco($dados['id_endereco']);
+        $this->db->query("UPDATE endereco SET rua = '{$dados['rua']}', numero = '{$dados['numero']}' ,complemento = '{$dados['complemento']}', cep = '{$dados['cep']}', bairro = '{$dados['bairro']}', cidade_id = $cidade_id WHERE id = $endereco_id");
+        $this->db->query("UPDATE aluno SET nome = '{$dados['nome']}', rg = {$dados['rg']}, cpf = {$dados['cpf']}, telefone = '{$dados['telefone']}', email = '{$dados['email']}', sexo = '{$dados['sexo']}', graduacao_id = {$dados['graduacao_id']}, ativo = '{$dados['ativo']}' WHERE id = {$dados['id']}");
+        $this->db->trans_complete();        
+    }
 
-        return $this->db->update('aluno', $registro);
+
+    /**
+     *
+     * Busca do id do endereço e compara com o id que esta vindo da view from_alt_centro_de_treinamento
+     * @param $id recebe o id da view form_alt_centro_de_treinamento
+     *
+     */
+    public function busca_id_endereco($id){
+
+        $query = $this->db->query("select id as endereco_id from endereco where id = '{$id}'");
+        $linha = $query->row();
+        return $linha->endereco_id;
+
+
     }
 
 }

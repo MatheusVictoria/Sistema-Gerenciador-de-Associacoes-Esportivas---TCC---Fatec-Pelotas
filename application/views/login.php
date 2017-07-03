@@ -53,16 +53,16 @@
 
                             <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-                            <form id="loginform" class="form-horizontal form-login" role="form">
+                            <form id="loginform" class="form-horizontal form-login" role="form" method="post" action="<?= base_url('home/logar') ?>">
 
                                 <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="Usuário" required autofocus autocomplete/>                                        
+                                    <input id="login-username" type="text" class="form-control" id="nome" name="nome" value="" placeholder="Usuário" required autofocus autocomplete/>                                        
                                 </div>
 
                                 <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <input id="login-password" type="password" class="form-control" name="password" placeholder="Senha" required/>
+                                    <input id="login-password" type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required/>
                                 </div>
 
                                 <div style="margin-top:10px" class="form-group">

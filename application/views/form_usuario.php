@@ -11,7 +11,7 @@
     </div>
     <div class="col-lg-12">
 
-        <form method="post" action="<?= base_url('Usuario/index') ?>" enctype="multipart/form-data">
+        <form method="post" action="<?= base_url('Usuario/gravar') ?>" enctype="multipart/form-data">
             <div class="form-group col-lg-6 ">
                 <label for="usuario">Usuário:</label>
                 <input type="text" class="form-control" id="usuario" name="usuario" value="<?= set_value('usuario')?>" placeholder="usuario"/>
