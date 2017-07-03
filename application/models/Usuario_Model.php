@@ -35,9 +35,9 @@ class Usuario_Model extends CI_Model {
         return $this->db->update('usuario', $registro);
     }
 
-    public function verificaUsuario($nome, $senha) {
-        $sql = "select * from usuario where usuario=? and senha=? and ativo=1";
-        $query = $this->db->query($sql, array($nome, md5($senha)));
+    public function verificaUsuario($email, $senha) {
+        $sql = "select * from usuario where email=? and senha=? and ativo=1";
+        $query = $this->db->query($sql, array($email, md5($senha)));
         return $query->row();
     }
 

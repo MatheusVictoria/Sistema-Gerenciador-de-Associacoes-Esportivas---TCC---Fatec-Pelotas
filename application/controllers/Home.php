@@ -32,13 +32,14 @@ class Home extends CI_Controller {
         $this->load->model('Usuario_Model', 'usuariosM');
         
         // obtém os dados do form
-        $nome = $this->input->post('nome');
+        $email = $this->input->post('email');
         $senha = $this->input->post('senha');
         
-        $verifica = $this->usuariosM->verificaUsuario($nome, $senha);
+        $verifica = $this->usuariosM->verificaUsuario($email, $senha);
         
         if (isset($verifica)) {
             $sessao['nome'] = $verifica->usuario;
+            $sessao['email'] = $verifica->email;
             $sessao['id'] = $verifica->id;
             $sessao['logado'] = true;
             $this->session->set_userdata($sessao);

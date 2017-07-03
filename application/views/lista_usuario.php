@@ -14,7 +14,6 @@
             <tr>
                 <th>#</th>
                 <th>Usuário</th>
-                <th>Senha</th>
                 <th>Tipo de Usuário</th>
                 <th>Ativo</th>
                 <th>Ações</th>
@@ -25,7 +24,6 @@
                 <tr>
                     <td><?= $us->id ?></td>
                     <td><?= $us->usuario ?></td>
-                    <td><?= $us->senha ?></td>
                     <td><?= $us->tipo_id ?></td>
                     <td><?php
                         if ($us->ativo == 1) {
@@ -36,7 +34,7 @@
                         ?></td>
                     <td>  
                         <a href="<?= base_url('usuario/editar/' . $us->id) ?>" >
-                            <span class="glyphicon glyphicon-edit"></span></a>
+                            <span class="glyphicon glyphicon-edit "></span></a>
                     </td>
 
                 <?php } ?>

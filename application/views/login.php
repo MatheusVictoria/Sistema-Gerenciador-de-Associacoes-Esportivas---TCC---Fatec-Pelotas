@@ -57,7 +57,7 @@
 
                                 <div style="margin-bottom: 25px" class="input-group">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input id="login-username" type="text" class="form-control" id="nome" name="nome" value="" placeholder="Usuário" required autofocus autocomplete/>                                        
+                                    <input id="login-username" type="email" class="form-control" id="email" name="email" value="" placeholder="E-mail" required autofocus autocomplete/>                                        
                                 </div>
 
                                 <div style="margin-bottom: 25px" class="input-group">
