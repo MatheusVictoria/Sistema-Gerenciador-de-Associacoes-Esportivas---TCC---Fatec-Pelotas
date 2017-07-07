@@ -41,7 +41,7 @@ class Usuario extends CI_Controller {
 
         if ($this->form_validation->run() === FALSE) {
 
-            $dados['erro'] = validation_errors('<li>', '</li>');
+            $dados['erro'] = validation_errors('<br/><li>', '</li>');
         } else {
             $this->usuarioM->inserir($dados);
             redirect('listar_usuario');

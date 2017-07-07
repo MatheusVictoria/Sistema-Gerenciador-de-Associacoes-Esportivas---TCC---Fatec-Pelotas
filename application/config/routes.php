@@ -64,3 +64,5 @@ $route['alt_usuario'] = 'Usuario/editar';
 $route['listar_usuario'] = 'Usuario/listar';
 $route['form_professor'] = 'Professor/index';
 $route['listar_professor'] = 'Professor/listar';
+$route['form_tipo'] = 'Tipo/index';
+$route['listar_tipo'] = 'Tipo/listar';

@@ -20,8 +20,8 @@ class Aluno_Model extends CI_Model {
         $cidade_id = $this->cidadeM->busca_cidades($dados['cidade']);
         $this->db->query("INSERT INTO endereco(rua, numero,complemento, cep, bairro, cidade_id)
           VALUES('{$dados['rua']}', '{$dados['numero']}', '{$dados['complemento']}', '{$dados['cep']}', '{$dados['bairro']}', $cidade_id)");
-        $this->db->query("INSERT INTO aluno(nome, rg, cpf, telefone, email, sexo, graduacao_id, ativo, endereco_id)
-          values('{$dados['nome']}', {$dados['rg']}, {$dados['cpf']}, '{$dados['telefone']}','{$dados['email']}', '{$dados['sexo']}', {$dados['graduacao_id']}, '{$dados['ativo']}', (select LAST_INSERT_ID()));");
+        $this->db->query("INSERT INTO aluno(nome, rg, cpf, telefone, email, sexo, graduacao_id, foto, ativo, endereco_id)
+          values('{$dados['nome']}', {$dados['rg']}, {$dados['cpf']}, '{$dados['telefone']}','{$dados['email']}', '{$dados['sexo']}', {$dados['graduacao_id']}, '{$dados['foto']}', '{$dados['ativo']}', (select LAST_INSERT_ID()));");
         $this->db->trans_complete();
     }
 

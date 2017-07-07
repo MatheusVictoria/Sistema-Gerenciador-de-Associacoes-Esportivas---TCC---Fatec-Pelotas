@@ -14,17 +14,17 @@
         <form method="post" action="<?= base_url('Usuario/index') ?>" enctype="multipart/form-data">
             <div class="form-group col-lg-6 ">
                 <label for="usuario">Usuário:</label>
-                <input type="text" class="form-control" id="usuario" name="usuario"  placeholder="usuario"/>
+                <input type="text" class="form-control" id="usuario" name="usuario" value="<?= set_value('usuario') ?>"  placeholder="usuario"/>
             </div>
 
             <div class="form-group col-lg-6 ">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email"  placeholder="e-mail"/>
+                <input type="email" class="form-control" id="email" name="email" value="<?= set_value('email') ?>"  placeholder="e-mail"/>
             </div>
 
             <div class="form-group col-lg-6 ">
                 <label for="senha">Senha:</label>
-                <input type="password" class="form-control" id="senha" name="senha"  placeholder="senha"/>
+                <input type="password" class="form-control" id="senha" name="senha" value="<?= set_value('senha') ?>" placeholder="senha"/>
             </div>
 
             <div class="form-group col-lg-6">
@@ -34,7 +34,7 @@
                     <?php
                     foreach ($tipos as $tipo) {
                         ?>
-                        <option value="<?= $tipo->id ?>"> 
+                    <option value="<?= $tipo->id, set_value($tipo->id) ?>"> 
                             <?= $tipo->tipo ?> </option>
                         <?php
                     }
@@ -44,7 +44,7 @@
 
             <div class="form-group col-lg-6">
                 <label for="ativo">Ativo:</label>
-                <select class="form-control" name="ativo" id="ativo">
+                <select class="form-control" name="ativo" id="ativo" value="<?= set_value('ativo') ?>">
                     <option>Selecione sim ou não para o campo ativo</option>
                     <option value="1 " >Sim</option>
                     <option value="2 " >Não</option>                    
@@ -61,7 +61,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <?php if ($erro): ?>
                     <div class="alert alert-danger">
                         <ul>

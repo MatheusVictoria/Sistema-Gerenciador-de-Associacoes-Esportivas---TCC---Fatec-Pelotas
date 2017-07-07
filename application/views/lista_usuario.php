@@ -21,21 +21,21 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($usuario as $us) { ?>
+            <?php foreach ($usuario as $tp) { ?>
                 <tr>
-                    <td><?= $us->id ?></td>
-                    <td><?= $us->usuario ?></td>
-                    <td><?= $us->email ?></td>
-                    <td><?= $us->tipo_id ?></td>
+                    <td><?= $tp->id ?></td>
+                    <td><?= $tp->usuario ?></td>
+                    <td><?= $tp->email ?></td>
+                    <td><?= $tp->tipo_id ?></td>
                     <td><?php
-                        if ($us->ativo == 1) {
+                        if ($tp->ativo == 1) {
                             echo "sim";
                         } else {
                             echo "não";
                         }
                         ?></td>
                     <td>  
-                        <a href="<?= base_url('usuario/editar/' . $us->id) ?>" >
+                        <a href="<?= base_url('usuario/editar/' . $tp->id) ?>" >
                             <span class="glyphicon glyphicon-edit "></span></a>
                     </td>
 

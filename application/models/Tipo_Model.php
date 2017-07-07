@@ -4,9 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Tipo_Model extends CI_Model{
     
-    public function inserir($registro){
+    public function inserir($dados){
         
-        return $this->db->insert('tipo', $registro);        
+        return $this->db->insert('tipo', $dados);        
         
     }
     
@@ -19,6 +19,24 @@ class Tipo_Model extends CI_Model{
         return $query->result();
         
     }
+    
+    public function encontrar($id){
+        
+        $sql = "SELECT * FROM tipo WHERE id = $id";
+        
+        $query = $this->db->query($sql);
+        
+        return $query->row();
+        
+    }
+    
+    public function atualiza($registro) {
+     
+        $this->db->where('id', $registro['id']);
+        return $this->db->update('tipo', $registro);
+    }
+    
+    
     
     
 }

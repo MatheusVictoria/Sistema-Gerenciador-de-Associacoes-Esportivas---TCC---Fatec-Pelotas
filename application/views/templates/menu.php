@@ -50,6 +50,11 @@
                                 <hr class="btn-primary">
 
                                 <li>
+                                    <a href="<?= base_url('form_tipo') ?>">Tipo de Usuário</a>
+                                </li>
+                                <hr class="btn-primary">
+
+                                <li>
                                     <a href="<?= base_url('form_turma') ?>">Turma</a>
                                 </li>
                                 <hr class="btn-primary">
@@ -81,6 +86,12 @@
                                     <a href="<?= base_url('listar_professor') ?>">Professores</a>
                                 </li>
                                 <hr class="btn-primary">
+
+                                <li>
+                                    <a href="<?= base_url('listar_tipo') ?>">Tipo de Usuário</a>
+                                </li>
+                                <hr class="btn-primary">
+
                                 <li>
                                     <a href="<?= base_url('listar_turmas') ?>">Turmas</a>
                                 </li>
