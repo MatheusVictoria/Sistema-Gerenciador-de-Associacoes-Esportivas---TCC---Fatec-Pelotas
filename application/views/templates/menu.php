@@ -1,153 +1,140 @@
 
-<!-- Menu lateral, será exibido em todas as paginas do sistema completando o tempalte basico -->
-<div class="section containerMenuLateral body">
-    <div class="container-fluid ">
-        <div class="row">
-            <div class="col-lg-2 text-justify">
-                <div class="panel col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-offset-2">
-                            <h3 class="h3menu">Menu</h3> 
-                        </div>
-                    </div>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+                    <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header"><h4><b>Menu</b></h4></li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li ><a href="<?= base_url()?>"><i class="fa fa-circle-o"></i> Dashboard </a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-pencil-square-o"></i>
+                        <span>Cadastros</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?= base_url('form_aluno') ?>"><i class="fa fa-circle-o"></i>Aluno</a>
+                        </li>
 
-                    <hr class="large btn-primary" />
+                        <li>
+                            <a href="<?= base_url('form_centro_treinamento') ?>"><i class="fa fa-circle-o"></i>Centro de Treinamento</a>
+                        </li>
 
-                    <ul class="nav nav-pills nav-stacked menu">
-                        <a class="btn btn-block btn-primary" role="button" data-toggle="collapse" href="#dash" aria-expanded="false" aria-controls="collapseExample">Dashboard</a>
-                        <div class="collapse" id="dash" aria-expanded="true">
-                            <div class="well well-sm">
 
-                                <li>
-                                    <a href="<?= base_url() ?>">Dashboard</a>
-                                </li>
+                        <li>
+                            <a href="<?= base_url('form_graduacao') ?>"><i class="fa fa-circle-o"></i>Graduação</a>
+                        </li>
 
-                            </div>
-                        </div>
+                        <li>
+                            <a href="<?= base_url('form_professor') ?>"><i class="fa fa-circle-o"></i>Professor</a>
+                        </li>
 
-                        <a class="btn btn-block btn-primary" role="button" data-toggle="collapse" href="#cad" aria-expanded="false" aria-controls="collapseExample">Cadastros</a>
-                        <div class="collapse" id="cad" aria-expanded="true">
-                            <div class="well well-sm">
+                        <li>
+                            <a href="<?= base_url('form_tipo') ?>"><i class="fa fa-circle-o"></i>Tipo de Usuário</a>
+                        </li>
 
-                                <li>
-                                    <a href="<?= base_url('form_aluno') ?>">Aluno</a>
-                                </li>
-                                <hr class="btn-primary">
+                        <li>
+                            <a href="<?= base_url('form_turma') ?>"><i class="fa fa-circle-o"></i>Turma</a>
+                        </li>
 
-                                <li>
-                                    <a href="<?= base_url('form_centro_treinamento') ?>">Centro de Treinamento</a>
-                                </li>
-                                <hr class="btn-primary">
-
-                                <li>
-                                    <a href="<?= base_url('form_graduacao') ?>">Graduação</a>
-                                </li>
-                                <hr class="btn-primary">
-
-                                <li>
-                                    <a href="<?= base_url('form_professor') ?>">Professor</a>
-                                </li>
-                                <hr class="btn-primary">
-
-                                <li>
-                                    <a href="<?= base_url('form_tipo') ?>">Tipo de Usuário</a>
-                                </li>
-                                <hr class="btn-primary">
-
-                                <li>
-                                    <a href="<?= base_url('form_turma') ?>">Turma</a>
-                                </li>
-                                <hr class="btn-primary">
-
-                                <li>
-                                    <a href="<?= base_url('form_usuario') ?>">Usuário</a>
-                                </li>
-
-                            </div>
-                        </div>
-
-                        <a href="#list" class="btn btn-block btn-primary" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">Listas</a>
-                        <div class="collapse" id="list" aria-expanded="true">
-                            <div class="well well-sm">
-
-                                <li>
-                                    <a href="<?= base_url('listar_aluno') ?>">Aluno</a>
-                                </li>
-                                <hr class="btn-primary">
-                                <li>
-                                    <a href="<?= base_url('listar_ct') ?>">Centro de Treinamento</a>
-                                </li>
-                                <hr class="btn-primary">
-                                <li>
-                                    <a href="<?= base_url('listar_graduacao') ?>">Graduação</a>
-                                </li>
-                                <hr class="btn-primary">
-                                <li>
-                                    <a href="<?= base_url('listar_professor') ?>">Professores</a>
-                                </li>
-                                <hr class="btn-primary">
-
-                                <li>
-                                    <a href="<?= base_url('listar_tipo') ?>">Tipo de Usuário</a>
-                                </li>
-                                <hr class="btn-primary">
-
-                                <li>
-                                    <a href="<?= base_url('listar_turmas') ?>">Turmas</a>
-                                </li>
-                                <hr class="btn-primary">
-                                <li>
-                                    <a href="<?= base_url('listar_usuario') ?>">Usuários</a>
-                                </li>
-                            </div>
-                        </div>
-                        <a href="#relat" class="btn btn-block btn-primary" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">Relatórios</a>
-                        <div class="collapse" id="relat" aria-expanded="true">
-                            <div class="well well-sm">
-
-                                <li>
-                                    <a href="<?= base_url('categoria/listar') ?>">Centro de Treinamento</a>
-                                </li>
-                                <hr class="btn-primary">
-                                <li>
-                                    <a href="<?= base_url('marca/listar') ?>">Turmas</a>
-                                </li>
-                                <hr class="btn-primary">
-                                <li>
-                                    <a href="<?= base_url('produto/listar') ?>">Pagamentos</a>
-                                </li>
-
-                            </div>
-                        </div>
-                        <a href="#site" class="btn btn-block btn-primary" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">Site</a>
-                        <div class="collapse" id="site" aria-expanded="true">
-                            <div class="well well-sm">
-
-                                <li>
-                                    <a href="<?= base_url('#') ?>">Cadastrar Patrocinador</a>
-                                </li>
-                                <hr class="btn-primary">
-                                <li>
-                                    <a href="<?= base_url('#') ?>">Novo Evento</a>
-                                </li>
-
-                            </div>
-                        </div>
-                        <a href="#util" class="btn btn-block btn-primary" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">Regsitro e Lançamento</a>
-                        <div class="collapse" id="util" aria-expanded="true">
-                            <div class="well well-sm">
-
-                                <li>
-                                    <a href="<?= base_url('categoria/listar') ?>">Lançar Pagamento</a>
-                                </li>
-                                <hr class="btn-primary">
-                                <li>
-                                    <a href="<?= base_url('marca/listar') ?>">Registro de aula</a>
-                                </li>
-
-                            </div>
-                        </div>
+                        <li>
+                            <a href="<?= base_url('form_usuario') ?>"><i class="fa fa-circle-o"></i>Usuário</a>
+                        </li>
 
                     </ul>
-                </div>
-            </div>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-list-ul"></i>
+                        <span>Listas</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?= base_url('listar_aluno') ?>"><i class="fa fa-circle-o"></i>Aluno</a>
+                        </li>
+
+                        <li>
+                            <a href="<?= base_url('listar_ct') ?>"><i class="fa fa-circle-o"></i>Centro de Treinamento</a>
+                        </li>
+
+                        <li>
+                            <a href="<?= base_url('listar_graduacao') ?>"><i class="fa fa-circle-o"></i>Graduação</a>
+                        </li>
+
+                        <li>
+                            <a href="<?= base_url('listar_professor') ?>"><i class="fa fa-circle-o"></i>Professores</a>
+                        </li>
+
+                        <li>
+                            <a href="<?= base_url('listar_tipo') ?>"><i class="fa fa-circle-o"></i>Tipo de Usuário</a>
+                        </li>
+
+                        <li>
+                            <a href="<?= base_url('listar_turmas') ?>"><i class="fa fa-circle-o"></i>Turmas</a>
+                        </li>
+
+                        <li>
+                            <a href="<?= base_url('listar_usuario') ?>"><i class="fa fa-circle-o"></i>Usuários</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-laptop"></i>
+                        <span>Relatórios</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?= base_url('categoria/listar') ?>"><i class="fa fa-circle-o"></i>Centro de Treinamento</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('marca/listar') ?>"><i class="fa fa-circle-o"></i>Turmas</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('produto/listar') ?>"><i class="fa fa-circle-o"></i>Pagamentos</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-edit"></i> <span>Registro e Pagamentos</span>
+                        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li>
+                            <a href="<?= base_url('categoria/listar') ?>"><i class="fa fa-circle-o"></i>Lançar Pagamento</a>
+                        </li>
+
+                        <li>
+                            <a href="<?= base_url('marca/listar') ?>"><i class="fa fa-circle-o"></i>Registro de aula</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+        </section>
+        <!-- /.sidebar -->
+    </aside>

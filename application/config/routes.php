@@ -66,3 +66,5 @@ $route['form_professor'] = 'Professor/index';
 $route['listar_professor'] = 'Professor/listar';
 $route['form_tipo'] = 'Tipo/index';
 $route['listar_tipo'] = 'Tipo/listar';
+$route['form_turma'] = 'Turma/index';
+$route['listar_turma'] = 'Turma/listar';

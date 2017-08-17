@@ -1,53 +1,69 @@
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
-<div class="col-lg-10 conteudo">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <div class="col-lg-12">
+<script src="<?= base_url('assets/js/script.js') ?>"></script>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <section class="content-header">
         <h1>
-            Cadastro de Graduações
+            Cadastro de graduação
         </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Cadastros </a></li>
+            <li><a href="#">Graduação</a></li>
+        </ol>
+    </section>
+    <!-- right col -->
+    <div>
+        <section class="content">
+            <div class="row">
+                <!-- left column -->
+                <div >
+                    <!-- general form elements -->
+                    <div class="box box-primary">
 
-        <hr class="col-lg-12 media btn-primary" />
+                        <form role="form" method="post" action="<?= base_url('Graduacao/index') ?>" enctype="multipart/form-data">
 
-    </div>
-    <div class="col-lg-12">
+                            <div class="box-body">
 
-        <form method="post" action="<?= base_url('form_graduacao') ?>" enctype="multipart/form-data">
-            <div class="form-group col-lg-6 ">
-                <label for="cor">Cor:</label>
-                <input type="text" class="form-control" id="cor" name="cor" value="<?= set_value('cor') ?>" placeholder="Cor"/>
-            </div>
+                                <div class="form-group col-lg-6 ">
+                                    <label for="cor">Cor:</label>
+                                    <input type="text" class="form-control" id="cor" name="cor" value="<?= set_value('cor') ?>" placeholder="Cor"/>
+                                </div>
 
-            <div class="form-group col-lg-6 ">
-                <label for="descricao">Descrição:</label>
-                <input type="text" class="form-control" id="descricao" name="descricao" value="<?= set_value('descricao') ?>" placeholder="Descrição"/>
-            </div>
+                                <div class="form-group col-lg-6 ">
+                                    <label for="descricao">Descrição:</label>
+                                    <input type="text" class="form-control" id="descricao" name="descricao" value="<?= set_value('descricao') ?>" placeholder="Descrição"/>
+                                </div>
 
-            <div class="col-lg-12 col-lg-offset-1 ">
-                <div class="col-lg-6">
-                    <button type="submit" class="btn btn-primary col-lg-4">Enviar</button>
+                                <div class="box-footer col-lg-offset-2 ">
+                                    <div class="col-lg-6">
+                                        <button type="submit" class="btn btn-primary btn-flat col-xs-4">Enviar</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <button type="reset" class="btn btn-primary btn-flat col-xs-4">Limpar</button>
+                                    </div>
+                                </div>
+                            </div>
+                           <!-- <div class="col-lg-12">
+                                <?php if ($erro): ?>
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            <?= $erro ?>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?> -->
+                            </div>
+                        </form>
+
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                    <button type="reset" class="btn btn-primary col-lg-4">Limpar</button>
-                </div>
             </div>
-        </form>
-
-        <br>
-        <hr>
-        <br>
-        
-        <div class="col-lg-6">
-            <?php if ($erros): ?>
-            <div class="alert alert-danger" >
-                    <ul>
-                        <?= $erros ?>
-                    </ul> 
-                </div>            
-            <?php endif; ?>      
-        </div>
-
     </div>
+    <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
 </div>
-
-
-

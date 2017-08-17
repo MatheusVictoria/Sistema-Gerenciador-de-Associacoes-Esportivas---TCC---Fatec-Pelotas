@@ -1,81 +1,80 @@
 <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SGAE | Log in</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="<?=base_url('assets/adminlte/bower_components/bootstrap/dist/css/bootstrap.min.css')?>">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="<?=base_url('assets/adminlte/bower_components/font-awesome/css/font-awesome.min.css')?>">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="<?=base_url('assets/adminlte/bower_components/Ionicons/css/ionicons.min.css')?>">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="<?=base_url('assets/adminlte/dist/css/AdminLTE.min.css')?>">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="<?=base_url('assets/adminlte/plugins/iCheck/square/blue.css')?>">
 
-<html lang="pt_BR">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <head>
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="login-logo">
+        <a href="#"><b>SGAE</b></a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="login-box-body">
+        <p class="login-box-msg" style="font-size: 20px">Login</p>
 
-        <meta charset="utf-8">
-
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Login</title>
-
-        <meta name="author" content="Matheus Silva Victória">
-
-
-        <!-- CDN do Bootstrap -->
-
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-
-        <link href="http://getbootstrap.com/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-        <link	href="<?= base_url('assets/css/styleMenu.css') ?>"	rel="stylesheet">
-
-        <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-
-    <!--[if lt IE 9]><script src="http://getbootstrap.com/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-        <script src="http://getbootstrap.com/assets/js/ie-emulation-modes-warning.js"></script>
-
-    </head>
-
-    <body>    
-
-        <div class="container">
-
-            <div class="container">    
-                <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
-                    <div class="panel panel-info" >
-                        <div class="panel-heading">
-                            <div class="panel-title">Login</div>
-                            <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Esqueci minha senha</a></div>
-                        </div>     
-
-                        <div style="padding-top:30px" class="panel-body" >
-
-                            <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-
-                            <form id="loginform" class="form-horizontal form-login" role="form" method="post" action="<?= base_url('home/logar') ?>">
-
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input id="login-username" type="email" class="form-control" id="email" name="email" value="" placeholder="E-mail" required autofocus autocomplete/>                                        
-                                </div>
-
-                                <div style="margin-bottom: 25px" class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <input id="login-password" type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required/>
-                                </div>
-
-                                <div style="margin-top:10px" class="form-group">
-
-                                    <div class="col-sm-12 controls">
-                                        <button id="btn-login"  href="home.xhtml" class="btn btn-block btn-primary ">Login  </button>
-                                    </div>
-                                </div>    
-                            </form>     
-                        </div>
-                    </div>
-                </div>
+        <form action="<?=base_url('home/logar')?>" method="post">
+            <div class="form-group has-feedback">
+                <input type="email" id="email" name="email" class="form-control" placeholder="E-mail">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
-            
-    </body>
+            <div class="form-group has-feedback">
+                <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-xs-4 right-side">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button><br>
+                </div>
+                <!-- /.col -->
+            </div>
+        </form>
+
+        <a href="form_atualiza_senha">Esqueci minha senha</a>
+
+    </div>
+    <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery 3 -->
+<script src="<?=base_url('assets/adminlte/bower_components/jquery/dist/jquery.min.js')?>"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="<?=base_url('assets/adminlte/bower_components/bootstrap/dist/js/bootstrap.min.js')?>"></script>
+<!-- iCheck -->
+<script src="<?=base_url('assets/adminlte/plugins/iCheck/icheck.min.js')?>"></script>
+<script>
+    $(function () {
+        $('input').iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%' // optional
+        });
+    });
+</script>
+</body>
 </html>

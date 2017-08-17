@@ -24,7 +24,7 @@ class Aluno extends CI_Controller {
 
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required|min_length[4]', array('required' => 'Preencha o campo nome', 'min_length' => 'O nome não pode conter menos de quatro letras'));
         $this->form_validation->set_rules('rg', 'RG', 'trim|required', array('required' => 'Preencha o campo RG'));
-        $this->form_validation->set_rules('rg', 'RG', 'trim|required' , array('required' => 'Preencha o campo CPF'));
+        $this->form_validation->set_rules('cpf', 'Cpf', 'trim|required' , array('required' => 'Preencha o campo CPF'));
 
         if ($this->form_validation->run() === FALSE) {
 

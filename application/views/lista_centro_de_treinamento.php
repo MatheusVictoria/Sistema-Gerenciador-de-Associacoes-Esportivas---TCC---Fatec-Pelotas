@@ -1,54 +1,80 @@
-<div class="col-lg-10 conteudo">
 
-    <div class="col-lg-12">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <section class="content-header">
         <h1>
-            Lista de Centro de Trinamentos
+            Listas
+
         </h1>
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Listas</a></li>
+            <li><a href="#">Alunos</a></li>
+        </ol>
+    </section>
+    <section>
+        <!-- right col -->
+        <div>
+            <section class="content">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Lista de Alunos</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <table id="example1" class="table table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nome</th>
+                                        <th>Rua</th>
+                                        <th>Numero</th>
+                                        <th>Complemento</th>
+                                        <th>Cep</th>
+                                        <th>Bairro</th>
+                                        <th>Cidade</th>
+                                        <th>Estado</th>
+                                        <th>Pais</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php foreach ($centro as $ct) { ?>
+                                    <tr>
+                                        <td><?= $ct->id ?></td>
+                                        <td><?= $ct->nome ?></td>
+                                        <td><?= $ct->endereco_id ?></td>
+                                        <td><?= $ct->numero ?></td>
+                                        <td><?= $ct->complemento ?></td>
+                                        <td><?= $ct->cep ?></td>
+                                        <td><?= $ct->bairro ?></td>
+                                        <td><?= $ct->cidade_id ?></td>
+                                        <td><?= $ct->estado_id ?></td>
+                                        <td><?= $ct->pais_id ?></td>
+                                        <td>
+                                            <a href="<?= base_url('centro_de_treinamento/editar/' . $ct->id) ?>" >
+                                                <span class="glyphicon glyphicon-edit"></span></a>
+                                        </td>
 
-        <hr class="col-lg-12 media btn-primary" />
+                                        <?php } ?>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+                <!-- /.row -->
+            </section>
+            <!-- /.content -->
 
-    </div>
-
-    <table class="table col-lg-12">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Nome</th>
-                <th>Rua</th>
-                <th>Numero</th>
-                <th>Complemento</th>
-                <th>Cep</th>
-                <th>Bairro</th>
-                <th>Cidade</th>
-                <th>Estado</th>
-                <th>Pais</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($centro as $ct) { ?>
-                <tr>
-                    <td><?= $ct->id ?></td>
-                    <td><?= $ct->nome ?></td>
-                    <td><?= $ct->endereco_id ?></td>
-                    <td><?= $ct->numero ?></td>
-                    <td><?= $ct->complemento ?></td>  
-                    <td><?= $ct->cep ?></td>  
-                    <td><?= $ct->bairro ?></td>  
-                    <td><?= $ct->cidade_id ?></td>  
-                    <td><?= $ct->estado_id ?></td>  
-                    <td><?= $ct->pais_id ?></td>
-                    <td>
-                        <a href="<?= base_url('centro_de_treinamento/editar/' . $ct->id) ?>" >
-                            <span class="glyphicon glyphicon-edit"></span></a>
-                    </td>
-
-                <?php } ?>
-            </tr>
-
-        </tbody>
-    </table>
-
+    </section>
+    <!-- /.content -->
+</div>
 
 </div>
 
