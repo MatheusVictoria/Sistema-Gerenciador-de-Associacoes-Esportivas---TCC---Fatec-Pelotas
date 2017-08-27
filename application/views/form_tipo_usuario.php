@@ -21,6 +21,18 @@
                         <form role="form" method="post" action="<?= base_url('Tipo/index') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
+                                
+                                 <div class="col-lg-12">
+                                    <?php if ($erro): ?>
+                                        <div class="alert alert-danger alert-dismissable">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                                            <ul>
+                                                <?= $erro ?>
+                                            </ul>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="tipo">Tipo:</label>
@@ -35,15 +47,6 @@
                                         <button type="reset" class="btn btn-primary btn-flat col-xs-4">Limpar</button>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-12">
-                                <?php if ($erro): ?>
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            <?= $erro ?>
-                                        </ul>
-                                    </div>
-                                <?php endif; ?>
                             </div>
                         </form>
 

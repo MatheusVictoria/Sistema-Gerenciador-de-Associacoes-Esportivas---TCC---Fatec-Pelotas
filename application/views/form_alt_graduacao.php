@@ -45,15 +45,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--<div class="col-lg-12">
-                                <?php if ($erro): ?>
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            <?= $erro ?>
-                                        </ul>
-                                    </div>
-                                <?php endif; ?>
-                            </div>-->
                         </form>
 
                     </div>
@@ -62,6 +53,6 @@
     </div>
     <!-- /.row (main row) -->
 
-    </section>
-    <!-- /.content -->
+</section>
+<!-- /.content -->
 </div>

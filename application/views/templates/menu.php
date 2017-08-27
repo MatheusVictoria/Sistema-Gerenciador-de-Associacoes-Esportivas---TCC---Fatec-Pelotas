@@ -87,7 +87,7 @@
                         </li>
 
                         <li>
-                            <a href="<?= base_url('listar_turmas') ?>"><i class="fa fa-circle-o"></i>Turmas</a>
+                            <a href="<?= base_url('listar_turma') ?>"><i class="fa fa-circle-o"></i>Turmas</a>
                         </li>
 
                         <li>
@@ -105,13 +105,13 @@
                     </a>
                     <ul class="treeview-menu">
                         <li>
-                            <a href="<?= base_url('categoria/listar') ?>"><i class="fa fa-circle-o"></i>Centro de Treinamento</a>
+                            <a href="<?= base_url('##') ?>"><i class="fa fa-circle-o"></i>Centro de Treinamento</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('marca/listar') ?>"><i class="fa fa-circle-o"></i>Turmas</a>
+                            <a href="<?= base_url('##') ?>"><i class="fa fa-circle-o"></i>Turmas</a>
                         </li>
                         <li>
-                            <a href="<?= base_url('produto/listar') ?>"><i class="fa fa-circle-o"></i>Pagamentos</a>
+                            <a href="<?= base_url('##') ?>"><i class="fa fa-circle-o"></i>Pagamentos</a>
                         </li>
 
                     </ul>

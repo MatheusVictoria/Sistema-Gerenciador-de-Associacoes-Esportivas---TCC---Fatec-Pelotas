@@ -54,7 +54,7 @@ class Aluno_Model extends CI_Model {
     public function encontrar($id) {
 
         $sql = "SELECT a.id, a.nome, a.rg, a.cpf, a.telefone, a.email, a.sexo, 
-            a.ativo, g.cor as graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
+            a.ativo, a.graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
             en.complemento, en.cep, en.bairro, c.nome as cidade_id, 
             est.nome as estado_id, p.nome as pais_id FROM aluno a 
             LEFT JOIN endereco en ON a.endereco_id = en.id
@@ -99,6 +99,31 @@ class Aluno_Model extends CI_Model {
         return $linha->endereco_id;
 
 
+    }
+    
+    
+    /**
+     * 
+     * Faz uma busca através do id solicitado 
+     * @param type $id recebe o id solicitado na pagina lista_aluno
+     * @return type retorna os dados encontrados no banco referente ao id solicitado
+     * 
+     */
+    public function visualizar($id){
+        
+        $sql = "SELECT a.id, a.nome, a.rg, a.cpf, a.telefone, a.email, a.sexo, 
+            a.ativo, g.cor as graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
+            en.complemento, en.cep, en.bairro, c.nome as cidade_id, 
+            est.nome as estado_id, p.nome as pais_id FROM aluno a 
+            LEFT JOIN endereco en ON a.endereco_id = en.id
+            LEFT JOIN cidade c ON en.cidade_id = c.id
+            LEFT JOIN estado est ON c.estado_id = est.id
+            LEFT JOIN pais p ON est.pais_id = p.id
+            LEFT JOIN graduacao g ON a.graduacao_id = g.id WHERE a.id = $id";
+        
+        $query = $this->db->query($sql);
+        
+        return $query->row();
     }
 
 }

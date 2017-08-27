@@ -15,7 +15,7 @@ class Graduacao extends CI_Controller {
 
     function index() {
 
-        $dados ['erros'] = null;
+        $dados ['erro'] = null;
 
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
@@ -27,7 +27,7 @@ class Graduacao extends CI_Controller {
 
         if ($this->form_validation->run() === FALSE) {
 
-            $dados['erros'] = validation_errors('<li>', '</li>');
+            $dados['erro'] = validation_errors('<li>', '</li>');
         } else {
 
             $this->graduacaoM->inserir($dados);

@@ -37,7 +37,7 @@
                                         <td><?= $tp->id ?></td>
                                         <td><?= $tp->tipo ?></td>
                                         <td>
-                                            <a href="<?= base_url('tipo/editar/' . $tp->id) ?>" >
+                                            <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('tipo/editar/' . $tp->id) ?>" >
                                                 <span class="glyphicon glyphicon-edit "></span></a>
                                         </td>
 

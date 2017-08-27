@@ -25,41 +25,44 @@
                             <div class="box-body">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Nome</th>
-                                        <th>Rua</th>
-                                        <th>Numero</th>
-                                        <th>Complemento</th>
-                                        <th>Cep</th>
-                                        <th>Bairro</th>
-                                        <th>Cidade</th>
-                                        <th>Estado</th>
-                                        <th>Pais</th>
-                                        <th>Ações</th>
-                                    </tr>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Nome</th>
+                                            <th>Rua</th>
+                                            <th>Numero</th>
+                                            <th>Complemento</th>
+                                            <th>Cep</th>
+                                            <th>Bairro</th>
+                                            <th>Cidade</th>
+                                            <th>Estado</th>
+                                            <th>Pais</th>
+                                            <th>Ações</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($centro as $ct) { ?>
-                                    <tr>
-                                        <td><?= $ct->id ?></td>
-                                        <td><?= $ct->nome ?></td>
-                                        <td><?= $ct->endereco_id ?></td>
-                                        <td><?= $ct->numero ?></td>
-                                        <td><?= $ct->complemento ?></td>
-                                        <td><?= $ct->cep ?></td>
-                                        <td><?= $ct->bairro ?></td>
-                                        <td><?= $ct->cidade_id ?></td>
-                                        <td><?= $ct->estado_id ?></td>
-                                        <td><?= $ct->pais_id ?></td>
-                                        <td>
-                                            <a href="<?= base_url('centro_de_treinamento/editar/' . $ct->id) ?>" >
-                                                <span class="glyphicon glyphicon-edit"></span></a>
-                                        </td>
+                                        <?php foreach ($centro as $ct) { ?>
+                                            <tr>
+                                                <td><?= $ct->id ?></td>
+                                                <td><?= $ct->nome ?></td>
+                                                <td><?= $ct->endereco_id ?></td>
+                                                <td><?= $ct->numero ?></td>
+                                                <td><?= $ct->complemento ?></td>
+                                                <td><?= $ct->cep ?></td>
+                                                <td><?= $ct->bairro ?></td>
+                                                <td><?= $ct->cidade_id ?></td>
+                                                <td><?= $ct->estado_id ?></td>
+                                                <td><?= $ct->pais_id ?></td>
+                                                <td>
 
-                                        <?php } ?>
-                                    </tr>
-                                    </tfoot>
+                                                    <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('centro_de_treinamento/editar/' . $ct->id) ?>" >
+                                                        <span class="fa fa-edit"></span></a>
+                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar!" href="<?= base_url('centro_de_treinamento/editar/' . $ct->id) ?>">
+                                                        <span class="fa fa-vcard"></span></a>
+                                                </td>
+
+                                            <?php } ?>
+                                        </tr>
+                                        </tfoot>
                                 </table>
                             </div>
                             <!-- /.box-body -->

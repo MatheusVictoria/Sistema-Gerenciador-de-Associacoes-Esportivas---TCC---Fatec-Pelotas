@@ -1,14 +1,8 @@
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<script src="<?= base_url('assets/js/script.js') ?>"></script>
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Cadastro de alteração de dados do aluno
+            Cadastro de alteração de dados do usuário
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Listas </a></li>
@@ -25,7 +19,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
 
-                        <form role="form" method="post" action="<?= base_url('Usuario/grava_alterecao') ?>" enctype="multipart/form-data">
+                        <form role="form" method="post" action="<?= base_url('Usuario/grava_alteracao') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
 
@@ -58,8 +52,8 @@
                                 <div class="form-group col-lg-6">
                                     <label for="ativo">Ativo:</label>
                                     <select class="form-control" name="ativo" id="ativo">
-                                        <option value="1" >Sim</option>
-                                        <option value="2">Não</option>
+                                        <option value="1"  <?= $usuario->ativo == 1 ? 'selected' : '' ?>>Sim</option>
+                                        <option value="2" <?= $usuario->ativo == 2 ? 'selected' : '' ?>>Não</option>
                                     </select>
                                 </div>
 
@@ -74,15 +68,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--<div class="col-lg-12">
-                                <?php if ($erro): ?>
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            <?= $erro ?>
-                                        </ul>
-                                    </div>
-                                <?php endif; ?>
-                            </div>-->
                         </form>
 
                     </div>

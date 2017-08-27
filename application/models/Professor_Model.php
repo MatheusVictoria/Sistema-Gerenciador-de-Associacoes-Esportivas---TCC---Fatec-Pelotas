@@ -71,7 +71,7 @@ class Professor_Model extends CI_Model {
     public function encontrar($id) {
 
         $sql = "SELECT prof.id, prof.nome, prof.rg, prof.cpf, prof.telefone, prof.email, prof.sexo, 
-            prof.ativo, g.cor as graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
+            prof.ativo, prof.graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
             en.complemento, en.cep, en.bairro, c.nome as cidade_id, 
             est.nome as estado_id, p.nome as pais_id FROM professor prof 
             LEFT JOIN endereco en ON prof.endereco_id = en.id
@@ -89,13 +89,35 @@ class Professor_Model extends CI_Model {
      *
      * Busca do id do endereço e compara com o id que esta vindo da view from_alt_centro_de_treinamento
      * @param $id recebe o id da view form_alt_centro_de_treinamento
-     *
+     * @return type retorna os dados encontrados no banco referente ao id solicitado
      */
     public function busca_id_endereco($id) {
 
         $query = $this->db->query("select id as endereco_id from endereco where id = '{$id}'");
         $linha = $query->row();
         return $linha->endereco_id;
+    }
+
+    /**
+     * Faz uma busca através do id solicitado 
+     * @param type $id recebe o id solicitado na pagina lista_professor
+     * @return type retorna os dados encontrados no banco referente ao id solicitado
+     */
+    public function visualizar($id) {
+
+        $sql = "SELECT prof.id, prof.nome, prof.rg, prof.cpf, prof.telefone, prof.email, prof.sexo, 
+            prof.ativo, g.cor as graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
+            en.complemento, en.cep, en.bairro, c.nome as cidade_id, 
+            est.nome as estado_id, p.nome as pais_id FROM professor prof 
+            LEFT JOIN endereco en ON prof.endereco_id = en.id
+            LEFT JOIN cidade c ON en.cidade_id = c.id
+            LEFT JOIN estado est ON c.estado_id = est.id
+            LEFT JOIN pais p ON est.pais_id = p.id
+            LEFT JOIN graduacao g ON prof.graduacao_id = g.id WHERE prof.id = $id";
+
+        $query = $this->db->query($sql);
+
+        return $query->row();
     }
 
 }

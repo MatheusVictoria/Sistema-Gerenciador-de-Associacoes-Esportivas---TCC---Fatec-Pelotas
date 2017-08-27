@@ -24,61 +24,73 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
 
-                        <form role="form" method="post" action="<?= base_url('Professor/cadastrar') ?>" enctype="multipart/form-data">
+                        <form role="form" method="post" action="<?= base_url('Professor/index') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
+                                
+                                 <div class="col-lg-12">
+                                    <?php if ($erro): ?>
+                                        <div class="alert alert-danger alert-dismissable">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                                            <ul>
+                                                <?= $erro ?>
+                                            </ul>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="nome">Nome:</label>
-                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome"/>
+                                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" value="<?= set_value('nome') ?>"/>
                                 </div>
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="rg">RG:</label>
-                                    <input type="text" class="form-control" id="rg" name="rg" placeholder="RG"/>
+                                    <input type="text" class="form-control" id="rg" name="rg" placeholder="RG" value="<?= set_value('rg') ?>"/>
                                 </div>
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="cpf">CPF:</label>
-                                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF"/>
+                                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="CPF" <?= set_value('cpf') ?>/>
                                 </div>
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="telefone">Telefone:</label>
-                                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="Telefone"/>
+                                    <input type="tel" class="form-control" id="telefone" name="telefone" placeholder="Telefone" <?= set_value('telefone') ?>/>
                                 </div>
 
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="email">E-mail:</label>
-                                    <input type="email" class="form-control" id="enail" name="email" placeholder="E-mail"/>
+                                    <input type="email" class="form-control" id="enail" name="email" placeholder="E-mail" value="<?= set_value('email') ?>"/>
                                 </div>
 
                                 <div class="form-group col-lg-6 ">
 
                                     <label for="cep">Cep:</label>
-                                    <input type="text" class="form-control" id="cep" name="cep" placeholder="Cep"/>
+                                    <input type="text" class="form-control" id="cep" name="cep" placeholder="Cep" value="<?= set_value('cep') ?>"/>
 
                                 </div>
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="rua">Rua:</label>
-                                    <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua"/>
+                                    <input type="text" class="form-control" id="rua" name="rua" placeholder="Rua" value="rua"/>
                                 </div>
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="Bairro">Bairro:</label>
-                                    <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro"/>
+                                    <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro" />
                                 </div>
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="complemento">Complemento:</label>
-                                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Complemento"/>
+                                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Complemento" value="<?= set_value('complemento') ?>"/>
                                 </div>
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="numero">Numero:</label>
-                                    <input type="text" class="form-control" id="numero" name="numero" placeholder="Numero"/>
+                                    <input type="text" class="form-control" id="numero" name="numero" placeholder="Numero" value="<?= set_value('numero') ?>"/>
                                 </div>
 
                                 <div class="form-group col-lg-6 ">
@@ -93,7 +105,7 @@
 
                                 <div class="form-group col-lg-6 ">
                                     <label for="pais">Pais:</label>
-                                    <input type="text" class="form-control" id="pais" name="pais" placeholder="Pais"/>
+                                    <input type="text" class="form-control" id="pais" name="pais" placeholder="Pais" value="<?= set_value('pais') ?>"/>
                                 </div>
 
 
@@ -144,15 +156,6 @@
                                         <button type="reset" class="btn btn-primary btn-flat col-xs-4">Limpar</button>
                                     </div>
                                 </div>
-                            </div>
-                           <!-- <div class="col-lg-12">
-                                <?php if ($erro): ?>
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            <?= $erro ?>
-                                        </ul>
-                                    </div>
-                                <?php endif; ?> -->
                             </div>
                         </form>
 

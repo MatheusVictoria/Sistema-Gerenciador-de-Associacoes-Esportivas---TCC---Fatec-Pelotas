@@ -8,7 +8,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Listas</a></li>
-            <li><a href="#">Usuários</a></li>
+            <li><a href="#">Turmas</a></li>
         </ol>
     </section>
     <section>
@@ -19,7 +19,7 @@
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-header">
-                                <h3 class="box-title">Lista de Usuários</h3>
+                                <h3 class="box-title">Lista de Turmas</h3>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
@@ -27,30 +27,29 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Usuário</th>
-                                        <th>E-mail</th>
-                                        <th>Tipo de Usuário</th>
-                                        <th>Ativo</th>
+                                        <th>Horário</th>
+                                        <th>Professor</th>
+                                        <th>Centro de Treinamento</th>
                                         <th>Ações</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($usuario as $tp) { ?>
+                                    <?php foreach ($turma as $tm) { ?>
                                     <tr>
-                                        <td><?= $tp->id ?></td>
-                                        <td><?= $tp->usuario ?></td>
-                                        <td><?= $tp->email ?></td>
-                                        <td><?= $tp->tipo_id ?></td>
-                                        <td><?php
+                                        <td><?= $tm->id ?></td>
+                                        <td><?= $tm->horario ?></td>
+                                        <td><?= $tm->professor_id ?></td>
+                                        <td><?= $tm->centro_treinamento_id ?></td>
+<!--                                        <td><?php
                                             if ($tp->ativo == 1) {
                                                 echo "sim";
                                             } else {
                                                 echo "não";
                                             }
-                                            ?></td>
+                                            ?></td>-->
                                         <td>
-                                            <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('usuario/editar/' . $tp->id) ?>" >
-                                                <span class="glyphicon glyphicon-edit "></span></a>
+                                            <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('turma/editar/' . $tm->id) ?>" >
+                                                <span class="fa fa-edit "></span></a>
                                         </td>
 
                                         <?php } ?>

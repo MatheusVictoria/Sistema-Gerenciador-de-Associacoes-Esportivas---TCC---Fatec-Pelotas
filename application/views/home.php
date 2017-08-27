@@ -15,69 +15,75 @@
         <!-- right col -->
         <div>
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+                <!-- general form elements -->
+                <div class="box box-primary">
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">Contatos recebidos</span>
-                            <span class="info-box-number">3</span>
-                        </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
+                    <div class="box-body">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">Alunos em atraso</span>
-                            <span class="info-box-number">4</span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Contatos recebidos</span>
+                                    <span class="info-box-number">3</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
                         </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">Alunos Cadastrados</span>
-                            <span class="info-box-number">5</span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Alunos em atraso</span>
+                                    <span class="info-box-number">4</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
                         </div>
-                        <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="info-box">
-                        <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
 
-                        <div class="info-box-content">
-                            <span class="info-box-text">Alunos desistentes</span>
-                            <span class="info-box-number">2</span>
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Alunos Cadastrados</span>
+                                    <span class="info-box-number">5</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
                         </div>
-                        <!-- /.info-box-content -->
+                        <!-- /.col -->
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text">Alunos desistentes</span>
+                                    <span class="info-box-number">2</span>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <!-- /.col -->
                     </div>
-                    <!-- /.info-box -->
+                    <!-- /.row -->
                 </div>
-                <!-- /.col -->
+                <!-- /.row (main row) -->
             </div>
-            <!-- /.row -->
         </div>
-        <!-- /.row (main row) -->
 
-    </section>
-    <!-- /.content -->
-</div>
+                </section>
+                <!-- /.content -->
+            </div>
 
-<!--<h1 style="font-family: initial; font-size: 40px;"> Bem vindo a área administrativa.</h1>
-
-<hr class="large btn-primary">
-
-<h3 style="text-align: center; margin-top: 50px; font-family: initial; font-size: 25px;">Olá escolha a opção que deseja no menu ao lado !</h3> -->
+            <!--<h1 style="font-family: initial; font-size: 40px;"> Bem vindo a área administrativa.</h1>
+            
+            <hr class="large btn-primary">
+            
+            <h3 style="text-align: center; margin-top: 50px; font-family: initial; font-size: 25px;">Olá escolha a opção que deseja no menu ao lado !</h3> -->

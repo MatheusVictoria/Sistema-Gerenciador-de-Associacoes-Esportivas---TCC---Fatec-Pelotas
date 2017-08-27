@@ -19,16 +19,16 @@ class Aluno extends CI_Controller {
 
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
-        
+
         $dados = $this->input->post();
 
-        $this->form_validation->set_rules('nome', 'Nome', 'trim|required|min_length[4]', array('required' => 'Preencha o campo nome', 'min_length' => 'O nome não pode conter menos de quatro letras'));
+        $this->form_validation->set_rules('nome', 'Nome', 'trim|required', array('required' => 'Preencha o campo nome', 'min_length' => 'O nome não pode conter menos de quatro letras'));
         $this->form_validation->set_rules('rg', 'RG', 'trim|required', array('required' => 'Preencha o campo RG'));
-        $this->form_validation->set_rules('cpf', 'Cpf', 'trim|required' , array('required' => 'Preencha o campo CPF'));
+        $this->form_validation->set_rules('cpf', 'Cpf', 'trim|required', array('required' => 'Preencha o campo CPF'));
 
         if ($this->form_validation->run() === FALSE) {
 
-            $dados['erro'] = validation_errors('<br/><li>', '</li>');
+            $dados['erro'] = validation_errors('<li>', '</li>');
         } else {
             $uploadFoto = $this->uploadImagem('foto');
 
@@ -80,7 +80,7 @@ class Aluno extends CI_Controller {
         // carrega a library upload
         $this->load->library('upload');
         // @$path recebe o caminho onde será armazenada a imagem
-        $path = "./fotos";
+        $path = "fotos";
         //define as configurações para armazenar a foto
         $config['upload_path'] = $path;
         $config['allowed_types'] = 'gif|jpg|png';
@@ -89,22 +89,32 @@ class Aluno extends CI_Controller {
         $config['max_height'] = 768;
         $config['encrypt_name'] = true;
 
-        if (!is_dir($path)) {
-            mkdir($path, 0777, $recursive = true);
+        $this->upload->initialize($config);
 
-            $this->upload->initialize($config);
+        if (!$this->upload->do_upload($nomeArquivo)) {
+            $dados['error'] = false;
+            $dados['message'] = $this->upload->diaplay_errors();
+        } else {
 
-            if (!$this->upload->do_upload($nomeArquivo)) {
-                $dados['error'] = false;
-                $dados['message'] = $this->upload->diaplay_errors();
-            } else {
-
-                $dados['error'] = false;
-                $dados['foto'] = $this->upload->data();
-            }
-
-            return $dados;
+            $dados['error'] = false;
+            $dados['foto'] = $this->upload->data();
         }
+
+        return $dados;
+    }
+
+    /**
+     * Recebe o id solicitado através do botão visualizar na lista de professores
+     * @param type $id 
+     */
+    public function visualizar($id) {
+
+        $dados['aluno'] = $this->alunoM->visualizar($id);
+        $dados['graduacao'] = $this->graduacaoM->selecionar();
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('visualizar_aluno', $dados);
+        $this->load->view('templates/footer');
     }
 
 }

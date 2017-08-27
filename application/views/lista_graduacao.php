@@ -25,26 +25,27 @@
                             <div class="box-body">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Cor da Faixa</th>
-                                        <th>Descrição</th>
-                                        <th>Ações</th>
-                                    </tr>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Cor da Faixa</th>
+                                            <th>Descrição</th>
+                                            <th>Ações</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    <?php foreach ($graduacao as $grad) { ?>
-                                    <tr>
-                                        <td><?= $grad->id ?></td>
-                                        <td><?= $grad->cor ?></td>
-                                        <td><?= $grad->descricao ?></td>
-                                        <td><a href="<?= base_url('graduacao/editar/' . $grad->id) ?>" >
-                                                <span class="glyphicon glyphicon-edit"></span></a>
-                                        </td>
+                                        <?php foreach ($graduacao as $grad) { ?>
+                                            <tr>
+                                                <td><?= $grad->id ?></td>
+                                                <td><?= $grad->cor ?></td>
+                                                <td><?= $grad->descricao ?></td>
+                                                <td>
+                                                    <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('graduacao/editar/' . $grad->id) ?>" >
+                                                        <span class="fa fa-edit"></span></a>
+                                                </td>
 
-                                        <?php } ?>
-                                    </tr>
-                                    </tfoot>
+                                            <?php } ?>
+                                        </tr>
+                                        </tfoot>
                                 </table>
                             </div>
                             <!-- /.box-body -->

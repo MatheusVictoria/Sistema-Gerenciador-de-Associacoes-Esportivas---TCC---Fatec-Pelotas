@@ -27,9 +27,19 @@
                         <form method="post" action="<?= base_url('Centro_de_Treinamento/cadastrar') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
-
-                                <form method="post" action="<?= base_url('Centro_de_Treinamento/cadastrar') ?>" enctype="multipart/form-data">
-
+                                
+<!--                                 <div class="col-lg-12">
+                                    <?php if ($erro): ?>
+                                        <div class="alert alert-danger alert-dismissable">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                            <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                                            <ul>
+                                                <?= $erro ?>
+                                            </ul>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>-->
+                                
                                     <div class="form-group col-lg-6 ">
                                         <label for="nome">Nome:</label>
                                         <input type="text" class="form-control" id="nome" name="nome" autofocus placeholder="Nome"/>
@@ -84,15 +94,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--<div class="col-lg-12">
-                                <?php if ($erro): ?>
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            <?= $erro ?>
-                                        </ul>
-                                    </div>
-                                <?php endif; ?>
-                            </div> -->
                         </form>
 
                     </div>

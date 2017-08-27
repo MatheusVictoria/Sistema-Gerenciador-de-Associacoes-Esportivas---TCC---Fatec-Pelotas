@@ -1,9 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<script src="<?= base_url('assets/js/script.js') ?>"></script>
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <section class="content-header">
@@ -25,7 +19,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
 
-                        <form role="form" method="post" action="<?= base_url('Tipo/grava_alterecao') ?>" enctype="multipart/form-data">
+                        <form role="form" method="post" action="<?= base_url('Tipo/grava_alteracao') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
 
@@ -45,15 +39,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--<div class="col-lg-12">
-                                <?php if ($erro): ?>
-                                    <div class="alert alert-danger">
-                                        <ul>
-                                            <?= $erro ?>
-                                        </ul>
-                                    </div>
-                                <?php endif; ?>
-                            </div>-->
                         </form>
 
                     </div>
@@ -62,6 +47,6 @@
     </div>
     <!-- /.row (main row) -->
 
-    </section>
-    <!-- /.content -->
+</section>
+<!-- /.content -->
 </div>

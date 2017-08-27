@@ -25,7 +25,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
 
-                        <form role="form" method="post" action="<?= base_url('Aluno/grava_alterecao') ?>" enctype="multipart/form-data">
+                        <form role="form" method="post" action="<?= base_url('Aluno/grava_alteracao') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
 
@@ -109,14 +109,11 @@
 
                                         <option>Selecione a Graduação</option>
 
-                                        <?php
-                                        foreach ($graduacao as $graduacao) {
-                                            ?>
-                                            <option value="<?= $graduacao->id ?>">
-                                                <?= $graduacao->cor ?> </option>
-                                            <?php
-                                        }
-                                        ?>
+                                        <?php foreach ($graduacao as $graduacao): ?>
+                                            <option value="<?= $graduacao->id; ?>" <?= $aluno->graduacao_id == $graduacao->id ? " selected = \"selected\""  : "" ?>>
+                                                <?= $graduacao->cor ?> 
+                                            </option>
+                                        <?php endforeach;?>
                                     </select>
                                 </div>
 
@@ -125,8 +122,8 @@
                                         <label for="sexo">Sexo:</label>
                                     </div>
                                     <div>
-                                        <label class="checkbox-inline "><input type="checkbox" id="sexo" name="sexo" value="M">Masculino</label>
-                                        <label class="checkbox-inline "><input type="checkbox" id="sexo" name="sexo" value="F">Feminino</label>
+                                        <label class="checkbox-inline "><input type="radio" id="sexo" name="sexo" value="M" <?= $aluno->sexo == "M" ? "checked" : "" ?>>Masculino</label>
+                                        <label class="checkbox-inline "><input type="radio" id="sexo" name="sexo" value="F" <?= $aluno->sexo == "F" ? "checked" : "" ?>>Feminino</label>
                                     </div>
                                 </div>
 
@@ -137,9 +134,9 @@
 
                                 <div class="form-group col-lg-4">
                                     <label for="ativo">Ativo:</label>
-                                    <select class="form-control" id="ativo" name="ativo">
-                                        <option value="1">Sim</option>
-                                        <option value="0">Não</option>
+                                    <select class="form-control" id="ativo" name="ativo" >
+                                        <option value="1" <?= $aluno->ativo == 1 ? " selected = \"selected\""  : "" ?>>Sim</option>
+                                        <option value="0" <?= $aluno->ativo == 0 ? " selected = \"selected\""  : "" ?>>Não</option>
                                     </select>
                                 </div>
 
