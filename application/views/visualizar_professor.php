@@ -26,7 +26,7 @@
                             <div class="col-lg-6">
                                 <div class="box box-primary">
                                     <div class="box-body box-profile">
-                                        <img class="profile-user-img img-responsive img-circle" height="70px" width="70px" src="" alt="Foto">
+                                        <img class="profile-user-img img-responsive img-circle" src="<?= base_url('fotos/') . $professor->foto ?>" alt="Foto">
 
                                         <h3 class="profile-username text-center"><?= $professor->nome ?></h3>
 
@@ -93,15 +93,14 @@
                                 </div>                           
                             </div>
                         </div>
+                        <a href="<?= base_url('listar_professor') ?>" class="btn btn-primary btn-block"><b>Voltar para lista</b></a>
                     </div>
 
-                            <a href="<?= base_url('listar_professor') ?>" class="btn btn-primary btn-block"><b>Voltar para lista</b></a>
-
-                        </div>
-                    </div>
                 </div>
-                <!-- /.row (main row) -->
-
-        </section>
-        <!-- /.content -->
+            </div>
     </div>
+    <!-- /.row (main row) -->
+
+</section>
+<!-- /.content -->
+</div>

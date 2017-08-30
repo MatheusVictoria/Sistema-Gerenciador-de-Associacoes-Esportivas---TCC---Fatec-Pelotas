@@ -26,7 +26,7 @@
                             <div class="col-lg-6">
                                 <div class="box box-primary">
                                     <div class="box-body box-profile">
-                                        <img class="profile-user-img img-responsive img-circle" height="70px" width="70px" src="" alt="Foto">
+                                        <img class="profile-user-img img-responsive img-circle" src="<?= base_url('fotos/') . $aluno->foto ?>" alt="Foto">
 
                                         <h3 class="profile-username text-center"><?= $aluno->nome ?></h3>
 

@@ -20,8 +20,8 @@ class Professor_Model extends CI_Model {
         $cidade_id = $this->cidadeM->busca_cidades($dados['cidade']);
         $this->db->query("INSERT INTO endereco(rua, numero,complemento, cep, bairro, cidade_id)
           VALUES('{$dados['rua']}', '{$dados['numero']}', '{$dados['complemento']}', '{$dados['cep']}', '{$dados['bairro']}', $cidade_id)");
-        $this->db->query("INSERT INTO professor(nome, rg, cpf, telefone, email, sexo, graduacao_id, ativo, endereco_id)
-          values('{$dados['nome']}', {$dados['rg']}, {$dados['cpf']}, '{$dados['telefone']}','{$dados['email']}', '{$dados['sexo']}', {$dados['graduacao_id']}, '{$dados['ativo']}', (select LAST_INSERT_ID()));");
+        $this->db->query("INSERT INTO professor(nome, rg, cpf, telefone, email, foto, sexo, graduacao_id, ativo, endereco_id)
+          values('{$dados['nome']}', {$dados['rg']}, {$dados['cpf']}, '{$dados['telefone']}','{$dados['email']}','{$dados['foto']}', '{$dados['sexo']}', {$dados['graduacao_id']}, '{$dados['ativo']}', (select LAST_INSERT_ID()));");
         $this->db->trans_complete();
     }
 
@@ -58,7 +58,7 @@ class Professor_Model extends CI_Model {
         $cidade_id = $this->cidadeM->busca_cidades($dados['cidade']);
         $endereco_id = $this->busca_id_endereco($dados['id_endereco']);
         $this->db->query("UPDATE endereco SET rua = '{$dados['rua']}', numero = {$dados['numero']} ,complemento = '{$dados['complemento']}', cep = '{$dados['cep']}', bairro = '{$dados['bairro']}', cidade_id = $cidade_id WHERE id = $endereco_id");
-        $this->db->query("UPDATE professor SET nome = '{$dados['nome']}', rg = {$dados['rg']}, cpf = {$dados['cpf']}, telefone = '{$dados['telefone']}', email = '{$dados['email']}', sexo = '{$dados['sexo']}', graduacao_id = {$dados['graduacao_id']}, ativo = '{$dados['ativo']}' WHERE  id = {$dados['id']}");
+        $this->db->query("UPDATE professor SET nome = '{$dados['nome']}', rg = {$dados['rg']}, cpf = {$dados['cpf']}, telefone = '{$dados['telefone']}', email = '{$dados['email']}', foto = '{$dados['foto']}', sexo = '{$dados['sexo']}', graduacao_id = {$dados['graduacao_id']}, ativo = '{$dados['ativo']}' WHERE  id = {$dados['id']}");
         $this->db->trans_complete();
     }
 
@@ -71,7 +71,7 @@ class Professor_Model extends CI_Model {
     public function encontrar($id) {
 
         $sql = "SELECT prof.id, prof.nome, prof.rg, prof.cpf, prof.telefone, prof.email, prof.sexo, 
-            prof.ativo, prof.graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
+            prof.foto, prof.ativo, prof.graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
             en.complemento, en.cep, en.bairro, c.nome as cidade_id, 
             est.nome as estado_id, p.nome as pais_id FROM professor prof 
             LEFT JOIN endereco en ON prof.endereco_id = en.id
@@ -106,7 +106,7 @@ class Professor_Model extends CI_Model {
     public function visualizar($id) {
 
         $sql = "SELECT prof.id, prof.nome, prof.rg, prof.cpf, prof.telefone, prof.email, prof.sexo, 
-            prof.ativo, g.cor as graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
+            prof.foto, prof.ativo, g.cor as graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
             en.complemento, en.cep, en.bairro, c.nome as cidade_id, 
             est.nome as estado_id, p.nome as pais_id FROM professor prof 
             LEFT JOIN endereco en ON prof.endereco_id = en.id

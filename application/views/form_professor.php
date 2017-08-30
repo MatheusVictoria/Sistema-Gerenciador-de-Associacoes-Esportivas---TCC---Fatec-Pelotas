@@ -130,8 +130,8 @@
                                         <label for="sexo">Sexo:</label>
                                     </div>
                                     <div>
-                                        <label class="checkbox-inline "><input type="checkbox" value="M" name="sexo" id="sexo">Masculino</label>
-                                        <label class="checkbox-inline "><input type="checkbox" value="F" name="sexo" id="sexo">Feminino</label>
+                                        <label class="checkbox-inline "><input type="radio" value="M" name="sexo" id="sexo">Masculino</label>
+                                        <label class="checkbox-inline "><input type="radio"   value="F" name="sexo" id="sexo">Feminino</label>
                                     </div>
                                 </div>
 

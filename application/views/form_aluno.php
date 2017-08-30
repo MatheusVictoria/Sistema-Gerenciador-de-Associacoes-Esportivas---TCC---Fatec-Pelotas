@@ -129,14 +129,14 @@
                                         <label for="sexo">Sexo:</label>
                                     </div>
                                     <div>
-                                        <label class="checkbox-inline "><input type="checkbox" id="sexo" name="sexo" value="M">Masculino</label>
-                                        <label class="checkbox-inline "><input type="checkbox" id="sexo" name="sexo" value="F">Feminino</label>
+                                        <label class="checkbox-inline "><input type="radio" id="sexo" name="sexo" value="M">Masculino</label>
+                                        <label class="checkbox-inline "><input type="radio" id="sexo" name="sexo" value="F">Feminino</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group col-lg-4 ">
                                     <label for="foto">Foto:</label>
-                                    <input type="file" id="foto" name="foto"/>
+                                    <input type="file" id="foto" name="foto" value="<?= set_value('foto') ?>"/>
                                 </div>
 
                                 <div class="form-group col-lg-4">

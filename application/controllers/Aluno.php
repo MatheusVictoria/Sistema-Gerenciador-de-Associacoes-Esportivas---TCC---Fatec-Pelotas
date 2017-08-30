@@ -21,6 +21,7 @@ class Aluno extends CI_Controller {
         $this->load->view('templates/menu');
 
         $dados = $this->input->post();
+  
 
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required', array('required' => 'Preencha o campo nome', 'min_length' => 'O nome não pode conter menos de quatro letras'));
         $this->form_validation->set_rules('rg', 'RG', 'trim|required', array('required' => 'Preencha o campo RG'));
@@ -30,13 +31,13 @@ class Aluno extends CI_Controller {
 
             $dados['erro'] = validation_errors('<li>', '</li>');
         } else {
-            $uploadFoto = $this->uploadImagem('foto');
+            $uploadFoto = $this->uploadImagem();
 
             if ($uploadFoto['error']) {
 
                 $dados['error'] = $uploadFoto['message'];
             } else {
-
+                $dados['foto'] = $uploadFoto['foto'];
                 $this->alunoM->inserir($dados);
                 redirect('listar_aluno');
             }
@@ -68,14 +69,46 @@ class Aluno extends CI_Controller {
 
     public function grava_alteracao() {
 
+         $idFoto = $this->input->post('id');
+        $professor = $this->alunoM->encontrar($idFoto);
+        //recebe os dados do form
         $dados = $this->input->post();
+        
+//        $mensa = "";
+        if (isset($_FILES['foto'])) {
+           $uploadFoto = $this->uploadImagem('foto');
 
-        $this->alunoM->atualiza($dados);
+            if ($uploadFoto['error']) {
 
+                $dados['error'] = $uploadFoto['message'];
+                $tipo = "0";
+                $mensa = "Erro... Arquivo Inválido " . $this->upload->display_errors();
+            } else {
+                $dados['foto'] = $uploadFoto['foto'];
+            }
+        }
+
+        //altera o registro na tabela de produtos
+        $alt = $this->alunoM->atualiza($dados);
+        
+         // verifica se alterou
+        if ($alt) {
+            $tipo = "1";
+            $mensa .= "Ok! Produto Corretamente Alterado";
+        } else {
+            $tipo = "0";
+            $mensa .= "Erro... Produto não foi alterado";
+        }
+
+        // define a variaavel de sessao com a mensagem exibida
+        $this->session->set_flashdata('tipo', $tipo);
+        $this->session->set_flashdata('mensa', $mensa);
+
+        //recarrega listagem de veículos
         redirect('listar_aluno');
     }
 
-    public function uploadImagem($nomeArquivo) {
+    public function uploadImagem() {
 
         // carrega a library upload
         $this->load->library('upload');
@@ -91,15 +124,14 @@ class Aluno extends CI_Controller {
 
         $this->upload->initialize($config);
 
-        if (!$this->upload->do_upload($nomeArquivo)) {
+        if (!$this->upload->do_upload('foto')) {
             $dados['error'] = false;
-            $dados['message'] = $this->upload->diaplay_errors();
+            $dados['message'] = $this->upload->display_errors();
         } else {
 
             $dados['error'] = false;
-            $dados['foto'] = $this->upload->data();
+            $dados['foto'] = $this->upload->data()['file_name'];
         }
-
         return $dados;
     }
 

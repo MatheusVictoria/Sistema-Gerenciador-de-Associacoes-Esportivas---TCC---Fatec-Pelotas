@@ -26,7 +26,6 @@ class Home extends CI_Controller {
 
     public function logar() {
         // habilita a exibição de um conjunto de informações da execução deste método
-        //$this->output->enable_profiler(TRUE);
         
         // carrega a model com os métodos da tabela usuarios
         $this->load->model('Usuario_Model', 'usuariosM');

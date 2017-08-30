@@ -70,3 +70,5 @@ $route['form_tipo'] = 'Tipo/index';
 $route['listar_tipo'] = 'Tipo/listar';
 $route['form_turma'] = 'Turma/index';
 $route['listar_turma'] = 'Turma/listar';
+$route['form_modalidade'] = 'Modalidade/index';
+$route['listar_modalidade'] = 'Modalidade/listar';
