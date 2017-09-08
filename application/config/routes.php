@@ -72,3 +72,5 @@ $route['form_turma'] = 'Turma/index';
 $route['listar_turma'] = 'Turma/listar';
 $route['form_modalidade'] = 'Modalidade/index';
 $route['listar_modalidade'] = 'Modalidade/listar';
+$route['registra_aula'] = 'Restro_Aula/index';
+$route['lanca_pagamento'] = 'Mensalidade/index';

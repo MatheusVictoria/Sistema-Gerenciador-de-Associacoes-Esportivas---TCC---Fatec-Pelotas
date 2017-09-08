@@ -3,10 +3,9 @@
 <!-- /.content-wrapper -->
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Version</b> 2.4.0
+        <b>Verssão</b> Beta 0.1
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>SGAE; 2017 <span>Matheus Victória</span>.</strong> 
 </footer>
 
 <!-- /.control-sidebar -->

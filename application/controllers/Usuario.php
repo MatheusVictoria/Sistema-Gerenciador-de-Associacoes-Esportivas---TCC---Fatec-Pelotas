@@ -7,8 +7,9 @@ class Usuario extends CI_Controller {
     public function __construct() {
         parent::__construct();
         if (!$this->session->logado) {
-            redirect('home/login');
+            redirect('home/logar');
         }
+
         $this->load->model('Usuario_Model', 'usuarioM');
         $this->load->model('Tipo_Model', 'tipoM');
     }

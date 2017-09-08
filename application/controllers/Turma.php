@@ -6,9 +6,10 @@ class Turma extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        if (!$this->session->logado) {
-            redirect('home/login');
+         if (!$this->session->logado) {
+            redirect('home/logar');
         }
+
         $this->load->model('Turma_Model', 'turmaM');
         $this->load->model('Centro_de_Treinamento_Model', 'ctM');
         $this->load->model('Professor_Model', 'professorM');

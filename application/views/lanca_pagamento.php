@@ -21,29 +21,48 @@
                         <form role="form" method="post" action="<?= base_url('Lanca_Pagamento/index') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
-                                
-<!--                                 <div class="col-lg-12">
-                                    <?php if ($erro): ?>
-                                        <div class="alert alert-danger alert-dismissable">
-                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                            <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
-                                            <ul>
-                                                <?= $erro ?>
-                                            </ul>
+
+                                <!--                                <div class="col-lg-12">
+                                <?php if ($erro): ?>
+                                                                                <div class="alert alert-danger alert-dismissable">
+                                                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                                                    <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                                                                                    <ul>
+                                    <?= $erro ?>
+                                                                                    </ul>
+                                                                                </div>
+                                <?php endif; ?>
+                                                                </div>-->
+                                <div class="col-lg-9" style="margin-left: 10%">
+                                    <div class="box box-body">
+                                        <div class="box-body box-profile">
+                                            <div class="form-group col-lg-6">
+                                                <label for="aluno">Aluno:</label>
+                                                <select name="aluno_id" id="aluno_id" class="form-control" >
+                                                    <option>Selecione o Aluno</option>
+                                                    <?php
+                                                    foreach ($aluno as $a) {
+                                                        ?>
+                                                        <option value="<?= $a->id, set_value($a->id) ?>">
+                                                            <?= $a->nome ?> </option>
+                                                        <?php
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </div>
+
+
+                                            <div class="box-footer col-lg-offset-2 ">
+                                                <div class="col-lg-6">
+                                                    <button type="submit" class="btn btn-primary btn-flat col-xs-4">Enviar</button>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <button type="reset" class="btn btn-primary btn-flat col-xs-4">Limpar</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                    <?php endif; ?>
-                                </div>-->
-
-                               
-
-<!--                                <div class="box-footer col-lg-offset-2 ">
-                                    <div class="col-lg-6">
-                                        <button type="submit" class="btn btn-primary btn-flat col-xs-4">Enviar</button>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <button type="reset" class="btn btn-primary btn-flat col-xs-4">Limpar</button>
-                                    </div>
-                                </div>-->
+                                </div>
                             </div>
                         </form>
 
@@ -53,8 +72,8 @@
     </div>
     <!-- /.row (main row) -->
 
-    </section>
-    <!-- /.content -->
+</section>
+<!-- /.content -->
 </div>
 
 

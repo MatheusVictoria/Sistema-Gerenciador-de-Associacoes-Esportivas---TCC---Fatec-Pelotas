@@ -129,11 +129,11 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="<?= base_url('categoria/listar') ?>"><i class="fa fa-circle-o"></i>Lançar Pagamento</a>
+                        <a href="<?= base_url('lanca_pagamento') ?>"><i class="fa fa-circle-o"></i>Lançar Pagamento</a>
                     </li>
 
                     <li>
-                        <a href="<?= base_url('marca/listar') ?>"><i class="fa fa-circle-o"></i>Registro de aula</a>
+                        <a href="<?= base_url('registra_aula') ?>"><i class="fa fa-circle-o"></i>Registro de aula</a>
                     </li>
 
                 </ul>
