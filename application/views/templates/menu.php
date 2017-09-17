@@ -81,6 +81,10 @@
                     <li>
                         <a href="<?= base_url('listar_graduacao') ?>"><i class="fa fa-circle-o"></i>Graduação</a>
                     </li>
+                    
+                     <li>
+                        <a href="<?= base_url('listar_modalidade') ?>"><i class="fa fa-circle-o"></i>Modalidade</a>
+                    </li>
 
                     <li>
                         <a href="<?= base_url('listar_professor') ?>"><i class="fa fa-circle-o"></i>Professores</a>

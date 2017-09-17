@@ -11,8 +11,9 @@ class Turma_Model extends CI_Model {
 
     public function selecionar() {
 
-        $sql = "SELECT t.id, t.horario, p.nome as professor_id, c.nome as centro_treinamento_id  FROM turma t "
+        $sql = "SELECT t.id, t.horario, p.nome as professor_id, c.nome as centro_treinamento_id, m.modalidade as modalidade_id  FROM turma t "
                 . "LEFT JOIN professor p ON t.professor_id = p.id "
+                . "LEFT JOIN modalidade m ON t.modalidade_id = m.id "
                 . "LEFT JOIN centro_treinamento c ON t.centro_treinamento_id = c.id ";
 
         $query = $this->db->query($sql);
@@ -28,8 +29,9 @@ class Turma_Model extends CI_Model {
      */
     public function encontrar($id) {
 
-        $sql = "SELECT t.id, t.horario, p.nome as professor_id, c.nome as centro_treinamento_id  FROM turma t "
+        $sql = "SELECT t.id, t.horario, p.nome as professor_id, c.nome as centro_treinamento_id, m.modalidade as modalidade_id  FROM turma t "
                 . "LEFT JOIN professor p ON t.professor_id = p.id "
+                . "LEFT JOIN modalidade m ON t.modalidade_id = m.id "
                 . "LEFT JOIN centro_treinamento c ON t.centro_treinamento_id = c.id "
                 . " WHERE t.id = $id ";
            

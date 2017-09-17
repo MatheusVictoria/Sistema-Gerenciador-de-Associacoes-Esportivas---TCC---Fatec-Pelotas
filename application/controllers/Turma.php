@@ -13,6 +13,7 @@ class Turma extends CI_Controller {
         $this->load->model('Turma_Model', 'turmaM');
         $this->load->model('Centro_de_Treinamento_Model', 'ctM');
         $this->load->model('Professor_Model', 'professorM');
+        $this->load->model('Modalidade_Model', 'modalidadeM');
     }
 
     public function index() {
@@ -40,6 +41,7 @@ class Turma extends CI_Controller {
 
         $dados['ct'] = $this->ctM->selecionar();
         $dados['professor'] = $this->professorM->selecionar();
+        $dados['modalidade'] = $this->modalidadeM->selecionar();
         $this->load->view('form_turma', $dados);
         $this->load->view('templates/footer');
     }
@@ -58,6 +60,7 @@ class Turma extends CI_Controller {
         
         $dados['turma'] = $this->turmaM->encontrar($id);
         $dados['ct'] = $this->ctM->selecionar();
+        $dados['modalidade'] = $this->modalidadeM->selecionar();
         $dados['professor'] = $this->professorM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');

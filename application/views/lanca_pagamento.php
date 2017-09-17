@@ -24,13 +24,13 @@
 
                                 <!--                                <div class="col-lg-12">
                                 <?php if ($erro): ?>
-                                                                                <div class="alert alert-danger alert-dismissable">
-                                                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                                                                                    <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
-                                                                                    <ul>
+                                                                                        <div class="alert alert-danger alert-dismissable">
+                                                                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                                                            <h4><i class="icon fa fa-ban"></i> Alerta!</h4>
+                                                                                            <ul>
                                     <?= $erro ?>
-                                                                                    </ul>
-                                                                                </div>
+                                                                                            </ul>
+                                                                                        </div>
                                 <?php endif; ?>
                                                                 </div>-->
                                 <div class="col-lg-9" style="margin-left: 10%">
@@ -50,6 +50,19 @@
                                                     ?>
                                                 </select>
                                             </div>
+
+                                            <div class="form-group">
+                                                <label>Date:</label>
+
+                                                <div class="input-group date">
+                                                    <div class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                    </div>
+                                                    <input type="text" class="form-control pull-right" id="datepicker" name="data_pagamento">
+                                                </div>
+                                                <!-- /.input group -->
+                                            </div>
+                                            <!-- /.form group -->
 
 
                                             <div class="box-footer col-lg-offset-2 ">

@@ -69,6 +69,13 @@ class Home extends CI_Controller {
             'img_url' => base_url('captcha'),
             'img_width' => '320',
             'img_height' => '50',
+            // White background and border, black text and red grid
+        'colors'        => array(
+                'background' => array(255, 255, 255),
+                'border' => array(0, 0, 0),
+                'text' => array(0, 0, 0),
+                'grid' => array(255, 40, 40))
+
         );
 
         $cap = create_captcha($vals);

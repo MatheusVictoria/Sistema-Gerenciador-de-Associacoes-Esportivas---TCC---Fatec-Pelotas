@@ -30,6 +30,7 @@
                                         <th>Horário</th>
                                         <th>Professor</th>
                                         <th>Centro de Treinamento</th>
+                                        <th>Modalidade</th>
                                         <th>Ações</th>
                                     </tr>
                                     </thead>
@@ -40,6 +41,7 @@
                                         <td><?= $tm->horario ?></td>
                                         <td><?= $tm->professor_id ?></td>
                                         <td><?= $tm->centro_treinamento_id ?></td>
+                                        <td><?= $tm->modalidade_id ?></td>
 <!--                                        <td><?php
                                             if ($tp->ativo == 1) {
                                                 echo "sim";

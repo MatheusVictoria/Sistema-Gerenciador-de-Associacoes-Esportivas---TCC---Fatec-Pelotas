@@ -68,6 +68,21 @@
                                         ?>
                                     </select>
                                 </div>
+                                
+                                <div class="form-group col-lg-6">
+                                    <label for="modalidade">Modalidade:</label>
+                                    <select name="modalidade_id" id="modalidade_id" class="form-control" >
+                                        <option> Selecione a Modalidade </option>
+                                        <?php
+                                        foreach ($modalidade as $mod) {
+                                            ?>
+                                            <option value="<?= $mod->id, set_value($mod->id) ?>">
+                                                <?= $mod->modalidade ?> </option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
 
                                 <div class="box-footer col-lg-offset-2 ">
                                     <div class="col-lg-6">

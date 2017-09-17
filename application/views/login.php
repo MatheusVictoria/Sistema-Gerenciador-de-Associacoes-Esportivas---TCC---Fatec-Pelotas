@@ -30,6 +30,7 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
+                <img  src="<?= base_url()?>/assets/img/logo(assiaju).jpg" style="width: 100px; height: 100px">
                 <a href="#"><b>SGAE</b></a>
             </div>
             <!-- /.login-logo -->

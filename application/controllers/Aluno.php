@@ -136,7 +136,7 @@ class Aluno extends CI_Controller {
     }
 
     /**
-     * Recebe o id solicitado através do botão visualizar na lista de professores
+     * Recebe o id solicitado através do botão visualizar na lista de alunos
      * @param type $id 
      */
     public function visualizar($id) {

@@ -33,30 +33,31 @@
                                     <label for="professor">Professor:</label>
                                     <select name="professor_id" id="professor_id" class="form-control" >
                                         <option> Selecione o Professor </option>
-                                        <?php
-                                        foreach ($professor as $prof) {
-                                            ?>
-                                            <option value="<?= $prof->id ?>"
-                                                    <?= $turma->professor_id == $prof->id ? 'selected' : ' ' ?> >
+                                        <?php foreach ($professor as $prof) : ?>
+                                            <option value="<?= $prof->id ?>" <?= $turma->professor_id == $prof->id ? " selected = \"selected\"" : "" ?> >
                                                 <?= $prof->nome ?> </option>
-                                            <?php
-                                        }
-                                        ?>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label for="ct">Centro de Centro de Treinamento:</label>
                                     <select name="centro_treinamento_id" id="centro_treinamento_id" class="form-control" >
                                         <option> Selecione o Centro de Treinamento </option>
-                                        <?php
-                                        foreach ($ct as $ct) {
-                                            ?>
-                                            <option value="<?= $ct->id ?>"
-                                                    <?= $ct->id == $turma->professor_id ? "selected == \"selected\"" : " " ?> >
+                                        <?php foreach ($ct as $ct) : ?>
+
+                                            <option value="<?= $ct->id ?>"<?= $turma->professor_id == $ct->id ? " selected = \"selected\"" : "" ?> >
                                                 <?= $ct->nome ?> </option>
-                                            <?php
-                                        }
-                                        ?>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="modalidade">Centro de Centro de Treinamento:</label>
+                                    <select name="modalidade_id" id="modalidade_id" class="form-control" >
+                                        <option> Selecione a modalidade </option>
+                                        <?php foreach ($modalidade as $mod) : ?>
+                                            <option value="<?= $mod->id ?>" <?= $turma->modalidade_id == $mod->id ? " selected = \"selected\"" : "" ?> >
+                                                <?= $mod->modalidade ?> </option>
+                                        <?php endforeach; ?>
                                     </select>
                                 </div>
 
