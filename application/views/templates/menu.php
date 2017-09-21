@@ -89,6 +89,13 @@
                     <li>
                         <a href="<?= base_url('listar_professor') ?>"><i class="fa fa-circle-o"></i>Professores</a>
                     </li>
+                    
+                    <li>
+                        <a href="<?= base_url('listar_registros_aulas') ?>"><i class="fa fa-circle-o"></i>Registros de Aulas</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('listar_professor') ?>"><i class="fa fa-circle-o"></i>Professores</a>
+                    </li>
 
                     <li>
                         <a href="<?= base_url('listar_tipo') ?>"><i class="fa fa-circle-o"></i>Tipo de Usuário</a>
@@ -138,6 +145,10 @@
 
                     <li>
                         <a href="<?= base_url('registra_aula') ?>"><i class="fa fa-circle-o"></i>Registro de aula</a>
+                    </li>
+                    
+                    <li>
+                        <a href="<?= base_url('registra_acidente_aluno') ?>"><i class="fa fa-circle-o"></i>Registro de acidente com aluno</a>
                     </li>
 
                 </ul>

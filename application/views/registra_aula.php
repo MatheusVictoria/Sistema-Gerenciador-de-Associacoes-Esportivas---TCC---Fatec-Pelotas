@@ -40,7 +40,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="date" class="form-control" name="data" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                                        <input type="date" class="form-control" name="data" id="datemask" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask value="<?= set_value('data') ?>">
                                     </div>
                                     <!-- /.input group -->
                                 </div>

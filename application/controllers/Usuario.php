@@ -64,6 +64,11 @@ class Usuario extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    
+    /**
+     * Lista os usuario existentes na tabela "usuario",
+     * atraves do método selecionar da model usuario_model
+     */
     public function listar() {
 
         $dados['usuario'] = $this->usuarioM->selecionar();
