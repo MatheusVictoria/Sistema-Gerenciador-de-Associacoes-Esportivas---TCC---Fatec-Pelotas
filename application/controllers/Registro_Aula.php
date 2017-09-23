@@ -38,7 +38,7 @@ class Registro_Aula extends CI_Controller {
             $dados['erro'] = validation_errors('<li>', '</li>');
         } else {
             $this->raM->inserir($dados);
-            redirect('listar_registro_aula');
+            redirect('listar_registros_aulas');
         }
 
 

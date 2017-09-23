@@ -98,163 +98,36 @@
                                             <div class="form-group col-lg-3">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="radio" name="lesao" value="">
-                                                        Checkbox 1
+                                                        <input type="checkbox" name="lesao" value="">
+                                                        Contusão
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="form-group col-lg-3">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
+                                                        <input type="checkbox" name="lesao" value="">
+                                                        Luxação
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="form-group col-lg-3">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
+                                                        <input type="checkbox" name="lesao" value="">
+                                                        Fratura
                                                     </label>
                                                 </div>
                                             </div>
                                             <div class="form-group col-lg-3">
                                                 <div class="checkbox">
                                                     <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
+                                                        <input type="checkbox" name="lesao" value="">
+                                                        Torção
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="radio" name="lesao">
-                                                        Checkbox 1
-                                                    </label>
-                                                </div>
-                                            </div>
+                                         
 
                                         </div>
 

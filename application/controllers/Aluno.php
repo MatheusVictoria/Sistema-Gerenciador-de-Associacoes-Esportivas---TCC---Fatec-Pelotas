@@ -50,7 +50,7 @@ class Aluno extends CI_Controller {
 
     public function listar() {
 
-        $dados['aluno'] = $this->alunoM->selecionar();
+        $dados['alunos'] = $this->alunoM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
         $this->load->view('lista_aluno', $dados);
@@ -146,6 +146,15 @@ class Aluno extends CI_Controller {
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
         $this->load->view('visualizar_aluno', $dados);
+        $this->load->view('templates/footer');
+    }
+    
+    public function pesquisar() {
+
+        $dados['aluno'] = $this->alunoM->selecionar_graduacao();
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('lista_aluno', $dados);
         $this->load->view('templates/footer');
     }
 

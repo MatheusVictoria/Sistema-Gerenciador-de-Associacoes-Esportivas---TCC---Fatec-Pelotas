@@ -23,57 +23,82 @@
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Nome</th>
-                                            <!--<th>RG</th>-->
-                                            <th>CPF</th>
-                                            <!--<th>Tel</th>-->
-                                            <th>E-mail</th>
-                                            <th>Ativo</th>
-                                            <th>Ações</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach ($aluno as $prof) { ?>
-                                            <tr>
-                                                <td><?= $prof->id ?></td>
-                                                <td><?= $prof->nome ?></td>
-                                                <!--<td><?= $prof->rg ?></td>-->
-                                                <td><?= $prof->cpf ?></td>
-                                                <!--<td><?= $prof->telefone ?></td>-->
-                                                <td><?= $prof->email ?></td>
-                                                <td><?php
-                                                    if ($prof->ativo == 1) {
-                                                        echo "sim";
-                                                    } else {
-                                                        echo "não";
-                                                    }
-                                                    ?></td>
-                                                <td>
-                                                    <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('Aluno/editar/' . $prof->id) ?>" >
-                                                        <span class="fa fa-edit"></span></a>
-                                                    <a data-toggle="tooltip" data-placement="top" title="Visualizar!" href="<?= base_url('Aluno/visualizar/' . $prof->id) ?>">
-                                                        <span class="fa fa-vcard"></span></a>
-                                                </td>
 
-                                            <?php } ?>
-                                        </tr>
-                                        </tfoot>
-                                </table>
+                                <div class="col-lg-12">
+                                    <div class="box box-header">
+                                        <div class="box-body box-profile">
+
+                                            <form  action="<?= base_url('Aluno/pesquisar') ?>" method="get"  enctype="multipart/form-data">
+                                                <div class="row">
+                                                    <div class="form-group">
+                                                        <div class="input-group col-lg-6">
+                                                            <select name="pesquisa" id="pesquisa" class="form-control" >
+                                                                <option> Selecione o filtro </option>
+                                                                <option value="graduação">Graduação</option>
+                                                                <option value="nome">Nome</option>
+                                                            </select>  
+                                                        </div>
+                                                        <div class="input-group col-lg-6" style="padding-top: 10px">
+                                                            <button type="submit" class="btn btn-info btn-flat fa fa-search col-lg-2"> </button>
+                                                        </div>
+                                                    </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <!-- /.box-body -->
-                        </div>
-                        <!-- /.box -->
-                    </div>
-                    <!-- /.col -->
-                </div>
-                <!-- /.row -->
-            </section>
-            <!-- /.content -->
 
+                            <table id="example1" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nome</th>
+                                        <!--<th>RG</th>-->
+                                        <th>CPF</th>
+                                        <!--<th>Tel</th>-->
+                                        <th>E-mail</th>
+                                        <th>Ativo</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($alunos as $aluno) { ?>
+                                        <tr>
+                                            <td><?= $aluno->id ?></td>
+                                            <td><?= $aluno->nome ?></td>
+
+                                            <td><?= $aluno->cpf ?></td>
+
+                                            <td><?= $aluno->email ?></td>
+                                            <td><?php
+                                                if ($aluno->ativo == 1) {
+                                                    echo "sim";
+                                                } else {
+                                                    echo "não";
+                                                }
+                                                ?></td>
+                                            <td>
+                                                <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('Aluno/editar/' . $aluno->id) ?>" >
+                                                    <span class="fa fa-edit"></span></a>
+                                                <a data-toggle="tooltip" data-placement="top" title="Visualizar!" href="<?= base_url('Aluno/visualizar/' . $aluno->id) ?>">
+                                                    <span class="fa fa-vcard"></span></a>
+                                            </td>
+
+                                        <?php } ?>
+                                    </tr>
+                                    </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <!-- /.col -->
+        </div>
+        <!-- /.row -->
     </section>
     <!-- /.content -->
+
+</section>
+<!-- /.content -->
 </div>

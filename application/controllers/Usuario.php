@@ -78,6 +78,11 @@ class Usuario extends CI_Controller {
         $this->load->view('templates/footer');
     }
 
+    /**
+     * Recebe as informações do formulário da view form_altera_usuário,
+     * através de "post" e grava os dados na tabela "usuario". Após redireciona
+     * para a view liastar_usuario.
+     */
     public function grava_alteracao() {
 
         $dados = $this->input->post();
