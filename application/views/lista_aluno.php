@@ -28,20 +28,26 @@
                                     <div class="box box-header">
                                         <div class="box-body box-profile">
 
-                                            <form  action="<?= base_url('Aluno/pesquisar') ?>" method="get"  enctype="multipart/form-data">
+                                            <form  action="<?= base_url('Aluno/pesquisar') ?>" method="post"  enctype="multipart/form-data">
                                                 <div class="row">
-                                                    <div class="form-group">
-                                                        <div class="input-group col-lg-6">
-                                                            <select name="pesquisa" id="pesquisa" class="form-control" >
-                                                                <option> Selecione o filtro </option>
-                                                                <option value="graduação">Graduação</option>
-                                                                <option value="nome">Nome</option>
-                                                            </select>  
-                                                        </div>
-                                                        <div class="input-group col-lg-6" style="padding-top: 10px">
-                                                            <button type="submit" class="btn btn-info btn-flat fa fa-search col-lg-2"> </button>
-                                                        </div>
+                                                    <div class="form-group col-lg-6 ">
+                                                        <label for="graduacao">Graduação:</label>
+                                                        <select name="pesquisa" id="pesquisa" class="form-control" >
+                                                            <option>Selecione a Graduação</option>
+                                                            <?php
+                                                            foreach ($graduacao as $graduacao) {
+                                                                ?>
+                                                                <option value="<?= $graduacao->id, set_value($graduacao->id) ?>">
+                                                                    <?= $graduacao->cor ?> </option>
+                                                                <?php
+                                                            }
+                                                            ?>
+                                                        </select>
                                                     </div>
+                                                    <div class="form-group col-lg-6" style="padding-top: 25px">
+                                                        <button type="submit" class="btn btn-info btn-flat fa fa-search col-lg-2"> </button>
+                                                    </div>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>
@@ -52,11 +58,10 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Nome</th>
-                                        <!--<th>RG</th>-->
+                                        <th>Nome</th>                                       
                                         <th>CPF</th>
-                                        <!--<th>Tel</th>-->
                                         <th>E-mail</th>
+                                        <th>Graduação</th>
                                         <th>Ativo</th>
                                         <th>Ações</th>
                                     </tr>
@@ -70,6 +75,7 @@
                                             <td><?= $aluno->cpf ?></td>
 
                                             <td><?= $aluno->email ?></td>
+                                            <td><?= $aluno->graduacao_id ?></td>
                                             <td><?php
                                                 if ($aluno->ativo == 1) {
                                                     echo "sim";

@@ -127,5 +127,19 @@ class Aluno_Model extends CI_Model {
         
         return $query->row();
     }
+    
+    public function pesquisa_graduacao(){
+        $dados = $this->input->post('pesquisa');
+      
+        $sql = "SELECT a.id, a.nome, a.rg, a.cpf, a.telefone, a.email, a.sexo, 
+            a.foto, a.ativo, g.cor as graduacao_id FROM aluno a 
+            LEFT JOIN graduacao g ON a.graduacao_id = g.id WHERE a.graduacao_id LIKE $dados";
+
+        $query = $this->db->query($sql);
+
+        return $query->result();
+        
+        
+    }
 
 }

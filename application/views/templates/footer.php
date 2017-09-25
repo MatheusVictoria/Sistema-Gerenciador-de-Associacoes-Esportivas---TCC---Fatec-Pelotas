@@ -3,7 +3,7 @@
 <!-- /.content-wrapper -->
 <footer class="main-footer">
     <div class="pull-right hidden-xs">
-        <b>Verssão</b> Beta 0.1
+        <b>Versão</b> de desenvolvimento
     </div>
     <strong>SGAE; 2017 <span>Matheus Victória</span>.</strong> 
 </footer>

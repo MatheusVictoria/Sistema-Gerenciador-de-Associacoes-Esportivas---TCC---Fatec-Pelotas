@@ -21,7 +21,7 @@ class Aluno extends CI_Controller {
         $this->load->view('templates/menu');
 
         $dados = $this->input->post();
-  
+
 
         $this->form_validation->set_rules('nome', 'Nome', 'trim|required', array('required' => 'Preencha o campo nome', 'min_length' => 'O nome não pode conter menos de quatro letras'));
         $this->form_validation->set_rules('rg', 'RG', 'trim|required', array('required' => 'Preencha o campo RG'));
@@ -51,6 +51,7 @@ class Aluno extends CI_Controller {
     public function listar() {
 
         $dados['alunos'] = $this->alunoM->selecionar();
+        $dados['graduacao'] = $this->graduacaoM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
         $this->load->view('lista_aluno', $dados);
@@ -69,14 +70,14 @@ class Aluno extends CI_Controller {
 
     public function grava_alteracao() {
 
-         $idFoto = $this->input->post('id');
+        $idFoto = $this->input->post('id');
         $professor = $this->alunoM->encontrar($idFoto);
         //recebe os dados do form
         $dados = $this->input->post();
-        
+
 //        $mensa = "";
         if (isset($_FILES['foto'])) {
-           $uploadFoto = $this->uploadImagem('foto');
+            $uploadFoto = $this->uploadImagem('foto');
 
             if ($uploadFoto['error']) {
 
@@ -90,14 +91,14 @@ class Aluno extends CI_Controller {
 
         //altera o registro na tabela de produtos
         $alt = $this->alunoM->atualiza($dados);
-        
-         // verifica se alterou
+
+        // verifica se alterou
         if ($alt) {
             $tipo = "1";
-            $mensa .= "Ok! Produto Corretamente Alterado";
+            $mensa .= "Ok! Aluno Corretamente Alterado";
         } else {
             $tipo = "0";
-            $mensa .= "Erro... Produto não foi alterado";
+            $mensa .= "Erro... Aluno não foi alterado";
         }
 
         // define a variaavel de sessao com a mensagem exibida
@@ -148,10 +149,11 @@ class Aluno extends CI_Controller {
         $this->load->view('visualizar_aluno', $dados);
         $this->load->view('templates/footer');
     }
-    
+
     public function pesquisar() {
 
-        $dados['aluno'] = $this->alunoM->selecionar_graduacao();
+        $dados['alunos'] = $this->alunoM->pesquisa_graduacao();
+        $dados['graduacao'] = $this->graduacaoM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
         $this->load->view('lista_aluno', $dados);

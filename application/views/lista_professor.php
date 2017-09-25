@@ -31,7 +31,7 @@
                                             <th>Nome</th>                                           
                                             <th>CPF</th>                                            
                                             <th>E-mail</th>
-                                            <th>Graduação</th>
+                                            <th>Graduação/Faixa</th>
                                             <th>Ativo</th>
                                             <th>Ações</th>
                                         </tr>

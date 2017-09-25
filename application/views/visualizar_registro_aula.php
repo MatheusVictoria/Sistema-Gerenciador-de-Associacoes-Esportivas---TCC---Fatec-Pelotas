@@ -50,7 +50,7 @@
                                 </div>                           
                             </div>
                         </div>
-                        <a href="<?= base_url('listar_professor') ?>" class="btn btn-primary btn-block"><b>Voltar para lista</b></a>
+                        <a href="<?= base_url('listar_registros_aulas') ?>" class="btn btn-primary btn-block"><b>Voltar para lista</b></a>
                     </div>
 
                 </div>

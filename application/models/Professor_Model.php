@@ -38,7 +38,7 @@ class Professor_Model extends CI_Model {
             LEFT JOIN cidade c ON en.cidade_id = c.id
             LEFT JOIN estado est ON c.estado_id = est.id
             LEFT JOIN pais p ON est.pais_id = p.id
-            LEFT JOIN graduacao g ON prof.graduacao_id = g.id ORDER BY p.id";
+            LEFT JOIN graduacao g ON prof.graduacao_id = g.id ORDER BY prof.id";
 
         $query = $this->db->query($sql);
 
