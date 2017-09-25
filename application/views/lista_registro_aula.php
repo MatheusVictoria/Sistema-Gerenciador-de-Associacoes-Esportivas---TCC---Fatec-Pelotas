@@ -38,7 +38,7 @@
                                             <tr>
                                                 <td><?= $ra->id ?></td>
                                                 <td><?= $ra->descricao ?></td>
-                                                <td><?= $ra->data ?></td>
+                                                <td><?= date('d/m/y', strtotime($ra->data)) ?></td>
                                                 <td><?= $ra->turma_id ?></td>
                                                 <td>
                                                     <a data-toggle="tooltip" data-placement="top" title="Visualizar!" href="<?= base_url('registro_aula/visualizar/' . $ra->id) ?>">

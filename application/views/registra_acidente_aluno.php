@@ -5,7 +5,7 @@
 <script>
     $(function () {
         //Initialize Select2 Elements
-        $('.select2').select2(),
+        $('.select').select(),
                 //Datemask dd/mm/yyyy
                 $('#datemask').inputmask('dd/mm/yyyy', {'placeholder': 'dd/mm/yyyy'})
         ,
@@ -54,7 +54,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="date" class="form-control" name="data" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask value="<?= set_value('data') ?>">
+                                        <input type="date" class="form-control" name="data" id="datemask" value="<?= set_value('data') ?>">
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -95,44 +95,21 @@
                                     <div class="box box-primary">
                                         <div class="box-body box-profile">
 
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="lesao" value="">
-                                                        Contusão
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="lesao" value="">
-                                                        Luxação
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="lesao" value="">
-                                                        Fratura
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-lg-3">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" name="lesao" value="">
-                                                        Torção
-                                                    </label>
-                                                </div>
-                                            </div>
-                                         
 
+                                            <?php foreach ($lesoes as $lesao) : ?>
+                                                <div class="form-group col-lg-3" >
+                                                    <label>
+                                                        <input type="checkbox" name="lesao" value="<?= $lesao->id, set_value($lesao->id) ?>">
+                                                        <?= $lesao->lesao ?>
+                                                    </label>
+
+                                                </div>
+                                            <?php endforeach; ?>
                                         </div>
-
                                     </div>
+
                                 </div>
+
 
                                 <div class="box-footer col-lg-offset-2 ">
                                     <div class="col-lg-6">

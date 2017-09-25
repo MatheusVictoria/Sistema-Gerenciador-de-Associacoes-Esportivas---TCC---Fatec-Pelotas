@@ -107,8 +107,8 @@ class Aluno_Model extends CI_Model {
     /**
      * 
      * Faz uma busca através do id solicitado 
-     * @param type $id recebe o id solicitado na pagina lista_aluno
-     * @return type retorna os dados encontrados no banco referente ao id solicitado
+     * @param  $id recebe o id solicitado na pagina lista_aluno
+     * @return  retorna os dados encontrados no banco referente ao id solicitado
      * 
      */
     public function visualizar($id){
@@ -128,6 +128,16 @@ class Aluno_Model extends CI_Model {
         return $query->row();
     }
     
+    
+    /**
+     * Método para buscar os alunos referentes a uma determinada graduação selecionado pelo ususario.
+     * 
+     * @param  $dados recebe o id referente a cor da graduação selecionada no campo do formulario
+     * @param  $slq recebe o cmando Select responçavel por fazer a busca dos alunos que correspondam ao id 
+     * da graduação selecionado pelo usuário atraves da clausula LIKE.
+     * @return $query-result()
+     * retorna os resultado encontrados pelo query 
+     */
     public function pesquisa_graduacao(){
         $dados = $this->input->post('pesquisa');
       

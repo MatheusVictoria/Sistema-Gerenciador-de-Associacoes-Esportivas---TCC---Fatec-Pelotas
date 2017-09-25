@@ -38,6 +38,10 @@
                                     <label for="modalidade">Modalidade:</label>
                                     <input type="text" class="form-control" id="modalidade" name="modalidade" value="<?= set_value('modalidade') ?>" placeholder="modalidade"/>
                                 </div>
+                                <div class="form-group col-lg-6 ">
+                                    <label for="valor">Valor da modalidade:</label>
+                                    <input type="number" class="form-control" id="valor" name="valor" value="<?= set_value('valor') ?>" placeholder="99,99"/>
+                                </div>
 
                                 <div class="box-footer col-lg-offset-2 ">
                                     <div class="col-lg-6">

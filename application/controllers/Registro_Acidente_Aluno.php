@@ -10,6 +10,7 @@ class Registro_Acidente_Aluno extends CI_Controller{
         $this->load->model('Registro_Acidente_Aluo_Model', 'raaM');
         $this->load->model('Aluno_Model', 'alunoM');
         $this->load->model('Modalidade_Model', 'modalidadeM');
+        $this->load->model('Lesao_Model', 'lesaoM');
         
     }
     
@@ -48,6 +49,7 @@ class Registro_Acidente_Aluno extends CI_Controller{
 
         $dados['alunos'] = $this->alunoM->selecionar();
         $dados['modalidades'] = $this->modalidadeM->selecionar();
+        $dados['lesoes'] = $this->lesaoM->selecionar();
         $this->load->view('registra_acidente_aluno', $dados);
         $this->load->view('templates/footer');
     }

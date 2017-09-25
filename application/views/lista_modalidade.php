@@ -27,6 +27,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Modlidade</th>
+                                        <th>Valor</th>
                                         <th>Ações</th>
                                     </tr>
                                     </thead>
@@ -35,6 +36,7 @@
                                     <tr>
                                         <td><?= $mod->id ?></td>
                                         <td><?= $mod->modalidade ?></td>
+                                        <td><?= $mod->valor ?></td>
                                         <td>
                                             <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('modalidade/editar/' . $mod->id) ?>" >
                                                 <span class="glyphicon glyphicon-edit "></span></a>

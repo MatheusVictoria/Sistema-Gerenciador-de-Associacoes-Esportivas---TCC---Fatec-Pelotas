@@ -29,12 +29,21 @@
                                     <label for="modalidade">Modalidade:</label>
                                     <input type="text" class="form-control" id="modalidade" name="modalidade" value="<?= $modalidade->modalidade ?>"/>
                                 </div>
+                                <div class="form-group col-lg-6 ">
+                                    <label for="valor">Valor da mensalidade:</label>
+                                    <input type="number" class="form-control" id="valor" name="valor" value="<?= $modalidade->valor ?>"/>
+                                </div>
 
                                 <div class="box-footer col-lg-offset-2 ">
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
                                         <button type="submit" class="btn btn-primary btn-flat col-xs-4">Enviar</button>
                                     </div>
-                                    <div class="col-lg-6">
+                                    <div class="col-lg-4">
+                                       <a href="<?= base_url('listar_modalidade')?>" >
+                                           <button type="button" class="btn btn-primary btn-flat col-xs-4">Cancelar</button>
+                                       </a>
+                                    </div>
+                                    <div class="col-lg-4">
                                         <button type="reset" class="btn btn-primary btn-flat col-xs-4">Limpar</button>
                                     </div>
                                 </div>

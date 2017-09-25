@@ -37,7 +37,7 @@
                                             <div class="col-lg-6 form-grop">
                                                 <strong><i class="fa fa-calendar margin-r-5"></i> Data </strong>
 
-                                                <p class="text-muted"> <?= $registro_aula->data ?> </p>
+                                                <p class="text-muted"> <?= date('d/m/y', strtotime($registro_aula->data)) ?> </p>
                                             </div>
                                            
                                             <div class="col-lg-12 form-group" style="margin-top: 20px;">
