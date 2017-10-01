@@ -35,15 +35,15 @@ class Registro_Acidente_Aluno extends CI_Controller{
 
         $this->form_validation->set_rules('data', 'Data', 'required', array('required' => 'Preencha o campo data'));
         $this->form_validation->set_rules('descricao', 'Descrição', 'required', array('required' => 'È obrigatótio fazer o relato do acidente no campo descrição'));
-        $this->form_validation->set_rules('aluno', 'Aluno', 'required', array('required' => 'Escolha um aluno'));
-        $this->form_validation->set_rules('modalidade', 'Modalidade', 'required', array('required' => 'Escolha uma modalidade'));
+            $this->form_validation->set_rules('aluno_id', 'Aluno', 'required', array('required' => 'Escolha um aluno'));
+            $this->form_validation->set_rules('modalidade_id', 'Modalidade', 'required', array('required' => 'Escolha uma modalidade'));
                 
         if ($this->form_validation->run() === FALSE) {
 
             $dados['erro'] = validation_errors('<li>', '</li>');
         } else {
-            $this->raM->inserir($dados);
-            redirect('listar_registro_acidente_aluno');
+            $this->raaM->inserir($dados);
+            redirect('listar_registro_acidente');
         }
 
 
@@ -65,7 +65,20 @@ class Registro_Acidente_Aluno extends CI_Controller{
         $dados['modalidades'] = $this->modalidadeM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
-        $this->load->view('visualizar_registro_acidente', $dados);
+        $this->load->view('visualizar_registro_acidente_aluno', $dados);
+        $this->load->view('templates/footer');
+    }
+    
+    /**
+     * Lista os dados existentes na tabela historico aluno.
+     * 
+     */
+    public function listar() {
+
+        $dados['registro_acidentes'] = $this->raaM->selecionar();
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('lista_registro_acidente_aluno', $dados);
         $this->load->view('templates/footer');
     }
     

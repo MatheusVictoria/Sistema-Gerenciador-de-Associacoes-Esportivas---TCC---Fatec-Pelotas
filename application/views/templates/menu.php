@@ -71,6 +71,9 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
+                        <a href="<?= base_url('listar_registro_acidente') ?>"><i class="fa fa-circle-o"></i>Acidentes de Alunos</a>
+                    </li>
+                    <li>
                         <a href="<?= base_url('listar_aluno') ?>"><i class="fa fa-circle-o"></i>Aluno</a>
                     </li>
 

@@ -11,7 +11,7 @@ class Registro_Aula_Model extends CI_Model {
 
     public function selecionar() {
 
-        $sql = 'SELECT h.id, h.data,  h.descricao, t.horario as turma_id  FROM `historico_aula` h LEFT JOIN turma t ON h.turma_id = t.id ORDER BY h.id';
+        $sql = 'SELECT h.id, h.data,  SUBSTRING(h.descricao, 1, 30) AS descricao, t.horario as turma_id  FROM `historico_aula` h LEFT JOIN turma t ON h.turma_id = t.id ORDER BY h.id';
 
         $query = $this->db->query($sql);
 

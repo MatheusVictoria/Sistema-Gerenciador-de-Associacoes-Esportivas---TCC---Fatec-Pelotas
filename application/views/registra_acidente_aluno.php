@@ -32,7 +32,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
 
-                        <form role="form" method="post" action="<?= base_url('Registro_Aula/registra_aula') ?>" enctype="multipart/form-data">
+                        <form role="form" method="post" action="<?= base_url('Registro_Acidente_Aluno/registra_acidente') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
 
@@ -62,7 +62,7 @@
 
                                 <div class="form-group col-lg-6">
                                     <label for="aluno">Aluno:</label>
-                                    <select name="turma_id" id="turma_id" class="form-control">
+                                    <select name="aluno_id" id="aluno_id" class="form-control">
                                         <option> Selecione o aluno </option>
                                         <?php
                                         foreach ($alunos as $aluno) {
@@ -94,8 +94,6 @@
                                     <label>Lesão</label>
                                     <div class="box box-primary">
                                         <div class="box-body box-profile">
-
-
                                             <?php foreach ($lesoes as $lesao) : ?>
                                                 <div class="form-group col-lg-3" >
                                                     <label>
