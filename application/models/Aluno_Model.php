@@ -24,6 +24,9 @@ class Aluno_Model extends CI_Model {
           VALUES('{$dados['rua']}', '{$dados['numero']}', '{$dados['complemento']}', '{$dados['cep']}', '{$dados['bairro']}', $cidade_id)");
         $this->db->query("INSERT INTO aluno(nome, rg, cpf, telefone, email, sexo, graduacao_id, foto, ativo, endereco_id)
           values('{$dados['nome']}', {$dados['rg']}, {$dados['cpf']}, '{$dados['telefone']}','{$dados['email']}', '{$dados['sexo']}', {$dados['graduacao_id']}, '{$dados['foto']}', '{$dados['ativo']}', (select LAST_INSERT_ID()));");
+          $this->db->query("INSERT INTO aluno_has_patologia(patologia_id, aluno_id)
+          values({$dados['patologia']}, (select LAST_INSERT_ID()));");
+        
         $this->db->trans_complete();
     }
 
@@ -84,6 +87,7 @@ class Aluno_Model extends CI_Model {
         $endereco_id = $this->busca_id_endereco($dados['id_endereco']);
         $this->db->query("UPDATE endereco SET rua = '{$dados['rua']}', numero = '{$dados['numero']}' ,complemento = '{$dados['complemento']}', cep = '{$dados['cep']}', bairro = '{$dados['bairro']}', cidade_id = $cidade_id WHERE id = $endereco_id");
         $this->db->query("UPDATE aluno SET nome = '{$dados['nome']}', rg = {$dados['rg']}, cpf = {$dados['cpf']}, telefone = '{$dados['telefone']}', email = '{$dados['email']}', foto = '{$dados['foto']}', sexo = '{$dados['sexo']}', graduacao_id = {$dados['graduacao_id']}, ativo = '{$dados['ativo']}' WHERE id = {$dados['id']}");
+        $this->db->query("UPDATE aluno_has_patologia SET patologia_id = {$dados['patologia']} WHERE aluno_id = {$dados['id']}");
         $this->db->trans_complete();        
     }
 
@@ -116,12 +120,13 @@ class Aluno_Model extends CI_Model {
         $sql = "SELECT a.id, a.nome, a.rg, a.cpf, a.telefone, a.email, a.sexo, 
             a.foto, a.ativo, g.cor as graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
             en.complemento, en.cep, en.bairro, c.nome as cidade_id, 
-            est.nome as estado_id, p.nome as pais_id FROM aluno a 
+            est.nome as estado_id, p.nome as pais_id, patologia FROM aluno a 
             LEFT JOIN endereco en ON a.endereco_id = en.id
             LEFT JOIN cidade c ON en.cidade_id = c.id
             LEFT JOIN estado est ON c.estado_id = est.id
             LEFT JOIN pais p ON est.pais_id = p.id
-            LEFT JOIN graduacao g ON a.graduacao_id = g.id WHERE a.id = $id";
+            LEFT JOIN graduacao g ON a.graduacao_id = g.id
+            LEFT JOIN aluno_has_patologia pat ON a.id = pat.aluno_id WHERE a.id = $id";
         
         $query = $this->db->query($sql);
         

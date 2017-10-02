@@ -124,7 +124,7 @@
                                     </select>
                                 </div>
 
-                                <div class=" form-group col-lg-4">
+                                <div class=" form-group col-lg-3">
                                     <div>
                                         <label for="sexo">Sexo:</label>
                                     </div>
@@ -134,16 +134,30 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group col-lg-4 ">
+                                <div class="form-group col-lg-3 ">
                                     <label for="foto">Foto:</label>
                                     <input type="file" id="foto" name="foto" value="<?= set_value('foto') ?>"/>
                                 </div>
 
-                                <div class="form-group col-lg-4">
+                                <div class="form-group col-lg-3">
                                     <label for="ativo">Ativo:</label>
                                     <select class="form-control" id="ativo" name="ativo" value="<?= set_value('ativo') ?>">
                                         <option value="1">Sim</option>
                                         <option value="0">Não</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-3">
+                                    <label for="patologia">Patologia:</label>
+                                    <select name="patologia" id="patologia" class="form-control" >
+                                        <option>Selecione um tipo de patologia</option>
+                                        <?php
+                                        foreach ($patologias as $patologia) {
+                                            ?>
+                                            <option value="<?= $patologia->id, set_value($patologia->id) ?>">
+                                                <?= $patologia->patologia ?> </option>
+                                            <?php
+                                        }
+                                        ?>
                                     </select>
                                 </div>
 

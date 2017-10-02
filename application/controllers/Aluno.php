@@ -12,6 +12,7 @@ class Aluno extends CI_Controller {
 
         $this->load->model('Aluno_Model', 'alunoM');
         $this->load->model('Graduacao_Model', 'graduacaoM');
+        $this->load->model('Patologia_Model', 'patologiaM');
     }
 
     public function index() {
@@ -44,6 +45,7 @@ class Aluno extends CI_Controller {
         }
 
         $dados ['graduacao'] = $this->graduacaoM->selecionar();
+        $dados ['patologias'] = $this->patologiaM->selecionar();
         $this->load->view('form_aluno', $dados);
         $this->load->view('templates/footer');
     }
@@ -62,6 +64,7 @@ class Aluno extends CI_Controller {
 
         $dados ['aluno'] = $this->alunoM->encontrar($id);
         $dados ['graduacao'] = $this->graduacaoM->selecionar();
+        $dados ['patologias'] = $this->patologiaM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
         $this->load->view('form_alt_aluno', $dados);
