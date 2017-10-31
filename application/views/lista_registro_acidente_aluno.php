@@ -64,5 +64,4 @@
 
     </section>
     <!-- /.content -->
-</div>
 

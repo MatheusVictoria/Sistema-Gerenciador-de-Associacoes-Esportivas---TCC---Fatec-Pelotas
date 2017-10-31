@@ -146,6 +146,7 @@ class Aluno extends CI_Controller {
     public function visualizar($id) {
 
         $dados['aluno'] = $this->alunoM->visualizar($id);
+        $dados['patologia'] = $this->alunoM->seleciona_patologia($id);
         $dados['graduacao'] = $this->graduacaoM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
@@ -155,12 +156,14 @@ class Aluno extends CI_Controller {
 
     public function pesquisar() {
 
+                  
         $dados['alunos'] = $this->alunoM->pesquisa_graduacao();
         $dados['graduacao'] = $this->graduacaoM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
         $this->load->view('lista_aluno', $dados);
         $this->load->view('templates/footer');
+        
     }
 
 }

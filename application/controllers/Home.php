@@ -67,7 +67,7 @@ class Home extends CI_Controller {
         $vals = array(
             'img_path' => './captcha/',
             'img_url' => base_url('captcha'),
-            'img_width' => '320',
+            'img_width' => '170',
             'img_height' => '50',
             // White background and border, black text and red grid
         'colors'        => array(

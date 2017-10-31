@@ -79,3 +79,6 @@ $route['registra_acidente_aluno'] = 'Registro_Acidente_Aluno/registra_acidente';
 $route['listar_registro_acidente'] = 'Registro_Acidente_Aluno/listar';
 $route['visualizar_registro_acidente'] = 'Registro_Acidente_Aluno/visualizar';
 $route['lanca_pagamento'] = 'Mensalidade/index';
+$route['form_vincula_aluno_turma'] = 'Turma/vincula_aluno';
+$route['registra_presenca'] = 'Turma/escolhe_turma';
+$route['form_registra_presenca'] = 'Turma/registra_presenca';

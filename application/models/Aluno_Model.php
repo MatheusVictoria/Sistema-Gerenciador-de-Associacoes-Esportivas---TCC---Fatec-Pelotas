@@ -24,9 +24,9 @@ class Aluno_Model extends CI_Model {
           VALUES('{$dados['rua']}', '{$dados['numero']}', '{$dados['complemento']}', '{$dados['cep']}', '{$dados['bairro']}', $cidade_id)");
         $this->db->query("INSERT INTO aluno(nome, rg, cpf, telefone, email, sexo, graduacao_id, foto, ativo, endereco_id)
           values('{$dados['nome']}', {$dados['rg']}, {$dados['cpf']}, '{$dados['telefone']}','{$dados['email']}', '{$dados['sexo']}', {$dados['graduacao_id']}, '{$dados['foto']}', '{$dados['ativo']}', (select LAST_INSERT_ID()));");
-          $this->db->query("INSERT INTO aluno_has_patologia(patologia_id, aluno_id)
+        $this->db->query("INSERT INTO aluno_has_patologia(patologia_id, aluno_id)
           values({$dados['patologia']}, (select LAST_INSERT_ID()));");
-        
+
         $this->db->trans_complete();
     }
 
@@ -87,10 +87,8 @@ class Aluno_Model extends CI_Model {
         $endereco_id = $this->busca_id_endereco($dados['id_endereco']);
         $this->db->query("UPDATE endereco SET rua = '{$dados['rua']}', numero = '{$dados['numero']}' ,complemento = '{$dados['complemento']}', cep = '{$dados['cep']}', bairro = '{$dados['bairro']}', cidade_id = $cidade_id WHERE id = $endereco_id");
         $this->db->query("UPDATE aluno SET nome = '{$dados['nome']}', rg = {$dados['rg']}, cpf = {$dados['cpf']}, telefone = '{$dados['telefone']}', email = '{$dados['email']}', foto = '{$dados['foto']}', sexo = '{$dados['sexo']}', graduacao_id = {$dados['graduacao_id']}, ativo = '{$dados['ativo']}' WHERE id = {$dados['id']}");
-        $this->db->query("UPDATE aluno_has_patologia SET patologia_id = {$dados['patologia']} WHERE aluno_id = {$dados['id']}");
-        $this->db->trans_complete();        
+        $this->db->trans_complete();
     }
-
 
     /**
      *
@@ -98,16 +96,13 @@ class Aluno_Model extends CI_Model {
      * @param $id recebe o id da view form_alt_centro_de_treinamento
      *
      */
-    public function busca_id_endereco($id){
+    public function busca_id_endereco($id) {
 
         $query = $this->db->query("select id as endereco_id from endereco where id = '{$id}'");
         $linha = $query->row();
         return $linha->endereco_id;
-
-
     }
-    
-    
+
     /**
      * 
      * Faz uma busca através do id solicitado 
@@ -115,25 +110,40 @@ class Aluno_Model extends CI_Model {
      * @return  retorna os dados encontrados no banco referente ao id solicitado
      * 
      */
-    public function visualizar($id){
-        
+    public function visualizar($id) {
+
         $sql = "SELECT a.id, a.nome, a.rg, a.cpf, a.telefone, a.email, a.sexo, 
             a.foto, a.ativo, g.cor as graduacao_id, en.id as id_endereco, en.rua as endereco_id, en.numero, 
             en.complemento, en.cep, en.bairro, c.nome as cidade_id, 
-            est.nome as estado_id, p.nome as pais_id, patologia FROM aluno a 
+            est.nome as estado_id, p.nome as pais_id FROM aluno a 
             LEFT JOIN endereco en ON a.endereco_id = en.id
             LEFT JOIN cidade c ON en.cidade_id = c.id
             LEFT JOIN estado est ON c.estado_id = est.id
             LEFT JOIN pais p ON est.pais_id = p.id
-            LEFT JOIN graduacao g ON a.graduacao_id = g.id
-            LEFT JOIN aluno_has_patologia pat ON a.id = pat.aluno_id WHERE a.id = $id";
-        
+            LEFT JOIN graduacao g ON a.graduacao_id = g.id WHERE a.id = $id";
+
         $query = $this->db->query($sql);
-        
+
         return $query->row();
     }
+
     
-    
+    /**
+     * Seleciona a potologia do aluno existente na tablea aluno_has_patologia
+     * @param  $id do aluno selecionado na lista de alunas ao clicar no botão visualizar aluno
+     * @return $query->row() retorna uma unica linha refente ao aluno encontrado
+     */
+    public function seleciona_patologia($id) {
+
+        $sql = "SELECT a.id, pat.patologia as patologia_id FROM aluno a 
+            INNER JOIN aluno_has_patologia apat ON a.id = apat.aluno_id
+            INNER JOIN patologia pat ON apat.patologia_id = pat.id WHERE a.id = $id";
+
+        $query = $this->db->query($sql);
+
+        return  $query->row();
+    }
+
     /**
      * Método para buscar os alunos referentes a uma determinada graduação selecionado pelo ususario.
      * 
@@ -143,18 +153,16 @@ class Aluno_Model extends CI_Model {
      * @return $query-result()
      * retorna os resultado encontrados pelo query 
      */
-    public function pesquisa_graduacao(){
+    public function pesquisa_graduacao() {
         $dados = $this->input->post('pesquisa');
-      
+
         $sql = "SELECT a.id, a.nome, a.rg, a.cpf, a.telefone, a.email, a.sexo, 
             a.foto, a.ativo, g.cor as graduacao_id FROM aluno a 
-            LEFT JOIN graduacao g ON a.graduacao_id = g.id WHERE a.graduacao_id LIKE $dados";
+            LEFT JOIN graduacao g ON a.graduacao_id = g.id WHERE a.graduacao_id = $dados";
 
         $query = $this->db->query($sql);
 
         return $query->result();
-        
-        
     }
 
 }

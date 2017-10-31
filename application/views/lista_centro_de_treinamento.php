@@ -77,9 +77,6 @@
 
     </section>
     <!-- /.content -->
-</div>
-
-</div>
 
 
 

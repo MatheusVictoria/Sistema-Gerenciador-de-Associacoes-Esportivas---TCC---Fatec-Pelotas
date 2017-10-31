@@ -7,6 +7,10 @@ class Registro_Acidente_Aluno extends CI_Controller{
     public function __construct() {
         parent::__construct();
         
+        if (!$this->session->logado) {
+            redirect('home/logar');
+        }
+        
         $this->load->model('Registro_Acidente_Aluo_Model', 'raaM');
         $this->load->model('Aluno_Model', 'alunoM');
         $this->load->model('Modalidade_Model', 'modalidadeM');

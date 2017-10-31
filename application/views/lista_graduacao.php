@@ -60,6 +60,3 @@
 
     </section>
     <!-- /.content -->
-</div>
-
-</div>

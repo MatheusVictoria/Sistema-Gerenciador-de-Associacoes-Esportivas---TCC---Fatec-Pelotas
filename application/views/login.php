@@ -17,6 +17,7 @@
         <!-- iCheck -->
         <link rel="stylesheet" href="<?= base_url('assets/adminlte/plugins/iCheck/square/blue.css') ?>">
 
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -30,7 +31,7 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
-                <img  src="<?= base_url()?>/assets/img/logo(assiaju).jpg" style="width: 100px; height: 100px">
+                <img  src="<?= base_url() ?>/assets/img/logo(assiaju).jpg" style="width: 100px; height: 100px">
                 <a href="#"><b>SGAE</b></a>
             </div>
             <!-- /.login-logo -->
@@ -49,7 +50,7 @@
                 <p class="login-box-msg" style="font-size: 20px">Login</p>
                 <form action="<?= base_url('home/logar') ?>" method="post">
                     <div class="form-group has-feedback">
-                        <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" value="<?= set_value('email')?>">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" value="<?= set_value('email') ?>">
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">
@@ -59,10 +60,17 @@
                     <div class="form-group has-feedback">
                         <input type="text" id="captcha" name="captcha" class="form-control" placeholder="Captcha">
                     </div>
-                    <div class="form-group has-feedback">
-                        <?= $captcha_image ?>
-                    </div>
                     <div class="row">
+                        <div class="form-group has-feedback">
+                            <div class="col-lg-6" id="igmCaptcha">
+                                <?= $captcha_image ?>
+                            </div>
+                            <div class="col-lg-6">
+                                <button type="button" style="height: 50px" id="refresh" class="btn btn-default btn-block btn-flat fa fa-refresh"></button><br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 10px">
                         <!-- /.col -->
                         <div class="col-xs-4 right-side">
                             <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button><br>
@@ -85,13 +93,14 @@
         <!-- iCheck -->
         <script src="<?= base_url('assets/adminlte/plugins/iCheck/icheck.min.js') ?>"></script>
         <script>
-            $(function () {
-                $('input').iCheck({
-                    checkboxClass: 'icheckbox_square-blue',
-                    radioClass: 'iradio_square-blue',
-                    increaseArea: '20%' // optional
-                });
-            });
-        </script>
-    </body>
+            $(function(){ 
+            var base_url = '<? echo base_url() ?>';
+
+            $('#refresh').on('click', function(){ 
+                         $('#igmCaptcha').html(base_url + "Home/geraCaptcha"); 
+                  }); 
+             });
+    </script>
+    <script src="<?= base_url('assets/js/carregaImgCaptcha.js') ?>">   </script>
+</body>
 </html>

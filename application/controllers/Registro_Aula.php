@@ -6,6 +6,9 @@ class Registro_Aula extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        if (!$this->session->logado) {
+            redirect('home/logar');
+        }
 
         $this->load->model('Registro_Aula_Model', 'raM');
         $this->load->model('Turma_Model', 'turmaM');
@@ -41,13 +44,11 @@ class Registro_Aula extends CI_Controller {
             redirect('listar_registros_aulas');
         }
 
-
         $dados['turmas'] = $this->turmaM->selecionar();
         $this->load->view('registra_aula', $dados);
         $this->load->view('templates/footer');
     }
 
-    
     /**
      * Lista os registros de aula existentes na tabela "historico_aula",
      * atraves do método selecionar da model registro_aula_model.

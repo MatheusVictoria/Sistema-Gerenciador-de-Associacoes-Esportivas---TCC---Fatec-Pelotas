@@ -50,6 +50,10 @@
                     <li>
                         <a href="<?= base_url('form_tipo') ?>"><i class="fa fa-circle-o"></i>Tipo de Usuário</a>
                     </li>
+                    
+                    <li>
+                        <a href="<?= base_url('form_vincula_aluno_turma') ?>"><i class="fa fa-circle-o"></i>Vincula Aluno</a>
+                    </li>
 
                     <li>
                         <a href="<?= base_url('form_turma') ?>"><i class="fa fa-circle-o"></i>Turma</a>
@@ -147,11 +151,14 @@
                     </li>
 
                     <li>
-                        <a href="<?= base_url('registra_aula') ?>"><i class="fa fa-circle-o"></i>Registro de aula</a>
+                        <a href="<?= base_url('registra_aula') ?>"><i class="fa fa-circle-o"></i>Registro de Aula</a>
                     </li>
                     
                     <li>
-                        <a href="<?= base_url('registra_acidente_aluno') ?>"><i class="fa fa-circle-o"></i>Registro de acidente com aluno</a>
+                        <a href="<?= base_url('registra_acidente_aluno') ?>"><i class="fa fa-circle-o"></i>Registro de Acidente com Aluno</a>
+                    </li>
+                    <li>
+                        <a href="<?= base_url('registra_presenca') ?>"><i class="fa fa-circle-o"></i>Registro de Presença de Alunos</a>
                     </li>
 
                 </ul>

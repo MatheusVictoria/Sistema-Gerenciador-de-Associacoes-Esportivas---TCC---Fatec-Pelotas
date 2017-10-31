@@ -33,7 +33,7 @@
                                                     <div class="form-group col-lg-6 ">
                                                         <label for="graduacao">Graduação:</label>
                                                         <select name="pesquisa" id="pesquisa" class="form-control" >
-                                                            <option>Selecione a Graduação</option>
+                                                            <option></option>
                                                             <?php
                                                             foreach ($graduacao as $graduacao) {
                                                                 ?>
@@ -45,7 +45,12 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group col-lg-6" style="padding-top: 25px">
+                                                        <div>
                                                         <button type="submit" class="btn btn-info btn-flat fa fa-search col-lg-2"> </button>
+                                                        </div>
+                                                        <div class="col-lg-offset-3">
+                                                        <button type="button" class="btn btn-default btn-flat fa fa-trash col-lg-3"> <a href="<?= base_url('listar_aluno') ?>"> Limpar</a></button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </form>
@@ -107,4 +112,3 @@
 
 </section>
 <!-- /.content -->
-</div>

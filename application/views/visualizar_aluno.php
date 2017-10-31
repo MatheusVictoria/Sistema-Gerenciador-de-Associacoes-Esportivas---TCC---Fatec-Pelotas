@@ -77,7 +77,7 @@
 
                                         <hr>
 
-                                        <strong><i class="fa fa-phone margin-r-5"></i> Telefone</strong>
+                                        <strong><i class="fa fa-phone margin-r-5"></i> Telefone </strong>
 
                                         <p ><?= $aluno->telefone ?> </p>
 
@@ -91,7 +91,14 @@
                                             } else {
                                                 echo "Feminino";
                                             }
-                                            ?></p></p>
+                                            ?></p>
+                                         <hr>
+
+                                        <strong><i class="fa fa-plus-square margin-r-5"></i> Patologia </strong>
+
+                                        <p ><?= $patologia->patologia_id ?> </p>
+
+                                        <hr>
                                     </div>
                                 </div>                           
                             </div>
@@ -107,4 +114,3 @@
 
         </section>
         <!-- /.content -->
-    </div>

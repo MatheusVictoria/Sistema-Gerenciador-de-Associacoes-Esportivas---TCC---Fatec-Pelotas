@@ -59,9 +59,6 @@
 
     </section>
     <!-- /.content -->
-</div>
-
-</div>
 
 
 

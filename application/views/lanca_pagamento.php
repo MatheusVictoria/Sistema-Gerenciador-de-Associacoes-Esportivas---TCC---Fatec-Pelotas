@@ -87,6 +87,5 @@
 
 </section>
 <!-- /.content -->
-</div>
 
 
