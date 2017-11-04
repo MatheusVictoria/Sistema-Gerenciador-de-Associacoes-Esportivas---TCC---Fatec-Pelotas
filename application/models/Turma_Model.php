@@ -95,5 +95,30 @@ class Turma_Model extends CI_Model {
             $this->db->insert('presenca', $presenca);
         }
     }
+    
+    
+    /**
+     * Método para buscar os turmas referentes a um determinado centro de treinamento 
+     * selecionado pelo ususario.
+     * 
+     * @param  $dados recebe o id referente ao nome do centro de trinamento 
+     *  selecionada no campo do formulario
+     * @param  $slq recebe o comando Select responçavel por fazer a busca das turmas que correspondam ao id 
+     * do centro de treinamento selecionado pelo usuário.
+     * @return $query-result()
+     * retorna os resultado encontrados pelo query 
+     */
+    public function pesquisa_graduacao() {
+        $dados = $this->input->post('pesquisa');
+
+        $sql = "SELECT t.id, t.horario, p.nome as professor_id, c.nome as centro_treinamento_id, m.modalidade as modalidade_id  FROM turma t "
+                . "LEFT JOIN professor p ON t.professor_id = p.id "
+                . "LEFT JOIN modalidade m ON t.modalidade_id = m.id "
+                . "LEFT JOIN centro_treinamento c ON t.centro_treinamento_id = c.id WHERE t.centro_treinamento_id = $dados";
+
+        $query = $this->db->query($sql);
+
+        return $query->result();
+    }
 
 }

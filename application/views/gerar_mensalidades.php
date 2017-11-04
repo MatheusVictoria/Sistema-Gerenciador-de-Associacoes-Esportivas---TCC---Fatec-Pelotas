@@ -2,11 +2,11 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Lançamento de pagamento
+            Gerar mensalidades
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Registros e Pagamentos </a></li>
-            <li><a href="#">Lançar Pagamento</a></li>
+            <li><a href="#">Gerar Mensalidades</a></li>
         </ol>
     </section>
     <!-- right col -->
@@ -25,33 +25,7 @@
                                 <div class="col-lg-9" style="margin-left: 10%">
                                     <div class="box box-body">
                                         <div class="box-body box-profile">
-                                            <div class="form-group col-lg-6">
-                                                <label for="aluno">Aluno:</label>
-                                                <select name="aluno_id" id="aluno_id" class="form-control" >
-                                                    <option>Selecione o Aluno</option>
-                                                    <?php
-                                                    foreach ($aluno as $a) {
-                                                        ?>
-                                                        <option value="<?= $a->id, set_value($a->id) ?>">
-                                                            <?= $a->nome ?> </option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label>Date:</label>
-
-                                                <div class="input-group date">
-                                                    <div class="input-group-addon">
-                                                        <i class="fa fa-calendar"></i>
-                                                    </div>
-                                                    <input type="text" class="form-control pull-right" id="datepicker" name="data_pagamento">
-                                                </div>
-                                                <!-- /.input group -->
-                                            </div>
-                                            <!-- /.form group -->
+                                            
 
 
                                             <div class="box-footer col-lg-offset-2 ">
@@ -76,5 +50,6 @@
 
 </section>
 <!-- /.content -->
+
 
 

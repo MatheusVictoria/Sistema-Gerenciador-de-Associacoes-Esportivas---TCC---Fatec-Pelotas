@@ -49,6 +49,7 @@ class Turma extends CI_Controller {
 
     public function listar() {
 
+        $dados ['centro_treinamento'] = $this->ctM->selecionar();
         $dados['turma'] = $this->turmaM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
@@ -144,6 +145,18 @@ class Turma extends CI_Controller {
         $dados['lista'] = $this->turmaM->pesquisa_alunos();
         $this->load->view('form_registra_presenca', $dados);
         $this->load->view('templates/footer');
+    }
+    
+     public function pesquisar() {
+
+                  
+        $dados['turma'] = $this->turmaM->pesquisa_graduacao();
+        $dados['centro_treinamento'] = $this->ctM->selecionar();
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('lista_turma', $dados);
+        $this->load->view('templates/footer');
+        
     }
 
 }

@@ -82,3 +82,5 @@ $route['lanca_pagamento'] = 'Mensalidade/index';
 $route['form_vincula_aluno_turma'] = 'Turma/vincula_aluno';
 $route['registra_presenca'] = 'Turma/escolhe_turma';
 $route['form_registra_presenca'] = 'Turma/registra_presenca';
+$route['form_registra_evento'] = 'Eventos_Participados/registra_eventos';
+$route['listar_evento'] = 'Eventos_Participados/listar';

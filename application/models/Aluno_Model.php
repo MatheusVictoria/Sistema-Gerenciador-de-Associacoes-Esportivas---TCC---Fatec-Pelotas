@@ -149,7 +149,7 @@ class Aluno_Model extends CI_Model {
      * 
      * @param  $dados recebe o id referente a cor da graduação selecionada no campo do formulario
      * @param  $slq recebe o cmando Select responçavel por fazer a busca dos alunos que correspondam ao id 
-     * da graduação selecionado pelo usuário atraves da clausula LIKE.
+     * da graduação selecionado pelo usuário.
      * @return $query-result()
      * retorna os resultado encontrados pelo query 
      */

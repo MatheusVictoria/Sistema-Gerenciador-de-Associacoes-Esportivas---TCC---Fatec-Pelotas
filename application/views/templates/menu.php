@@ -84,6 +84,10 @@
                     <li>
                         <a href="<?= base_url('listar_ct') ?>"><i class="fa fa-circle-o"></i>Centro de Treinamento</a>
                     </li>
+                    
+                    <li>
+                        <a href="<?= base_url('listar_evento') ?>"><i class="fa fa-circle-o"></i>Eventos Participados</a>
+                    </li>
 
                     <li>
                         <a href="<?= base_url('listar_graduacao') ?>"><i class="fa fa-circle-o"></i>Graduação</a>
@@ -157,6 +161,11 @@
                     <li>
                         <a href="<?= base_url('registra_acidente_aluno') ?>"><i class="fa fa-circle-o"></i>Registro de Acidente com Aluno</a>
                     </li>
+                    
+                    <li>
+                        <a href="<?= base_url('form_registra_evento') ?>"><i class="fa fa-circle-o"></i>Registro de Eventos</a>
+                    </li>
+                    
                     <li>
                         <a href="<?= base_url('registra_presenca') ?>"><i class="fa fa-circle-o"></i>Registro de Presença de Alunos</a>
                     </li>
