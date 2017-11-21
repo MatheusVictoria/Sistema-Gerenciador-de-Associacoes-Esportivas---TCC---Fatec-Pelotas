@@ -127,7 +127,6 @@ class Aluno_Model extends CI_Model {
         return $query->row();
     }
 
-    
     /**
      * Seleciona a potologia do aluno existente na tablea aluno_has_patologia
      * @param  $id do aluno selecionado na lista de alunas ao clicar no botão visualizar aluno
@@ -141,7 +140,7 @@ class Aluno_Model extends CI_Model {
 
         $query = $this->db->query($sql);
 
-        return  $query->row();
+        return $query->row();
     }
 
     /**
@@ -163,6 +162,30 @@ class Aluno_Model extends CI_Model {
         $query = $this->db->query($sql);
 
         return $query->result();
+    }
+
+    public function busca_aluno($turma_id) {
+
+        $sql = "SELECT a.nome, ta.aluno_id FROM aluno a INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id "
+                . "INNER JOIN turma t ON t.id = ta.turma_id WHERE a.id = ta.aluno_id AND t.id = $turma_id ORDER BY a.nome";
+        
+        $query = $this->db->query($sql);
+        
+        return $query->result();
+    }
+    
+    public function seleciona_aluno($turma_id){
+        
+        $alunos = $this->busca_aluno($turma_id);
+        
+        $options = "<option ></option>";
+        
+        foreach ($alunos->result() as $aluno){
+            $options .= "<option value='{$aluno->id}'>$aluno->nome</option>".PHP_EOL;
+        }
+        
+        return $options; 
+        
     }
 
 }

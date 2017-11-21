@@ -39,11 +39,12 @@
                                     <tr>
                                         <td><?= $evento->id ?></td>
                                         <td><?= $evento->nome ?></td>
+                                        <td><?= date('d/m/y', strtotime($evento->data)) ?></td>
                                         <td><?= $evento->local ?></td>
                                         <td><?= $evento->modalidade_id ?></td>
                                       
                                         <td>
-                                            <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('eventos_participados/editar/' . $tp->id) ?>" >
+                                            <a data-toggle="tooltip" data-placement="top" title="Editar!" href="<?= base_url('eventos_participados/editar/' . $evento->id) ?>" >
                                                 <span class="glyphicon glyphicon-edit "></span></a>
                                         </td>
 

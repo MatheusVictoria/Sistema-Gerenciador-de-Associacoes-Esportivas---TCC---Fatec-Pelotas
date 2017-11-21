@@ -14,7 +14,7 @@ class Turma_Model extends CI_Model {
         $sql = "SELECT t.id, t.horario, p.nome as professor_id, c.nome as centro_treinamento_id, m.modalidade as modalidade_id  FROM turma t "
                 . "LEFT JOIN professor p ON t.professor_id = p.id "
                 . "LEFT JOIN modalidade m ON t.modalidade_id = m.id "
-                . "LEFT JOIN centro_treinamento c ON t.centro_treinamento_id = c.id ";
+                . "LEFT JOIN centro_treinamento c ON t.centro_treinamento_id = c.id ORDER BY t.horario";
 
         $query = $this->db->query($sql);
 
@@ -73,7 +73,7 @@ class Turma_Model extends CI_Model {
 
         $sql = "SELECT a.nome, t.horario, t.id, ta.aluno_id FROM aluno a 
                 INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id 
-                INNER JOIN turma t ON t.id = ta.turma_id WHERE a.id = ta.aluno_id AND t.id = $dados ";
+                INNER JOIN turma t ON t.id = ta.turma_id WHERE a.id = ta.aluno_id AND t.id = $dados ORDER BY a.nome ";
 
         $query = $this->db->query($sql);
 
@@ -95,8 +95,7 @@ class Turma_Model extends CI_Model {
             $this->db->insert('presenca', $presenca);
         }
     }
-    
-    
+
     /**
      * Método para buscar os turmas referentes a um determinado centro de treinamento 
      * selecionado pelo ususario.
@@ -119,6 +118,19 @@ class Turma_Model extends CI_Model {
         $query = $this->db->query($sql);
 
         return $query->result();
+    }
+
+    public function seleciona_turma() {
+        
+        $turmas = $this->selecionar();
+        
+        $options = "<option></option>";        
+        foreach ($turmas as $turma){
+            $options .= "<option value='{$turma->id}'>$turma->horario</option>".PHP_EOL;
+        }
+        
+        return $options; 
+        
     }
 
 }

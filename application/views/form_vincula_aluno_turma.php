@@ -2,11 +2,11 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Vincula aluno em uma turma
+            Vincular aluno em uma turma
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Cadastros </a></li>
-            <li><a href="#">Vincula Aluno</a></li>
+            <li><a href="#">Vincular Aluno</a></li>
         </ol>
     </section>
     <!-- right col -->

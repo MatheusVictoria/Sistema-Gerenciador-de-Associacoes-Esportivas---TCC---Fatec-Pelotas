@@ -55,7 +55,7 @@ class Eventos_Participados extends CI_Controller{
     
      public function listar() {
 
-        $dados['evento'] = $this->reM->selecionar();
+        $dados['eventos'] = $this->reM->selecionar();
         $dados['modalidade'] = $this->modalidadeM->selecionar();
         $this->load->view('templates/header');
         $this->load->view('templates/menu');

@@ -16,7 +16,7 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Registro de aula
+            Registro de acidente de aluno
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Registros e Pagamentos </a></li>
@@ -54,7 +54,7 @@
                                         <div class="input-group-addon">
                                             <i class="fa fa-calendar"></i>
                                         </div>
-                                        <input type="date" class="form-control" name="data" id="datemask" value="<?= set_value('data') ?>">
+                                        <input type="date" class="form-control" name="data" id="data" value="<?= set_value('data') ?>">
                                     </div>
                                     <!-- /.input group -->
                                 </div>

@@ -84,3 +84,5 @@ $route['registra_presenca'] = 'Turma/escolhe_turma';
 $route['form_registra_presenca'] = 'Turma/registra_presenca';
 $route['form_registra_evento'] = 'Eventos_Participados/registra_eventos';
 $route['listar_evento'] = 'Eventos_Participados/listar';
+$route['gerar_mensalidade'] = 'Mensalidade/mensalidade';
+$route['form_mensalidade'] = 'Mensalidade/gerar_mensalidade';
