@@ -58,5 +58,27 @@ class Mensalidade_Model extends CI_Model {
 
         return $query->result();
     }
+    
+    /**
+     * Método para buscar os alunos referentes a uma determinada turma selecionado pelo ususario.
+     * 
+     * @param  $dados recebe o id referente a cor a turma selecionada no campo do formulario
+     * @param  $slq recebe o comando Select responçavel por fazer a busca dos alunos que correspondam ao id 
+     * da turma selecionado pelo usuário atraves da clausula LIKE.
+     * @return $query-result()
+     * retorna os resultado encontrados pelo query 
+     */
+    public function pesquisa_alunos() {
+        $dados = $this->input->post('turma_id');
+
+        $sql = "SELECT a.nome, t.horario, t.id, ta.aluno_id, m.valor FROM aluno a INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id "
+                . "INNER JOIN turma t ON t.id = ta.turma_id "
+                . "INNER JOIN modalidade m ON m.id = t.modalidade_id WHERE a.id = ta.aluno_id AND t.id = $dados ORDER BY a.nome  ";
+
+        $query = $this->db->query($sql);
+
+        return $query->result();
+    }
+    
 
 }

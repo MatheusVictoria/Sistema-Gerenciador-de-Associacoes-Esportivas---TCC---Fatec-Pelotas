@@ -18,7 +18,7 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
 
-                        <form role="form" method="post" action="<?= base_url('Lanca_Pagamento/index') ?>" enctype="multipart/form-data">
+                        <form role="form" method="post" action="<?= base_url('Mensalidade/index') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
 
@@ -40,26 +40,9 @@
                                                 </select>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label>Date:</label>
-
-                                                <div class="input-group date">
-                                                    <div class="input-group-addon">
-                                                        <i class="fa fa-calendar"></i>
-                                                    </div>
-                                                    <input type="text" class="form-control pull-right" id="datepicker" name="data_pagamento">
-                                                </div>
-                                                <!-- /.input group -->
-                                            </div>
-                                            <!-- /.form group -->
-
-
                                             <div class="box-footer col-lg-offset-2 ">
                                                 <div class="col-lg-6">
-                                                    <button type="submit" class="btn btn-primary btn-flat col-xs-4">Enviar</button>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <button type="reset" class="btn btn-primary btn-flat col-xs-4">Limpar</button>
+                                                    <button type="submit" class="btn btn-primary btn-flat col-xs-4">Pesquisar</button>
                                                 </div>
                                             </div>
                                         </div>
