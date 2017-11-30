@@ -19,7 +19,7 @@
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-header">
-                                <h3 class="box-title">Lista de Alunos</h3>
+                                <h3 class="box-title">Lista de alunos</h3>
                             </div>
                             <!-- /.box-header -->
                             <div class="box-body">
@@ -93,6 +93,8 @@
                                                     <span class="fa fa-edit"></span></a>
                                                 <a data-toggle="tooltip" data-placement="top" title="Visualizar!" href="<?= base_url('Aluno/visualizar/' . $aluno->id) ?>">
                                                     <span class="fa fa-vcard"></span></a>
+                                                <a data-toggle="tooltip" data-placement="top" title="Lista de Mensalidade!" href="<?= base_url('Mensalidade/listar/' . $aluno->id) ?>">
+                                                    <span class="fa fa-money"></span></a>
                                             </td>
 
                                         <?php } ?>

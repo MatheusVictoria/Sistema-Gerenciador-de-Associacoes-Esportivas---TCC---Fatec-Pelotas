@@ -62,19 +62,22 @@ class Home extends CI_Controller {
         redirect();
     }
 
-    public function geraCaptcha() {
+    public function geraCaptcha($refresh = FALSE) {
 
         $vals = array(
             'img_path' => './captcha/',
             'img_url' => base_url('captcha'),
             'img_width' => '170',
             'img_height' => '50',
-            // White background and border, black text and red grid
-        'colors'        => array(
+            'word_length'   => 6,
+            'font_size'     => 25,
+            'pool'          => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'colors' => array(
                 'background' => array(255, 255, 255),
                 'border' => array(0, 0, 0),
                 'text' => array(0, 0, 0),
-                'grid' => array(255, 40, 40))
+                'grid' => array(255, 40, 40)
+            )
 
         );
 
@@ -82,12 +85,14 @@ class Home extends CI_Controller {
 
         $this->session->set_userdata('user_captcha_value', $cap['word']);
 
-        return $cap['image'];
+        if($refresh){
+            echo $cap['image'];
+        }else {
+            return $cap['image'];
+        }
     }
 
     public function checa_captcha($captcha) {
-
-
         if ($captcha === $this->session->userdata('user_captcha_value')) {
             return TRUE;
         } else {

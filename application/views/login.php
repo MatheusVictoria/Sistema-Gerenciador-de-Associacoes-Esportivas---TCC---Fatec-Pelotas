@@ -94,13 +94,12 @@
         <script src="<?= base_url('assets/adminlte/plugins/iCheck/icheck.min.js') ?>"></script>
         <script>
             $(function(){ 
-            var base_url = '<? echo base_url() ?>';
+                var base_url = '<?=base_url() ?>';
 
-            $('#refresh').on('click', function(){ 
-                         $('#igmCaptcha').html(base_url + "Home/geraCaptcha"); 
-                  }); 
-             });
+                $('#refresh').on('click', function(){ 
+                     $('#igmCaptcha').load(base_url + "Home/geraCaptcha/true"); 
+                }); 
+            });
     </script>
-    <script src="<?= base_url('assets/js/carregaImgCaptcha.js') ?>">   </script>
 </body>
 </html>

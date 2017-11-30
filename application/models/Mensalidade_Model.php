@@ -26,7 +26,7 @@ class Mensalidade_Model extends CI_Model {
             $dados = [
                 'turma_has_aluno_aluno_id' => $aluno_id,
                 'turma_has_aluno_turma_id' => $turma_id,
-                'data_vencimento' => date("Y-d-m", mktime(0, 0, 0, $dia, $mes,$ano)),
+                'data_vencimento' => date("Y-d-m", mktime(0, 0, 0, $dia, $mes, $ano)),
                 'valor' => $valor
             ];
 
@@ -58,27 +58,18 @@ class Mensalidade_Model extends CI_Model {
 
         return $query->result();
     }
-    
-    /**
-     * Método para buscar os alunos referentes a uma determinada turma selecionado pelo ususario.
-     * 
-     * @param  $dados recebe o id referente a cor a turma selecionada no campo do formulario
-     * @param  $slq recebe o comando Select responçavel por fazer a busca dos alunos que correspondam ao id 
-     * da turma selecionado pelo usuário atraves da clausula LIKE.
-     * @return $query-result()
-     * retorna os resultado encontrados pelo query 
-     */
-    public function pesquisa_alunos() {
-        $dados = $this->input->post('turma_id');
 
-        $sql = "SELECT a.nome, t.horario, t.id, ta.aluno_id, m.valor FROM aluno a INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id "
-                . "INNER JOIN turma t ON t.id = ta.turma_id "
-                . "INNER JOIN modalidade m ON m.id = t.modalidade_id WHERE a.id = ta.aluno_id AND t.id = $dados ORDER BY a.nome  ";
+    public function selecionar($id) {
 
-        $query = $this->db->query($sql);
 
-        return $query->result();
+        $sql = "SELECT a.nome, ta.aluno_id, m.valor, men.data_vencimento, men.data_pagamento FROM mensalidade men  
+                INNER JOIN aluno a ON a.id = men.turma_has_aluno_aluno_id 
+                INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id 
+                INNER JOIN turma t ON t.id = ta.turma_id 
+                INNER JOIN modalidade m ON m.id = t.modalidade_id 
+                WHERE men.data_pagamento IS NULL
+                AND men.turma_has_aluno_aluno_id = $id
+                AND men.data_vencimento < now() ORDER BY men.data_vencimento ";
     }
-    
 
 }
