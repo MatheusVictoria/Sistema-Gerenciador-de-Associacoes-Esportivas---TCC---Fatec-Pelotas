@@ -82,15 +82,19 @@ class Mensalidade extends CI_Controller {
 
     public function editar($id) {
 
-        $dados ['mensalidades'] = $this->mensalidadeM->encontrar($id);
+        $dados ['mensalidade'] = $this->mensalidadeM->encontrar($id);
         $this->load->view('templates/header');
         $this->load->view('templates/menu');
-        $this->load->view('form_insere_pagamento', $dados);
+        $this->load->view('lanca_pagamento', $dados);
         $this->load->view('templates/footer');
     }
 
-    public function lancar_pagamento() {
-        
+    public function grava_alteracao() {
+
+        $dados = $this->input->post();
+        $this->mensalidadeM->atualiza($dados);
+
+        redirect('listar_aluno');
     }
 
 }

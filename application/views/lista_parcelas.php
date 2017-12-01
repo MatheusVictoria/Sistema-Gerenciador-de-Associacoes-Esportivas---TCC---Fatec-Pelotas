@@ -35,7 +35,7 @@
                                     <?php foreach ($mensalidades as $mensalidade) { ?>
                                         <tr>
                                             <td><?= $mensalidade->id ?></td>
-                                            <td><?= $mensalidade->data_vencimento ?></td>
+                                            <td><?= date('d/m/y', strtotime($mensalidade->data_vencimento)) ?></td>
 
                                             <td><?= $mensalidade->valor ?></td>
                                             <td>

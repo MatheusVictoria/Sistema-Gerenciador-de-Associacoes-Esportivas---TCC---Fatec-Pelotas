@@ -2,11 +2,13 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Lançamento de pagamento
+            Lançar pagamento do aluno
         </h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Registros e Pagamentos </a></li>
-            <li><a href="#">Lançar Pagamento</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Listas </a></li>
+            <li><a href="#">Alunos</a></li>
+            <li><a href="#">Mensalidades</a></li>
+            <li><a href="#">Editar</a></li>
         </ol>
     </section>
     <!-- right col -->
@@ -18,34 +20,28 @@
                     <!-- general form elements -->
                     <div class="box box-primary">
 
-                        <form role="form" method="post" action="<?= base_url('Mensalidade/index') ?>" enctype="multipart/form-data">
+                        <form role="form" method="post" action="<?= base_url('Mensalidade/grava_alteracao') ?>" enctype="multipart/form-data">
 
                             <div class="box-body">
 
-                                <div class="col-lg-9" style="margin-left: 10%">
-                                    <div class="box box-body">
-                                        <div class="box-body box-profile">
-                                            <div class="form-group col-lg-6">
-                                                <label for="aluno">Aluno:</label>
-                                                <select name="aluno_id" id="aluno_id" class="form-control" >
-                                                    <option>Selecione o Aluno</option>
-                                                    <?php
-                                                    foreach ($aluno as $a) {
-                                                        ?>
-                                                        <option value="<?= $a->id, set_value($a->id) ?>">
-                                                            <?= $a->nome ?> </option>
-                                                        <?php
-                                                    }
-                                                    ?>
-                                                </select>
-                                            </div>
+                                <input type="hidden" id="id" name="id" value="<?= $mensalidade->id ?>"/>
 
-                                            <div class="box-footer col-lg-offset-2 ">
-                                                <div class="col-lg-6">
-                                                    <button type="submit" class="btn btn-primary btn-flat col-xs-4">Pesquisar</button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="form-group col-lg-6 ">
+                                    <label for="data_pagamento">Data:</label>
+                                    <input type="date" class="form-control" id="data_pagamento" name="data_pagamento" value="<?= $mensalidade->data_pagamento ?>"/>
+                                </div>
+                                <div class="form-group col-lg-6 ">
+                                    <label for="valor_pago">Valor da mensalidade:</label>
+                                    <input type="number" class="form-control" id="valor_pago" name="valor_pago" value="<?= $mensalidade->valor ?>"/>
+                                </div>
+
+
+                                <div class="box-footer col-lg-offset-2 ">
+                                    <div class="col-lg-6">
+                                        <button type="submit" class="btn btn-primary btn-flat col-xs-4">Enviar</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <button type="reset" class="btn btn-primary btn-flat col-xs-4">Limpar</button>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +53,5 @@
     </div>
     <!-- /.row (main row) -->
 
-</section>
-<!-- /.content -->
-
-
+    </section>
+    <!-- /.content -->

@@ -62,7 +62,7 @@ class Mensalidade_Model extends CI_Model {
     public function selecionar($id) {
 
 
-        $sql = "SELECT a.nome, ta.aluno_id, m.valor, men.data_vencimento, men.data_pagamento FROM mensalidade men  
+        $sql = "SELECT a.nome, ta.aluno_id, m.valor, men.id, men.data_vencimento, men.data_pagamento FROM mensalidade men  
                 INNER JOIN aluno a ON a.id = men.turma_has_aluno_aluno_id 
                 INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id 
                 INNER JOIN turma t ON t.id = ta.turma_id 
@@ -70,6 +70,35 @@ class Mensalidade_Model extends CI_Model {
                 WHERE men.data_pagamento IS NULL
                 AND men.turma_has_aluno_aluno_id = $id
                 AND men.data_vencimento < now() ORDER BY men.data_vencimento ";
+        
+        $query = $this->db->query($sql);
+        
+        
+        return $query->result();
     }
+    
+    public function encontrar($id) {
+
+
+        $sql = "SELECT a.nome, ta.aluno_id, m.valor, men.id, men.data_vencimento, men.data_pagamento FROM mensalidade men  
+                INNER JOIN aluno a ON a.id = men.turma_has_aluno_aluno_id 
+                INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id 
+                INNER JOIN turma t ON t.id = ta.turma_id 
+                INNER JOIN modalidade m ON m.id = t.modalidade_id 
+                WHERE men.id = $id ";
+        
+        $query = $this->db->query($sql);
+        
+        
+        return $query->row();
+    }
+    
+    function atualiza($registro) {
+
+        $this->db->where('id', $registro['id']);
+        return $this->db->update('mensalidade', $registro);
+    }
+    
+    
 
 }

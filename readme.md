@@ -29,3 +29,7 @@ O sistema tem como objetivo centralizar os dados e auxiliar na organização das
 
 <p>https://raw.githubusercontent.com/MatheusVictoria/Sistema-Gerenciador-de-Associacoes-Esportivas---TCC---Fatec-Pelotas/master/license.txt<p>
 
+5. Autor
+
+**Matheus Silva Victória**
+
