@@ -5,6 +5,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Registra_Eventos_Model extends CI_Model {
 
     public function inserir($registro) {
+        
+        $hora = time("H:i:s");
+        $usuario = $this->session->nome;
+        $acao = "usuário insereiu o evento " . $registro['evento'];
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
 
         return $this->db->insert('evento', $registro);
     }

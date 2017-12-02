@@ -7,6 +7,11 @@ class Registro_Acidente_Aluo_Model extends CI_Model {
     public function inserir($dados) {
 
         $this->db->trans_start();
+        $hora = time("H:i:s");
+        $usuario = $this->session->nome;
+        $acao = "usuário insereriu um acidente para o aluno " . $dados['nome'];
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        
         $this->db->query("INSERT INTO historico_aluno(aluno_id, descricao, modalidade_id, data)
           VALUES('{$dados['aluno_id']}', '{$dados['descricao']}', '{$dados['modalidade_id']}', '{$dados['data']}')");
         $this->db->query("INSERT INTO historico_aluno_has_tipo_lesao(tipo_lesao_id, historico_aluno_id)

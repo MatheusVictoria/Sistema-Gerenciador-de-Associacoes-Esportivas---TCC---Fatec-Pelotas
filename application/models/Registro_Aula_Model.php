@@ -5,6 +5,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Registro_Aula_Model extends CI_Model {
 
     public function inserir($registro) {
+        
+        $hora = time("H:i:s");
+        $usuario = $this->session->nome;
+        $acao = "usuário inserei o registro de aula " . $registro['data'];
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
 
         return $this->db->insert('historico_aula', $registro);
     }

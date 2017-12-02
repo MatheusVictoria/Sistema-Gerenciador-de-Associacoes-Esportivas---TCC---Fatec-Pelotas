@@ -22,8 +22,13 @@ class Centro_de_Treinamento_Model extends CI_Model {
      * 
      */
     function inserir($dados) {
-
+        
         $this->db->trans_start();
+        $hora = time("H:i:s");
+        $usuario = $this->session->nome;
+        $acao = "usuário atualizou o centro de treinamento " . $dados['nome'];
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        
         $cidade_id = $this->cidadeM->busca_cidades($dados['cidade']);
         $this->db->query("INSERT INTO endereco(rua, numero,complemento, cep, bairro, cidade_id)
           VALUES('{$dados['rua']}', {$dados['numero']}, '{$dados['complemento']}', '{$dados['cep']}', '{$dados['bairro']}', $cidade_id)");
@@ -48,7 +53,6 @@ class Centro_de_Treinamento_Model extends CI_Model {
         $query = $this->db->query($sql_selecionar);
         return $query->result();
     }
-    
 
     /**
      * 
@@ -59,14 +63,20 @@ class Centro_de_Treinamento_Model extends CI_Model {
      */
     function atualiza($dados) {
 
+
         $this->db->trans_start();
+        $hora = time("H:i:s");
+        $usuario = $this->session->nome;
+        $acao = "usuário atualizou o centro de treinamento " . $dados['nome'];
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        
         $cidade_id = $this->cidadeM->busca_cidades($dados['cidade']);
         $endereco_id = $this->busca_id_endereco($dados['id_endereco']);
         $this->db->query("UPDATE endereco SET rua = '{$dados['rua']}', numero = {$dados['numero']} ,complemento = '{$dados['complemento']}', cep = '{$dados['cep']}', bairro = '{$dados['bairro']}', cidade_id = $cidade_id WHERE id = $endereco_id");
         $this->db->query("UPDATE centro_treinamento SET nome = '{$dados['nome']}' WHERE id = {$dados['id']}");
         $this->db->trans_complete();
     }
-    
+
     /**
      * 
      * Faz uma busca através do id solicitado
@@ -87,19 +97,17 @@ class Centro_de_Treinamento_Model extends CI_Model {
         return $query->row();
     }
 
-
     /**
      * 
      * Busca do id do endereço e compara com o id que esta vindo da view from_alt_centro_de_treinamento
      * @param $id recebe o id da view form_alt_centro_de_treinamento
      * 
      */
-     public function busca_id_endereco($id){
-        
+    public function busca_id_endereco($id) {
+
         $query = $this->db->query("select id as endereco_id from endereco where id = '{$id}'");
         $linha = $query->row();
         return $linha->endereco_id;
-        
-        
     }
+
 }

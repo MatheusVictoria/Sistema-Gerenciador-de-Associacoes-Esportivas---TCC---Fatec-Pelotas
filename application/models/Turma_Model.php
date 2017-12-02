@@ -5,6 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Turma_Model extends CI_Model {
 
     public function inserir($registro) {
+        $hora = time("H:i:s");
+        $usuario = $this->session->nome;
+        $acao = "usuário inseriio o horario " . $registro['horario'];
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
 
         return $this->db->insert('turma', $registro);
     }
@@ -49,6 +53,10 @@ class Turma_Model extends CI_Model {
      * @return type
      */
     function atualiza($registro) {
+        $hora = time("H:i:s");
+        $usuario = $this->session->nome;
+        $acao = "usuário atualizou o horario " . $registro['horario'];
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
 
         $this->db->where('id', $registro['id']);
         return $this->db->update('turma', $registro);

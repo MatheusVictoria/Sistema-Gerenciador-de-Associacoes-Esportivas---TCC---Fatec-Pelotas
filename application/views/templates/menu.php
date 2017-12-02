@@ -153,11 +153,7 @@
                     
                     <li>
                         <a href="<?= base_url('gerar_mensalidade') ?>"><i class="fa fa-circle-o"></i>Gerar Mensalidade</a>
-                    </li>
-                    
-                    <li>
-                        <a href="<?= base_url('lanca_pagamento') ?>"><i class="fa fa-circle-o"></i>Lançar Pagamento</a>
-                    </li>                    
+                    </li>                
 
                     <li>
                         <a href="<?= base_url('registra_aula') ?>"><i class="fa fa-circle-o"></i>Registro de Aula</a>
