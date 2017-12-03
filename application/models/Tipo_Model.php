@@ -6,10 +6,10 @@ class Tipo_Model extends CI_Model{
     
     public function inserir($dados){
         
-        $hora = time("H:i:s");
+        
         $usuario = $this->session->nome;
         $acao = "usuário inserio o tipo de usuario " . $dados['tipo'];
-        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
         
         return $this->db->insert('tipo', $dados);        
         

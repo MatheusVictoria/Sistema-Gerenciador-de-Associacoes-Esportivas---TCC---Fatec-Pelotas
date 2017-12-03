@@ -100,10 +100,10 @@ class Mensalidade_Model extends CI_Model {
     
     function atualiza($registro) {
         
-        $hora = time("H:i:s");
+       
         $usuario = $this->session->nome;
         $acao = "usuário lançou o pagamento do aluno " . $registro['nome'];
-        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
 
         $this->db->where('id', $registro['id']);
         return $this->db->update('mensalidade', $registro);

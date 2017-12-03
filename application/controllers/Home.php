@@ -7,6 +7,7 @@ class Home extends CI_Controller {
     public function __construct() {
         parent::__construct();
 
+        $this->load->model('Usuario_Model', 'usuariosM');
         $this->load->helper('captcha');
     }
 
@@ -28,8 +29,7 @@ class Home extends CI_Controller {
     public function logar() {
         $dados ['erro'] = null;
 
-        // carrega a model com os métodos da tabela usuarios
-        $this->load->model('Usuario_Model', 'usuariosM');
+        
         // obtém os dados do form
         $email = $this->input->post('email');
         $senha = $this->input->post('senha');
@@ -50,6 +50,8 @@ class Home extends CI_Controller {
                 $sessao['logado'] = true;
                 $this->session->set_userdata($sessao);
             }
+
+            $this->usuariosM->registra_sessao();
             redirect();
         }
 
@@ -69,25 +71,24 @@ class Home extends CI_Controller {
             'img_url' => base_url('captcha'),
             'img_width' => '170',
             'img_height' => '50',
-            'word_length'   => 6,
-            'font_size'     => 25,
-            'pool'          => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
+            'word_length' => 6,
+            'font_size' => 25,
+            'pool' => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
             'colors' => array(
                 'background' => array(255, 255, 255),
                 'border' => array(0, 0, 0),
                 'text' => array(0, 0, 0),
                 'grid' => array(255, 40, 40)
             )
-
         );
 
         $cap = create_captcha($vals);
 
         $this->session->set_userdata('user_captcha_value', $cap['word']);
 
-        if($refresh){
+        if ($refresh) {
             echo $cap['image'];
-        }else {
+        } else {
             return $cap['image'];
         }
     }

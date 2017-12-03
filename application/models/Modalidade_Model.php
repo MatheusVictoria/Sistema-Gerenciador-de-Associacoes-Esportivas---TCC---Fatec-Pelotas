@@ -5,10 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Modalidade_Model extends CI_Model{
     
     public function inserir($dados){
-        $hora = time("H:i:s");
+        
         $usuario = $this->session->nome;
         $acao = "usuário inseriu a modalidade " . $dados['nome'];
-        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
         
         return $this->db->insert('modalidade', $dados);        
         
@@ -36,10 +36,10 @@ class Modalidade_Model extends CI_Model{
     
     public function atualiza($registro) {
      
-        $hora = time("H:i:s");
+        
         $usuario = $this->session->nome;
-        $acao = "usuário atualizou o valor da modalidade " . $dados['nome'];
-        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        $acao = "usuário atualizou o valor da modalidade " . $registro['nome'];
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
         
         $this->db->where('id', $registro['id']);
         return $this->db->update('modalidade', $registro);

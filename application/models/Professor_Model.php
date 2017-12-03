@@ -17,10 +17,10 @@ class Professor_Model extends CI_Model {
     public function inserir($dados) {
 
         $this->db->trans_start();
-        $hora = time("H:i:s");
+       
         $usuario = $this->session->nome;
         $acao = "usuário inseriu o professor " . $dados['nome'];
-        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
         
         $cidade_id = $this->cidadeM->busca_cidades($dados['cidade']);
         $this->db->query("INSERT INTO endereco(rua, numero,complemento, cep, bairro, cidade_id)
@@ -60,10 +60,10 @@ class Professor_Model extends CI_Model {
     public function atualiza($dados) {
 
         $this->db->trans_start();
-        $hora = time("H:i:s");
+        
         $usuario = $this->session->nome;
         $acao = "usuário fez uma atualização no professor " . $dados['nome'];
-        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
         
         $cidade_id = $this->cidadeM->busca_cidades($dados['cidade']);
         $endereco_id = $this->busca_id_endereco($dados['id_endereco']);

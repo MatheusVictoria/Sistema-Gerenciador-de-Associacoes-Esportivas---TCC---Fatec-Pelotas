@@ -5,10 +5,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Usuario_Model extends CI_Model {
 
     public function inserir($registro) {
-        $hora = time("H:i:s");
+        
         $usuario = $this->session->nome;
         $acao = "usuário insereio o usuário " . $registro['nome'];
-        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
 
         $registro ['senha'] = md5($registro['senha']);
         return $this->db->insert('usuario', $registro);
@@ -33,11 +33,11 @@ class Usuario_Model extends CI_Model {
     }
 
     public function atualiza($registro) {
-        $hora = time("H:i:s");
+       
         $usuario = $this->session->nome;
-        $acao = "usuário atualizou o usário " . $dados['nome'];
-        $this->db->query("INSERT INTO log (acao,nome_usuario, data_acao, hora_acao) VALUES (' $acao ','$usuario', NOW(), $hora)");
-        
+        $acao = "usuário atualizou o usário " . $registro['nome'];
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
+
         $registro ['senha'] = md5($registro['senha']);
         $this->db->where('id', $registro['id']);
         return $this->db->update('usuario', $registro);
@@ -47,6 +47,13 @@ class Usuario_Model extends CI_Model {
         $sql = "select * from usuario where email=? and senha=? and ativo=1";
         $query = $this->db->query($sql, array($email, md5($senha)));
         return $query->row();
+    }
+
+    public function registra_sessao() {
+
+        $usuario = $this->session->nome;
+        $acao = "usuário iniciou uma nova sessão";
+        $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario',  NOW()) ");
     }
 
 }
