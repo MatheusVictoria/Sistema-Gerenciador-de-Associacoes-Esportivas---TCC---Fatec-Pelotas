@@ -79,8 +79,6 @@
                     </div>
                 </form>
 
-                <a href="form_atualiza_senha">Esqueci minha senha</a>
-
             </div>
             <!-- /.login-box-body -->
         </div>

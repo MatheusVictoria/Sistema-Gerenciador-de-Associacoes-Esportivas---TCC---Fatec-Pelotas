@@ -86,3 +86,7 @@ $route['form_registra_evento'] = 'Eventos_Participados/registra_eventos';
 $route['listar_evento'] = 'Eventos_Participados/listar';
 $route['gerar_mensalidade'] = 'Mensalidade/mensalidade';
 $route['form_mensalidade'] = 'Mensalidade/gerar_mensalidade';
+$route['form_relatorio_pagamento'] = 'Relatorios/periodo_pagamento';
+$route['relatorio_pagamento'] = 'Relatorios/gera_relatorio_pagamento';
+$route['form_relatorio_pagamento_ct'] = 'Relatorios/periodo_pagamento_ct';
+$route['relatorio_pagamento_ct'] = 'Relatorios/gera_relatorio_pagamento_ct';

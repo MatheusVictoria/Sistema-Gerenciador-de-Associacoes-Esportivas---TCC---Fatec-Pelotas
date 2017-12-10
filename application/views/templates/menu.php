@@ -131,13 +131,13 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="<?= base_url('##') ?>"><i class="fa fa-circle-o"></i>Centro de Treinamento</a>
+                        <a href="<?= base_url('form_relatorio_pagamento_ct') ?>"><i class="fa fa-circle-o"></i>Centro de Treinamento</a>
                     </li>
                     <li>
                         <a href="<?= base_url('##') ?>"><i class="fa fa-circle-o"></i>Turmas</a>
                     </li>
                     <li>
-                        <a href="<?= base_url('##') ?>"><i class="fa fa-circle-o"></i>Pagamentos</a>
+                        <a href="<?= base_url('form_relatorio_pagamento') ?>" ><i class="fa fa-circle-o"></i>Pagamentos</a>
                     </li>
 
                 </ul>

@@ -79,7 +79,7 @@
                                                         <div class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                         </div>
-                                                        <input type="datetime" class="form-control" name="data_vencimento" id="data_vencimento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask value="<?= set_value('data_vencimento') ?>">
+                                                        <input type="datetime" class="form-control" name="data_vencimento " id="data_vencimento" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask value="<?= set_value('data_vencimento') ?>">
                                                     </div>
                                                     <!-- /.input group -->
                                                 </div>

@@ -1,4 +1,7 @@
 <?php
+
+include "application/third_party/vendor/autoload.php";
+
 /**
  * CodeIgniter
  *
