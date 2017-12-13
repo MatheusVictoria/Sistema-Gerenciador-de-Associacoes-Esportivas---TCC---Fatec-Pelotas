@@ -113,39 +113,78 @@ class Mensalidade_Model extends CI_Model {
 
         $dados = $this->input->post();
 
-        $sql = "SELECT a.nome, ta.aluno_id, men.valor, SUM(men.valor_pago) as valor_pago, men.data_vencimento, men.data_pagamento
+        $sql = "SELECT a.nome, ta.aluno_id, men.valor , men.data_vencimento, men.data_pagamento
                 FROM mensalidade men
                 INNER JOIN aluno a ON a.id = men.turma_has_aluno_aluno_id
                 INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id
                 INNER JOIN turma t ON t.id = ta.turma_id
                 INNER JOIN modalidade m ON m.id = t.modalidade_id
                 WHERE men.data_pagamento BETWEEN '{$dados['data_inicio']}' AND '{$dados['data_final']}'
-                GROUP BY a.nome, ta.aluno_id, men.valor, men.data_vencimento, men.data_pagamento
-                WITH ROLLUP";
+                AND men.data_pagamento <> '0000-00-00'
+                GROUP BY a.nome, ta.aluno_id, men.valor, men.data_vencimento, men.data_pagamento";
 
-        $query = $this->db->query($sql);
+        $total = "SELECT sum(men.valor_pago) as valor_pago
+                FROM mensalidade men
+                INNER JOIN aluno a ON a.id = men.turma_has_aluno_aluno_id
+                INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id
+                INNER JOIN turma t ON t.id = ta.turma_id
+                INNER JOIN modalidade m ON m.id = t.modalidade_id
+                WHERE men.data_pagamento BETWEEN '{$dados['data_inicio']}' AND '{$dados['data_final']}' 
+                AND men.data_pagamento <> '0000-00-00'";
 
-        return $query->result();
+        $retorno = array(
+            'alunos' => $this->db->query($sql)->result(),
+            'total' => $this->db->query($total)->result()
+        );
+
+        return $retorno;
     }
-    
+
     public function relatorio_pagamento_ct() {
 
         $dados = $this->input->post();
+        $sql = "SELECT a.nome, ta.aluno_id, men.valor , men.data_vencimento, men.data_pagamento
+                FROM mensalidade men
+                INNER JOIN aluno a ON a.id = men.turma_has_aluno_aluno_id
+                INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id
+                INNER JOIN turma t ON t.id = ta.turma_id
+                INNER JOIN modalidade m ON m.id = t.modalidade_id                
+                INNER JOIN centro_treinamento ct ON ct.id = t.centro_treinamento_id
+                WHERE ct.id = '{$dados['centro_treinamento_id']}' AND men.data_pagamento BETWEEN '{$dados['data_inicio']}' AND '{$dados['data_final']}'
+                AND men.data_pagamento <> '0000-00-00'
+                GROUP BY a.nome, ta.aluno_id, men.valor, men.data_vencimento, men.data_pagamento";
 
-        $sql = "SELECT a.nome, ta.aluno_id, men.valor, SUM(men.valor_pago) as valor_pago, men.data_vencimento, men.data_pagamento, ct.id
+        $total = "SELECT sum(men.valor_pago) as valor_pago
                 FROM mensalidade men
                 INNER JOIN aluno a ON a.id = men.turma_has_aluno_aluno_id
                 INNER JOIN turma_has_aluno ta ON a.id = ta.aluno_id
                 INNER JOIN turma t ON t.id = ta.turma_id
                 INNER JOIN modalidade m ON m.id = t.modalidade_id
                 INNER JOIN centro_treinamento ct ON ct.id = t.centro_treinamento_id
-                WHERE ct.id = '{$dados['centro_treinamento_id']}' AND men.data_pagamento BETWEEN '{$dados['data_inicio']}' AND '{$dados['data_final']}'
-                GROUP BY a.nome, ta.aluno_id, men.valor, men.data_vencimento, men.data_pagamento, ct.id
-                WITH ROLLUP";
+                WHERE ct.id = '{$dados['centro_treinamento_id']}' AND men.data_pagamento BETWEEN '{$dados['data_inicio']}' AND '{$dados['data_final']}' 
+                AND men.data_pagamento <> '0000-00-00'";
 
-        $query = $this->db->query($sql);
+        $retorno = array(
+            'alunos' => $this->db->query($sql)->result(),
+            'total' => $this->db->query($total)->result()
+        );
 
-        return $query->result();
+        return $retorno;
+    }
+    
+    
+    public function grafico_pagamento_mes_mes(){
+        
+        
+        
+        
+    }
+    
+    
+    public function grafico_pagamento_ct(){
+        
+        
+        
     }
 
 }

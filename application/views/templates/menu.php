@@ -124,20 +124,28 @@
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-laptop"></i>
-                    <span>Relatórios</span>
+                    <span>Graficos e Relatórios</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="<?= base_url('form_relatorio_pagamento_ct') ?>"><i class="fa fa-circle-o"></i>Centro de Treinamento</a>
+                        <a href="<?= base_url('form_grafico_pagamento_ct') ?>"><i class="fa fa-circle-o"></i> Grafico de CT</a>
+                    </li>
+                    
+                    <li>
+                        <a href="<?= base_url('form_grafico_pagamento_ct') ?>"><i class="fa fa-circle-o"></i> Grafico de Pagamento Mensal</a>
+                    </li>
+                    
+                    <li>
+                        <a href="<?= base_url('form_relatorio_pagamento_ct') ?>"><i class="fa fa-circle-o"></i> Relatório de CT</a>
                     </li>
                     <li>
-                        <a href="<?= base_url('##') ?>"><i class="fa fa-circle-o"></i>Turmas</a>
+                        <a href="<?= base_url('##') ?>"><i class="fa fa-circle-o"></i> Relatório de Turmas</a>
                     </li>
                     <li>
-                        <a href="<?= base_url('form_relatorio_pagamento') ?>" ><i class="fa fa-circle-o"></i>Pagamentos</a>
+                        <a href="<?= base_url('form_relatorio_pagamento') ?>" ><i class="fa fa-circle-o"></i> Relatório de Pagamentos</a>
                     </li>
 
                 </ul>

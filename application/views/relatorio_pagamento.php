@@ -11,18 +11,16 @@
                 <th style="border: 1px black solid; text-align: left; padding-bottom: 10px">Aluno</th>
                 <th style="border: 1px black solid; text-align: left; padding-bottom: 10px">Data de Pagamento</th> 
                 <th style="border: 1px black solid; text-align: left; padding-bottom: 10px">Valor</th>
-                <th style="border: 1px black solid; text-align: left; padding-bottom: 10px">Valor Total Pago</th>
             </tr>
-                <?php foreach ($mensalidades as $mensalidade) { ?>
+                <?php foreach ($alunos as $aluno) { ?>
             <tr>
-                    <td style="border: 1px black solid; text-align: left; padding-bottom: 10px"><?= $mensalidade->nome ?></td>
-                    <td style="border: 1px black solid; text-align: left; padding-bottom: 10px"><?= $mensalidade->data_pagamento ?></td>
-                    <td style="border: 1px black solid; text-align: left; padding-bottom: 10px"><?= $mensalidade->valor ?></td>
-                    <td style="border: 1px black solid; text-align: left; padding-bottom: 10px"><?= $mensalidade->valor_pago ?></td>
+                    <td style="border: 1px black solid; text-align: left; padding-bottom: 10px"><?= $aluno->nome ?></td>
+                    <td style="border: 1px black solid; text-align: left; padding-bottom: 10px"><?= $aluno->data_pagamento ?></td>
+                    <td style="border: 1px black solid; text-align: left; padding-bottom: 10px"><?= $aluno->valor ?></td>
             </tr>                    
                 <?php } ?>
-            <tr>
-                <td ><b>Total:</b></td>
+            <tr >
+                <td style="margin: 200px">Total:</b> <?= $total[0]->valor_pago ?></td>
             </tr>
 
         </table>

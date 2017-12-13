@@ -47,7 +47,7 @@ class Relatorios extends CI_Controller {
 
     public function gera_relatorio_pagamento() {
 
-        $dados ['mensalidades'] = $this->mensalidadeM->relatorio_pagamento_periodo();
+        $dados = $this->mensalidadeM->relatorio_pagamento_periodo();
 
         $titulo = "Relatório de Pagamento por Periodo";
 
@@ -89,7 +89,7 @@ class Relatorios extends CI_Controller {
 
     public function gera_relatorio_pagamento_ct() {
 
-        $dados ['mensalidades'] = $this->mensalidadeM->relatorio_pagamento_ct();
+        $dados = $this->mensalidadeM->relatorio_pagamento_ct();
 
         $titulo = "Relatório de Pagamento por Centro de Treinamento";
 

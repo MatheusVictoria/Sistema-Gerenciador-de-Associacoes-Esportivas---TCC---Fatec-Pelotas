@@ -7,7 +7,7 @@ class Modalidade_Model extends CI_Model{
     public function inserir($dados){
         
         $usuario = $this->session->nome;
-        $acao = "usuário inseriu a modalidade " . $dados['nome'];
+        $acao = "usuário inseriu a modalidade " . $dados['modalidade'];
         $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
         
         return $this->db->insert('modalidade', $dados);        
