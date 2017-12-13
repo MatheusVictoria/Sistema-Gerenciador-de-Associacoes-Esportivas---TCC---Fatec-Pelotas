@@ -15,7 +15,7 @@ O sistema tem como objetivo centralizar os dados e auxiliar na organização das
 
 ### Execução no Netbeans
 
-1. **Clone o projeto** 
+1. Clone o projeto 
 
 <p>git clone git@github.com:MatheusVictoria/Sistema-Gerenciador-de-Associacoes-Esportivas---TCC---Fatec-Pelotas.git<p>
 
@@ -25,11 +25,11 @@ O sistema tem como objetivo centralizar os dados e auxiliar na organização das
 
 ### Licensa
 
-4. **Clique no link a seguir para ver a licensa do sistema** 
+4. Clique no link a seguir para ver a licensa do sistema
 
 <p> https://raw.githubusercontent.com/MatheusVictoria/Sistema-Gerenciador-de-Associacoes-Esportivas---TCC---Fatec-Pelotas/master/license.txt <p>
 
-5. **Autor**
+5. Autor
 
-**Matheus Silva Victória**
+Matheus Silva Victória
 
