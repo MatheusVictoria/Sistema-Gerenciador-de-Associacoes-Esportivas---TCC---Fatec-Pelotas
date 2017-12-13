@@ -1,9 +1,9 @@
 
-##Sistema Gerenciador de Associações Esportivas - SGAE
+## Sistema Gerenciador de Associações Esportivas - SGAE
 
 O sistema tem como objetivo centralizar os dados e auxiliar na organização das associações esportivas.
 
-###Ferramentas e Tecnologias Utilizadas
+### Ferramentas e Tecnologias Utilizadas
 
 * **Bootstrap 3.3.7 ->**      http://getbootstrap.com/
 * **Codeigniter 3.x.x ->**    https://codeigniter.com/docs
@@ -13,7 +13,7 @@ O sistema tem como objetivo centralizar os dados e auxiliar na organização das
 * **PHP 5.6 ->**              http://php.net/docs.php
 * **WampServer 3.0.6 ->**     http://www.wampserver.com/en/
 
-##Execução no Netbeans
+## Execução no Netbeans
 
 1. Clone o projeto 
 
@@ -23,7 +23,7 @@ O sistema tem como objetivo centralizar os dados e auxiliar na organização das
 
 3. Abra o projeto na versão 8 ou superior do Netbeans.
 
-###Licensa
+### Licensa
 
 4. Clique no link a seguir para ver a licensa do sistema 
 
