@@ -98,14 +98,15 @@
                     </li>
 
                     <li>
+                        <a href="<?= base_url('form_presenca_data') ?>"><i class="fa fa-circle-o"></i>Presença</a>
+                    </li>
+                    
+                    <li>
                         <a href="<?= base_url('listar_professor') ?>"><i class="fa fa-circle-o"></i>Professores</a>
                     </li>
                     
                     <li>
                         <a href="<?= base_url('listar_registros_aulas') ?>"><i class="fa fa-circle-o"></i>Registros de Aulas</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('listar_professor') ?>"><i class="fa fa-circle-o"></i>Professores</a>
                     </li>
 
                     <li>
@@ -135,7 +136,7 @@
                     </li>
                     
                     <li>
-                        <a href="<?= base_url('form_grafico_pagamento_ct') ?>"><i class="fa fa-circle-o"></i> Grafico de Pagamento Mensal</a>
+                        <a href="<?= base_url('grafico_ct_men') ?>"><i class="fa fa-circle-o"></i> Grafico de Pagamento Mensal</a>
                     </li>
                     
                     <li>

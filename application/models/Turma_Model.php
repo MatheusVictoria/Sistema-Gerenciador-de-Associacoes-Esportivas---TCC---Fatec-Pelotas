@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Turma_Model extends CI_Model {
 
     public function inserir($registro) {
-        
+
         $usuario = $this->session->nome;
         $acao = "usuário inseriio o horario " . $registro['horario'];
         $this->db->query("INSERT INTO log (acao,nome_usuario, data_hora_acao) VALUES (' $acao ','$usuario', NOW())");
@@ -129,16 +129,29 @@ class Turma_Model extends CI_Model {
     }
 
     public function seleciona_turma() {
-        
+
         $turmas = $this->selecionar();
-        
-        $options = "<option></option>";        
-        foreach ($turmas as $turma){
-            $options .= "<option value='{$turma->id}'>$turma->horario</option>".PHP_EOL;
+
+        $options = "<option></option>";
+        foreach ($turmas as $turma) {
+            $options .= "<option value='{$turma->id}'>$turma->horario</option>" . PHP_EOL;
         }
-        
-        return $options; 
-        
+
+        return $options;
+    }
+
+    public function lista_presenca() {
+
+        $dados = $this->input->post('pesquisa');
+
+        $sql = "SELECT a.nome, p.id, p.aluno_id, p.turma_id, p.data, t.horario FROM presenca p
+                INNER JOIN aluno a ON a.id = p.aluno_id 
+                INNER JOIN turma t ON t.id = p.turma_id 
+                WHERE p.data = '$dados'";
+
+        $query = $this->db->query($sql);
+
+        return $query->result();
     }
 
 }

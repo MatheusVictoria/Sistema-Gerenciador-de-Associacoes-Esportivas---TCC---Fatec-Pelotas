@@ -158,5 +158,25 @@ class Turma extends CI_Controller {
         $this->load->view('templates/footer');
         
     }
+    
+     public function pesquisa_presenca() {
+
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('form_presenca_data');
+        $this->load->view('templates/footer');
+        
+    }
+    
+     public function lista_presenca() {
+
+                  
+        $dados['presenca'] = $this->turmaM->lista_presenca();
+        $this->load->view('templates/header');
+        $this->load->view('templates/menu');
+        $this->load->view('lista_presenca', $dados);
+        $this->load->view('templates/footer');
+        
+    }
 
 }

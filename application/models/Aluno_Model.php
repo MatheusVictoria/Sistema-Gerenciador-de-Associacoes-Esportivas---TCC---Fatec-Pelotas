@@ -48,7 +48,8 @@ class Aluno_Model extends CI_Model {
             LEFT JOIN cidade c ON en.cidade_id = c.id
             LEFT JOIN estado est ON c.estado_id = est.id
             LEFT JOIN pais p ON est.pais_id = p.id
-            LEFT JOIN graduacao g ON a.graduacao_id = g.id ORDER BY a.id";
+            LEFT JOIN graduacao g ON a.graduacao_id = g.id
+            WHERE a.ativo = 1 ORDER BY a.id";
 
         $query = $this->db->query($sql);
 
@@ -96,7 +97,7 @@ class Aluno_Model extends CI_Model {
         $cidade_id = $this->cidadeM->busca_cidades($dados['cidade']);
         $endereco_id = $this->busca_id_endereco($dados['id_endereco']);
         $this->db->query("UPDATE endereco SET rua = '{$dados['rua']}', numero = '{$dados['numero']}' ,complemento = '{$dados['complemento']}', cep = '{$dados['cep']}', bairro = '{$dados['bairro']}', cidade_id = $cidade_id WHERE id = $endereco_id");
-        $this->db->query("UPDATE aluno SET nome = '{$dados['nome']}', rg = {$dados['rg']}, cpf = {$dados['cpf']}, telefone = '{$dados['telefone']}', email = '{$dados['email']}', foto = '{$dados['foto']}', sexo = '{$dados['sexo']}', graduacao_id = {$dados['graduacao_id']}, ativo = '{$dados['ativo']}' WHERE id = {$dados['id']}");
+        $this->db->query("UPDATE aluno SET nome = '{$dados['nome']}', rg = {$dados['rg']}, cpf = {$dados['cpf']}, telefone = '{$dados['telefone']}', email = '{$dados['email']}', sexo = '{$dados['sexo']}', graduacao_id = {$dados['graduacao_id']}, ativo = '{$dados['ativo']}' WHERE id = {$dados['id']}");
         $this->db->trans_complete();
     }
 
