@@ -182,7 +182,9 @@ class Mensalidade_Model extends CI_Model {
                 INNER JOIN turma t ON t.id = ta.turma_id
                 INNER JOIN modalidade m ON m.id = t.modalidade_id
                 INNER JOIN centro_treinamento ct ON ct.id = t.centro_treinamento_id
-                WHERE men.data_pagamento <> '0000-00-00' GROUP BY men.data_pagamento ORDER BY men.data_pagamento";
+                WHERE men.data_pagamento <> '0000-00-00'
+                GROUP BY mes
+                ORDER BY mes";
         
         $query = $this->db->query($sql);
         
